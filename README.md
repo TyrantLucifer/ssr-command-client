@@ -52,6 +52,7 @@ OPTIONS
 - Email:Tyrantlucifer@linuxstudy.cn
 - Blog:www.linuxstudy.cn
 - Personal Wechat
+
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg)
 
 

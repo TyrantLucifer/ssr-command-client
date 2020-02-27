@@ -47,11 +47,11 @@ OPTIONS
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228002902.png)
 
-- 生成ssr节点配置文件 python3 main.py -c 1
+- 生成ssr节点配置文件 python3 main.py -c `ssr_node_id`
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003044.png)
 
-- 指定本地代理端口并生成配置文件 python3 main.py -c ssr_node_id -p local_port
+- 指定本地代理端口并生成配置文件 python3 main.py -c `ssr_node_id` -p `local_port`
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003139.png)
 

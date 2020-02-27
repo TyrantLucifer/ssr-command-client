@@ -3,6 +3,7 @@
 在Linux下使用的一款ssr命令行客户端
 
 ## 特性
+
 - 支持订阅链接解析
 - 支持指定本地代理端口
 - 支持节点测试ping值
@@ -35,6 +36,33 @@ OPTIONS
 -u --update "update ssr list" 更新ssr节点列表
 
 ```
+
+## 效果展示
+
+- 输出ssr链接节点列表 python3 main.py -l
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228002318.png)
+
+- 更新ssr订阅链接 python3 main.py -u
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228002902.png)
+
+- 生成ssr节点配置文件 python3 main.py -c 1
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003044.png)
+
+- 指定本地代理端口并生成配置文件 python3 main.py -c ssr_node_id -p local_port
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003139.png)
+
+- 启动ssr代理 python3 main.py -s
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003406.png)
+
+- 停止ssr代理 python3 main.py -S
+
+![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003529.png)
+
 
 ## 未来计划
 

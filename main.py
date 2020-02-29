@@ -12,6 +12,7 @@ def get_parser():
     parser.add_argument("-S", "--stop", action="store_true", help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
+    parser.add_argument("-v", "--version", action="store_true", help="display version")
     return parser
 
 def main():
@@ -29,6 +30,8 @@ def main():
         start_ssr_proxy()
     elif args.stop:
         stop_ssr_proxy()
+    elif args.version:
+        display_version()
     else:
         parser.print_help()
 if __name__ == "__main__":

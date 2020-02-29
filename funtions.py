@@ -65,3 +65,14 @@ def stop_ssr_proxy():
     else:
         print("Config json file is not exists,Please use the option -c to create config json file~~")
 
+def display_version():
+    color = colored()
+    version = color.yellow("ssr-command-client v0.1")
+    author = color.blue("Powered by TyrantLucifer~~")
+    print(version)
+    print(author)
+
+
+
+
+

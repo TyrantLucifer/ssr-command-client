@@ -34,7 +34,7 @@ OPTIONS
 -p --port port "assign local port" 指定本地代理端口
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
 -u --update "update ssr list" 更新ssr节点列表
-
+-v --version "display version" 显示当前版本
 ```
 
 ## 效果展示

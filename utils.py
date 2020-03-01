@@ -221,6 +221,7 @@ def init_config_file():
     config_json_file_path = os.path.join(config_dir, 'config.json')
     shadowsocksr_client_path = os.path.join(config_dir, 'shadowsocksr/shadowsocks/local.py')
     shadowsocksr_pid_file_path = os.path.join(config_dir, 'shadowsocksr.pid')
+    shadowsocksr_log_file_path = os.path.join(config_dir, 'shadowsocksr.log')
     cf = configparser.ConfigParser()
     cf.add_section('default')
     cf.set('default', 'subscribe_url', 'https://raw.githubusercontent.com/satrom/V2SSR/master/SSR/Day.txt')
@@ -231,6 +232,7 @@ def init_config_file():
     cf.set('default', 'workers', '1')
     cf.set('default', 'shadowsocksr_client_path', shadowsocksr_client_path)
     cf.set('default', 'shadowsocksr_pid_file_path', shadowsocksr_pid_file_path)
+    cf.set('default', 'shadowsocksr_log_file_path', shadowsocksr_log_file_path)
     with open(config_file_dir, 'w+') as file:
         cf.write(file)
     with open(lock_file_dir, 'w') as lock_file:

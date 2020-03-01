@@ -13,6 +13,7 @@ if os.path.exists(lock_file_dir):
     TIMEOUT = int(get_config_value('TIMEOUT'))
     WORKERS = int(get_config_value('WORKERS'))
     SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
+    SHADOWSOCKSR_LOG_FILE_PATH = get_config_value('SHADOWSOCKSR_LOG_FILE_PATH')
 else:
     create_config_dir()
     download_ssr_source()
@@ -25,6 +26,7 @@ else:
     TIMEOUT = int(get_config_value('TIMEOUT'))
     WORKERS = int(get_config_value('WORKERS'))
     SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
+    SHADOWSOCKSR_LOG_FILE_PATH = get_config_value('SHADOWSOCKSR_LOG_FILE_PATH')
     
 def generate_config_json(id, port=1080):
     if os.path.exists(SERVER_JSON_FILE_PATH):
@@ -68,8 +70,8 @@ def start_ssr_proxy():
         if os.path.exists(SHADOWSOCKSR_PID_FILE_PATH):
             print('Proxy is already start~~')
         else:
-            cmd = 'python3 {0} -c {1} -d start --pid-file {2}'.format(SHADOWSOCKSR_CLIENT_PATH,
-                                              CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH)
+            cmd = 'python3 {0} -c {1} -d start --pid-file {2} --log-file {3}'.format(SHADOWSOCKSR_CLIENT_PATH,
+                                              CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH, SHADOWSOCKSR_LOG_FILE_PATH)
             os.system(cmd)
             print('Proxy is start~~')
     else:
@@ -78,8 +80,8 @@ def start_ssr_proxy():
 def stop_ssr_proxy():
     if os.path.exists(CONFIG_JSON_FILE_PATH):
         if os.path.exists(SHADOWSOCKSR_PID_FILE_PATH):
-            cmd = 'python3 {0} -c {1} -d stop --pid-file {2}'.format(SHADOWSOCKSR_CLIENT_PATH,
-                                                  CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH)
+            cmd = 'python3 {0} -c {1} -d stop --pid-file {2} --log-file {3}'.format(SHADOWSOCKSR_CLIENT_PATH,
+                                                  CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH, SHADOWSOCKSR_LOG_FILE_PATH)
             os.system(cmd)
             print('Proxy is stop~~')
         else:

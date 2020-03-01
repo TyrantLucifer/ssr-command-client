@@ -4,6 +4,29 @@ import json
 from utils import *
 from conf import *
 
+config_dir, config_file_dir, lock_file_dir = get_config_dir()
+if os.path.exists(lock_file_dir):
+    SUBSCRIBE_URL = get_config_value('SUBSCRIBE_URL')
+    SERVER_JSON_FILE_PATH = get_config_value('SERVER_JSON_FILE_PATH')
+    CONFIG_JSON_FILE_PATH = get_config_value('CONFIG_JSON_FILE_PATH')
+    LOCAL_ADDRESS = get_config_value('LOCAL_ADDRESS')
+    SHADOWSOCKSR_CLIENT_PATH = get_config_value('SHADOWSOCKSR_CLIENT_PATH')
+    TIMEOUT = int(get_config_value('TIMEOUT'))
+    WORKERS = int(get_config_value('WORKERS'))
+    SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
+else:
+    create_config_dir()
+    download_ssr_source()
+    init_config_file()
+    SUBSCRIBE_URL = get_config_value('SUBSCRIBE_URL')
+    SERVER_JSON_FILE_PATH = get_config_value('SERVER_JSON_FILE_PATH')
+    CONFIG_JSON_FILE_PATH = get_config_value('CONFIG_JSON_FILE_PATH')
+    LOCAL_ADDRESS = get_config_value('LOCAL_ADDRESS')
+    SHADOWSOCKR_CLIENT_PATH = get_config_value('SHADOWSOCKSR_CLIENT_PATH')
+    TIMEOUT = int(get_config_value('TIMEOUT'))
+    WORKERS = int(get_config_value('WORKERS'))
+    SHADOWSOCKR_PID_FILE_PATH = get_config_value('SHADOWSOCKR_PID_FILE_PATH')
+    
 def generate_config_json(id, port=1080):
     if os.path.exists(SERVER_JSON_FILE_PATH):
         with open(SERVER_JSON_FILE_PATH, 'r') as file:
@@ -43,11 +66,11 @@ def show_ssr_list():
 
 def start_ssr_proxy():
     if os.path.exists(CONFIG_JSON_FILE_PATH):
-        if os.path.exists('/var/run/shadowsocksr.pid'):
+        if os.path.exists(SHADOWSOCKSR_PID_FILE_PATH):
             print('Proxy is already start~~')
         else:
-            cmd = '{0} -c {1} -d start'.format(SHADOWSOCKR_CLIENT_PATH,
-                                              CONFIG_JSON_FILE_PATH)
+            cmd = 'python3 {0} -c {1} -d start --pid-file {2}'.format(SHADOWSOCKSR_CLIENT_PATH,
+                                              CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH)
             os.system(cmd)
             print('Proxy is start~~')
     else:
@@ -55,9 +78,9 @@ def start_ssr_proxy():
 
 def stop_ssr_proxy():
     if os.path.exists(CONFIG_JSON_FILE_PATH):
-        if os.path.exists('/var/run/shadowsocksr.pid'):
-            cmd = '{0} -c {1} -d stop'.format(SHADOWSOCKR_CLIENT_PATH,
-                                                  CONFIG_JSON_FILE_PATH)
+        if os.path.exists(SHADOWSOCKSR_PID_FILE_PATH):
+            cmd = 'python3 {0} -c {1} -d stop --pid-file {2}'.format(SHADOWSOCKSR_CLIENT_PATH,
+                                                  CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH)
             os.system(cmd)
             print('Proxy is stop~~')
         else:

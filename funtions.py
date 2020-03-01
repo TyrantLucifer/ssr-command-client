@@ -2,7 +2,6 @@
 # coding=utf-8
 import json
 from utils import *
-from conf import *
 
 config_dir, config_file_dir, lock_file_dir = get_config_dir()
 if os.path.exists(lock_file_dir):

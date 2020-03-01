@@ -24,7 +24,7 @@ else:
     SHADOWSOCKR_CLIENT_PATH = get_config_value('SHADOWSOCKSR_CLIENT_PATH')
     TIMEOUT = int(get_config_value('TIMEOUT'))
     WORKERS = int(get_config_value('WORKERS'))
-    SHADOWSOCKR_PID_FILE_PATH = get_config_value('SHADOWSOCKR_PID_FILE_PATH')
+    SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
     
 def generate_config_json(id, port=1080):
     if os.path.exists(SERVER_JSON_FILE_PATH):

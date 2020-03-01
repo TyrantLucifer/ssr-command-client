@@ -74,7 +74,7 @@ def get_ssr_list(url):
     url_colored = color.blue(url)
     print('Being parsed the ssr url:', url_colored)
     print('It will take a moment,Please be patient~~')
-    result = requests.get(url)
+    result = requests.get(url, headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3742.400 QQBrowser/10.5.3864.400'})
     ssr_result = base64decode(result.text)
     ssr_list = ssr_result.split('\n')
     ssr_real_list = list()

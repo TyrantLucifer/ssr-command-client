@@ -7,10 +7,12 @@
 - 支持订阅链接解析
 - 支持指定本地代理端口
 - 支持节点测试ping值
+- 自定义订阅链接
 
-## 个人配置修改
+## ~~个人配置修改~~
 
-修改项目中`conf.py`中的`UBSCRIBE_URL`为自己的订阅链接
+~~修改项目中`conf.py`中的`UBSCRIBE_URL`为自己的订阅链接~~
+全新版本已经支持命令行一键修改订阅链接，初始化设置为github共享订阅链接
 
 ## 安装方式
 
@@ -34,6 +36,8 @@ OPTIONS
 -p --port port "assign local port" 指定本地代理端口
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
 -u --update "update ssr list" 更新ssr节点列表
+--setting-url "set ssr subscribe url" 设置ssr订阅链接
+--list-url "display ssr subscribe url" 显示当前ssr订阅链接
 -v --version "display version" 显示当前版本
 ```
 

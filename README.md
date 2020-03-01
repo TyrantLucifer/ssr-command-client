@@ -32,8 +32,8 @@ python3 main.py [OPTIONS]
 OPTIONS
 
 -l --list "show ssr list" 展示ssr节点列表
--s --start "start ssr proxy" 启动ssr代理服务，如果以普通用户执行，请加sudo
--S --stop "stop ssr proxy" 停止ssr代理服务，如果以普通用户执行，请加sudo
+-s --start "start ssr proxy" 启动ssr代理服务
+-S --stop "stop ssr proxy" 停止ssr代理服务
 -p --port port "assign local port" 指定本地代理端口
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
 -u --update "update ssr list" 更新ssr节点列表

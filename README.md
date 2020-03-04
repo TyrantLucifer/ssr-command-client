@@ -1,6 +1,6 @@
-# The command client of Linux based Python3
+# The command client of ShadowsocksR based Python3
 
-在Linux下使用的一款ssr命令行客户端
+在命令行下使用的一款ssr客户端
 
 ## 特性
 
@@ -13,7 +13,7 @@
 
 ~~修改项目中`conf.py`中的`UBSCRIBE_URL`为自己的订阅链接~~
 
-全新版本已经移除conf.py，现支持命令行一键修改订阅链接，初始化设置为github共享订阅链接
+全新版本已经移除`conf.py`，现支持命令行一键修改订阅链接，初始化设置为github共享订阅链接
 
 ## 安装方式
 
@@ -68,7 +68,7 @@ OPTIONS
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200228003529.png)
 
-## 命令行设置代理方法
+## Linux命令行设置代理方法
 
 ``` shell
 export ALL_PROXY=socks5://127.0.0.1:1080 # 设置代理
@@ -91,6 +91,7 @@ alias ip="curl https://ip.cn"
 
 ## 未来计划
 
+- [ ] 支持Windows Linux双平台
 - [ ] 支持多订阅链接解析
 - [ ] 支持自动选择速度最优节点
 - [ ] 支持自动生成PAC代理文件

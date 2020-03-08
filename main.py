@@ -14,7 +14,9 @@ def get_parser():
     parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
+    parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")
     parser.add_argument("--list-url", action="store_true", help="list ssr subscribe url")
+    parser.add_argument("--list-address", action="store_true", help="list ssr local address")
     return parser
 
 def main():
@@ -36,8 +38,12 @@ def main():
         display_version()
     elif args.setting_url:
         set_config_value('SUBSCRIBE_URL', args.setting_url)
+    elif args.setting_address:
+        set_config_value('LOCAL_ADDRESS', args.setting_address)
     elif args.list_url:
         print(SUBSCRIBE_URL)
+    elif args.list_address:
+        print(LOCAL_ADDRESS)
     else:
         parser.print_help()
 if __name__ == "__main__":

@@ -45,6 +45,20 @@ def generate_config_json(id, port=1080):
         file.write(ssr_info)
     print('config json file is update~~')
 
+def serach_fast_node():
+    if os.path.exists(SERVER_JSON_FILE_PATH):
+        with open(SERVER_JSON_FILE_PATH, 'r') as file:
+            json_str = file.read()
+        ssr_info_dict_list = json.loads(json_str)
+    else:
+        ssr_info_dict_list = update_ssr_list_info()
+    ping_speed_list = list()
+    for ssr_info_dict in ssr_info_dict_list:
+        ping = ssr_info_dict['ping']
+        if isinstance(ping, str):
+            ping = 10000
+        ping_speed_list.append(ping)
+    return ping_speed_list.index(min(ping_speed_list))
 
 def update_ssr_list_info():
     ssr_url_list = get_ssr_list(SUBSCRIBE_URL)

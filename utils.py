@@ -6,6 +6,7 @@ import requests
 import base64
 import zipfile
 import configparser
+import socket
 import re
 import os
 from prettytable import PrettyTable
@@ -19,6 +20,7 @@ class DrawTable(object):
             "id",
             "name",
             "ping(ms)",
+            "port_status",
             "server",
             "port",
             "method"
@@ -32,6 +34,7 @@ class DrawTable(object):
                 kwargs['id'],
                 kwargs['name'],
                 kwargs['ping'],
+                kwargs['port_status'],
                 kwargs['server'],
                 kwargs['port'],
                 kwargs['method'],
@@ -115,6 +118,7 @@ def analysis_ssr_url(ssr_url):
         ssr_dict['remarks'] = "".join(remarks.split("\t"))
         ssr_dict['group'] = group
         ssr_dict['ping'] = get_ping_speed(server, remarks)
+        ssr_dict['port_status'] = get_port_status(server, int(port))
         return ssr_dict
 
 # 生成ssr 信息列表字典
@@ -136,10 +140,16 @@ def generate_ssr_display_table(ssr_info_dict_list):
             ping = color.red(ssr_info_dict['ping'])
         else:
             ping = color.green(str(ssr_info_dict['ping']))
+        if ssr_info_dict['port_status'] == "×":
+            port_status = color.red(ssr_info_dict['port_status'])
+        else:
+            port_status = color.green(ssr_info_dict['port_status'])
+
         table.append(
             id = id,
             name=ssr_info_dict['remarks'],
             ping=ping,
+            port_status=port_status,
             server=ssr_info_dict['server'],
             port=ssr_info_dict['server_port'],
             method=ssr_info_dict['method']
@@ -254,3 +264,17 @@ def set_config_value(key, value):
     cf.set('default', key, str(value))
     with open(config_file_dir, 'w+') as file:
         cf.write(file)
+
+# 测试端口是否可以联通
+def get_port_status(server, port):
+    server_addr = (server, port)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(1)
+    try:
+        s.connect(server_addr)
+    except:
+        flag = "×"
+    else:
+        flag = "√"
+    s.close()
+    return flag

@@ -166,7 +166,7 @@ def generate_ssr_display_table(ssr_info_dict_list):
 # 获取ssr节点ping值
 def get_ping_speed(server, remarks):
     color = colored()
-    ping_speed = ping3.ping(server, timeout=3, unit='ms')
+    ping_speed = ping3.ping(server, timeout=5, unit='ms')
     if ping_speed:
         flag = color.green('√')
         ping_speed = format(ping_speed, '.3f')

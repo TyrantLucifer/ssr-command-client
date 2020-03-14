@@ -72,6 +72,15 @@ OPTIONS
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315023654.png)
 
+## 更新ssr-command-client
+
+``` shell
+git pull
+pip3 install -r requirement.txt
+
+```
+
+
 ## Linux命令行设置代理方法
 
 ``` shell

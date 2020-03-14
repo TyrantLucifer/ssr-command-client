@@ -79,13 +79,18 @@ def get_ssr_list(url):
     print('Being parsed the ssr url:', url_colored)
     print('It will take a moment,Please be patient~~')
     result = requests.get(url, headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3742.400 QQBrowser/10.5.3864.400'})
-    ssr_result = base64decode(result.text)
-    ssr_list = ssr_result.split('\n')
-    ssr_real_list = list()
-    for ssr in ssr_list:
-        if ssr:
-            ssr_real_list.append(ssr[6:])
-    return ssr_real_list
+    try:
+        ssr_result = base64decode(result.text)
+    except:
+        print(color.red("ssr subscribe url parsed failed,please check the ssr subscribe url~~"))
+        return None
+    else:
+        ssr_list = ssr_result.split('\n')
+        ssr_real_list = list()
+        for ssr in ssr_list:
+            if ssr:
+                ssr_real_list.append(ssr[6:])
+        return ssr_real_list
 
 # 解析ssr url链接
 def analysis_ssr_url(ssr_url):

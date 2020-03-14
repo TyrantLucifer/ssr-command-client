@@ -5,6 +5,7 @@
 ## 特性
 
 - 支持订阅链接解析
+- 支持多订阅链接解析
 - 支持指定本地代理端口
 - 支持节点测试ping值
 - 自定义订阅链接
@@ -41,6 +42,8 @@ OPTIONS
 --fast-node "generate fast ssr config json file" 生成最快节点json文件
 --setting-url "set ssr subscribe url" 设置ssr订阅链接
 --setting-address "set ssr local address" 设置ssr本地代理地址
+--add-url "add ssr subscribe url" 增加ssr订阅链接·
+--remove-url "remove ssr subscribe url" 移除ssr订阅链接
 --list-url "display ssr subscribe url" 显示当前ssr订阅链接
 --list-address "display ssr local address" 显示当前ssr本地代理地址
 -v --version "display version" 显示当前版本
@@ -96,7 +99,7 @@ alias ip="curl https://ip.cn"
 ## 未来计划
 
 - [ ] 支持Windows Linux双平台
-- [ ] 支持多订阅链接解析
+- [x] ~支持多订阅链接解析~
 - [x] ~支持自动选择速度最优节点~
 - [ ] 支持自动生成PAC代理文件
 - [ ] 支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)

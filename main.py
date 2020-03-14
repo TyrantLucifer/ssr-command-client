@@ -17,6 +17,8 @@ def get_parser():
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
     parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")
     parser.add_argument("--list-url", action="store_true", help="list ssr subscribe url")
+    parser.add_argument("--add-url", metavar="ssr_subscribe_url", help="add ssr subscribe url")
+    parser.add_argument("--remove-url", metavar="ssr_subscribe_url", help="remove ssr subscribe url")
     parser.add_argument("--list-address", action="store_true", help="list ssr local address")
     return parser
 
@@ -48,7 +50,11 @@ def main():
     elif args.setting_address:
         set_config_value('LOCAL_ADDRESS', args.setting_address)
     elif args.list_url:
-        print(SUBSCRIBE_URL)
+        display_ssr_subcribe_url()
+    elif args.add_url:
+        add_ssr_subcribe_url(args.add_url)
+    elif args.remove_url:
+        remove_ssr_subcribe_url(args.remove_url)
     elif args.list_address:
         print(LOCAL_ADDRESS)
     else:

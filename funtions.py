@@ -61,7 +61,10 @@ def serach_fast_node():
     return ping_speed_list.index(min(ping_speed_list))
 
 def update_ssr_list_info():
-    ssr_url_list = get_ssr_list(SUBSCRIBE_URL)
+    url_list = SUBSCRIBE_URL.split(',')
+    ssr_url_list = list()
+    for url in url_list:
+        ssr_url_list += get_ssr_list(url)
     ssr_info_dict_list = generate_ssr_info_dict_list(ssr_url_list)
     json_str = json.dumps(ssr_info_dict_list)
     with open(SERVER_JSON_FILE_PATH, 'w') as file:
@@ -105,12 +108,35 @@ def stop_ssr_proxy():
 
 def display_version():
     color = colored()
-    version = color.yellow("ssr-command-client v1.0")
+    version = color.yellow("ssr-command-client v1.3")
     author = color.blue("Powered by TyrantLucifer~~")
     print(version)
     print(author)
 
+def display_ssr_subcribe_url():
+    color = colored()
+    url_list = SUBSCRIBE_URL.split(",")
+    for url in url_list:
+        print(color.blue(url))
 
+def add_ssr_subcribe_url(url):
+    color = colored()
+    url_list = SUBSCRIBE_URL.split(",")
+    url_list.append(url)
+    url = ",".join(url_list)
+    set_config_value("SUBSCRIBE_URL", url)
+    print(color.green("add ssr subcribe url success~~"))
 
-
+def remove_ssr_subcribe_url(url):
+    color = colored()
+    url_list = SUBSCRIBE_URL.split(",")
+    try:
+        url_list.remove(url)
+    except:
+        print(color.red("ssr subscribe url is not exists,please input the correct url~~"))
+    else:
+        url = ",".join(url_list)
+        set_config_value("SUBSCRIBE_URL", url)
+        print(color.green("remove ssr subcribe url success~~"))
+        
 

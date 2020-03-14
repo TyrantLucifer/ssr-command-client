@@ -7,6 +7,7 @@ import base64
 import zipfile
 import configparser
 import socket
+import ping3
 import re
 import os
 from prettytable import PrettyTable
@@ -160,28 +161,13 @@ def generate_ssr_display_table(ssr_info_dict_list):
 # 获取ssr节点ping值
 def get_ping_speed(server, remarks):
     color = colored()
-    num = len(server.split("."))
-
-    if num >= 4:
-        ping_len = "7"
-    else:
-        ping_len = "8"
-
-    cmd = "ping -c 1 %s |grep 'time=' | awk '{print $%s}' |cut -b 6-" % (server,ping_len)
-    ping_speed = os.popen(cmd).readlines()
-
+    ping_speed = ping3.ping(server, timeout=3, unit='ms')
     if ping_speed:
-        try:
-            ping_speed = float(ping_speed[0].strip())
-        except:
-            ping_speed = '∞'
-            flag = color.red("×")
-        else:
-            flag = color.green("√")
+        flag = color.green('√')
+        ping_speed = format(ping_speed, '.3f')
     else:
+        flag = color.red('×')
         ping_speed = '∞'
-        flag = color.red("×")
-
     print("Testing ping:", remarks, server, flag)
     return ping_speed
 

@@ -59,5 +59,6 @@ def main():
         print(LOCAL_ADDRESS)
     else:
         parser.print_help()
+
 if __name__ == "__main__":
     main()

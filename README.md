@@ -77,14 +77,14 @@ OPTIONS
 ``` shell
 export ALL_PROXY=socks5://127.0.0.1:1080 # 设置代理
 unset ALL_PROXY # 关闭代理
-curl https://ip.cn # 查看外网ip及ip归属地
+curl http://ip-api.com/json/?lang=zh-CN # 查看当前ip归属地
 
 ```
 如果想要方便的使用命令开关代理，可以将以下内容加入到自己的shell环境文件中：
 ``` shell
 alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
-alias ip="curl https://ip.cn"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 ```
 这样下面这几个命令就会有以下功能：

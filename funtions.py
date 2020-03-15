@@ -55,8 +55,10 @@ def serach_fast_node():
     ping_speed_list = list()
     for ssr_info_dict in ssr_info_dict_list:
         ping = ssr_info_dict['ping']
-        if isinstance(ping, str):
+        if ping == '∞':
             ping = 10000
+        else:
+            ping = float(ping)
         ping_speed_list.append(ping)
     return ping_speed_list.index(min(ping_speed_list))
 

@@ -29,16 +29,11 @@ def main():
         show_ssr_list()
     elif args.update:
         update_ssr_list_info()
-    elif args.config and not args.port:
-        generate_config_json(args.config)
-    elif args.config and args.port:
+    elif args.config:
         generate_config_json(args.config, args.port)
-    elif args.fast_node and not args.port:
-        id = serach_fast_node() + 1
-        generate_config_json(id)
-    elif args.fast_node and args.port:
-        id = serach_fast_node() + 1
-        generate_config_json(id, args.port)
+    elif args.fast_node:
+        node_id = serach_fast_node() + 1
+        generate_config_json(node_id, args.port)
     elif args.start:
         start_ssr_proxy()
     elif args.stop:

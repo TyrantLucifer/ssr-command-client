@@ -114,7 +114,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 ## Tips
 
-如果有好的建议，欢迎发邮件给我，或者关注下方我的个人微信公众号在后台留言
+如果有好的建议，欢迎发邮件给我，或者关注下方我的个人微信公众号在后台留言，或者加qq群`764374820`反馈
 
 - Email:Tyrantlucifer@linuxstudy.cn
 - Blog:www.linuxstudy.cn

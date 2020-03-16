@@ -51,7 +51,7 @@ OPTIONS
 
 ## 效果展示
 
-- 输出ssr链接节点列表 python3 main.py -l
+- 输出ssr链接节点列表 python3 main.py -l，新版本的`ssr-command-client`更新列表需要`sudo`权限，如果以普通用户运行，请加`sudo`
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315024222.png)
 

@@ -99,9 +99,15 @@ def start_ssr_proxy():
 def stop_ssr_proxy():
     if os.path.exists(CONFIG_JSON_FILE_PATH):
         if os.path.exists(SHADOWSOCKSR_PID_FILE_PATH):
-            cmd = 'python3 {0} -c {1} -d stop --pid-file {2} --log-file {3}'.format(SHADOWSOCKSR_CLIENT_PATH,
-                                                  CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH, SHADOWSOCKSR_LOG_FILE_PATH)
-            os.system(cmd)
+            with open(SHADOWSOCKSR_PID_FILE_PATH, "r") as file:
+                pid = file.read()
+            pid_num = len(os.popen("ps -aux | grep %s"%pid).readlines())
+            if pid_num > 2:
+                cmd = 'python3 {0} -c {1} -d stop --pid-file {2} --log-file {3}'.format(SHADOWSOCKSR_CLIENT_PATH,
+                                                      CONFIG_JSON_FILE_PATH, SHADOWSOCKSR_PID_FILE_PATH, SHADOWSOCKSR_LOG_FILE_PATH)
+                os.system(cmd)
+            else:
+                os.remove(SHADOWSOCKSR_PID_FILE_PATH)
             print('Proxy is stop~~')
         else:
             print('Proxy is already stop~~')

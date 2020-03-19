@@ -46,6 +46,8 @@ OPTIONS
 --remove-url "remove ssr subscribe url" 移除ssr订阅链接
 --list-url "display ssr subscribe url" 显示当前ssr订阅链接
 --list-address "display ssr local address" 显示当前ssr本地代理地址
+--parse-url "parse ssr url" 解析ssr链接
+--add-ssr "add ssr node" 添加ssr节点
 -v --version "display version" 显示当前版本
 ```
 
@@ -104,13 +106,13 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 ## 未来计划
 
-- [ ] 支持Windows Linux双平台
 - [x] ~支持多订阅链接解析~
 - [x] ~支持自动选择速度最优节点~
+- [x] ~支持命令行解析ssr链接信息~
+- [x] ~支持使用ssr链接添加节点~
+- [ ] 支持Windows Linux双平台
 - [ ] 支持自动生成PAC代理文件
 - [ ] 支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)
-- [ ] 支持指定ssr链接启动服务
-- [ ] 支持命令行解析ssr链接信息
 
 ## Tips
 

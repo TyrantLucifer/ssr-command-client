@@ -99,6 +99,7 @@ def analysis_ssr_url(ssr_url):
     except:
         pass
     else:
+        ssr_dict = dict()
         param_list = ssr_url.split(':')
         server = param_list[0]
         port = param_list[1]
@@ -108,22 +109,20 @@ def analysis_ssr_url(ssr_url):
         second_encryption_param_list = param_list[-1].split('/?')
         password = base64decode(second_encryption_param_list[0])
         encryption_param_list = second_encryption_param_list[-1].split('&')
-        obfs_param = base64decode(encryption_param_list[0].split('=')[-1])
-        protocol_param = base64decode(encryption_param_list[1].split('=')[-1])
-        remarks = base64decode(encryption_param_list[2].split('=')[-1])
-        group = base64decode(encryption_param_list[3].split('=')[-1])
-        ssr_dict = dict()
+        for params in encryption_param_list:
+            key = params.split('=')[0]
+            value = params.split('=')[1]
+            if key == 'obfsparam':
+                key = 'obfs_param'
+            if key == 'protoparam':
+                key = 'protocol_param'
+            ssr_dict[key] = base64decode(value)
         ssr_dict['server'] = server
         ssr_dict['server_port'] = int(port)
         ssr_dict['method'] = method
         ssr_dict['obfs'] = obfs
-        ssr_dict['protocol'] = protocol
         ssr_dict['password'] = password
-        ssr_dict['obfs_param'] = obfs_param
-        ssr_dict['protocol_param'] = protocol_param
-        ssr_dict['remarks'] = "".join(remarks.split("\t"))
-        ssr_dict['group'] = group
-        ssr_dict['ping'] = get_ping_speed(server, remarks)
+        ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
         ssr_dict['port_status'] = get_port_status(server, int(port))
         return ssr_dict
 

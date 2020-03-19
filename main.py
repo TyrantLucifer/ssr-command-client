@@ -20,6 +20,8 @@ def get_parser():
     parser.add_argument("--add-url", metavar="ssr_subscribe_url", help="add ssr subscribe url")
     parser.add_argument("--remove-url", metavar="ssr_subscribe_url", help="remove ssr subscribe url")
     parser.add_argument("--list-address", action="store_true", help="list ssr local address")
+    parser.add_argument("--parse-url", metavar="ssr_url", help="pares ssr url")
+    parser.add_argument("--add-ssr", metavar="ssr_url", help="add ssr node")
     return parser
 
 def main():
@@ -52,6 +54,10 @@ def main():
         remove_ssr_subcribe_url(args.remove_url)
     elif args.list_address:
         print(LOCAL_ADDRESS)
+    elif args.parse_url:
+        parse_ssr_url(args.parse_url)
+    elif args.add_ssr:
+        add_ssr_node(args.add_ssr)
     else:
         parser.print_help()
 

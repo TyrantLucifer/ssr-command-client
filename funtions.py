@@ -147,4 +147,52 @@ def remove_ssr_subcribe_url(url):
         set_config_value("SUBSCRIBE_URL", url)
         print(color.green("remove ssr subcribe url success~~"))
         
+def parse_ssr_url(url):
+    url = url[6:]
+    try:
+        ssr_info_dict = analysis_ssr_url(url)
+    except:
+        print('please input correct ssr url~~')
+    else:
+        table = DrawTable()
+        id = 1
+        color = colored()
+        if ssr_info_dict['ping'] == '∞':
+            ping = color.red(ssr_info_dict['ping'])
+        else:
+            ping = color.green(ssr_info_dict['ping'])
+        if ssr_info_dict['port_status'] == "×":
+            port_status = color.red(ssr_info_dict['port_status'])
+        else:
+            port_status = color.green(ssr_info_dict['port_status'])
+        table.append(
+            id = id,
+            name=ssr_info_dict['remarks'],
+            ping=ping,
+            port_status=port_status,
+            server=ssr_info_dict['server'],
+            port=ssr_info_dict['server_port'],
+            method=ssr_info_dict['method']
+        )
+        print(table.str())
+        return ssr_info_dict
+
+def add_ssr_node(url):
+    try:
+        ssr_info_dict = parse_ssr_url(url)
+    except:
+        print('please input correct ssr url~~')
+    else:
+        if os.path.exists(SERVER_JSON_FILE_PATH):
+            with open(SERVER_JSON_FILE_PATH, 'r') as ssr_list_file:
+                json_str = ssr_list_file.read()
+            ssr_info_dict_list = json.loads(json_str)
+            ssr_info_dict_list.append(ssr_info_dict)                      
+        else:
+            ssr_info_dict_list = list()
+            ssr_info_dict_list.append(ssr_info_dict)
+
+        json_str = json.dumps(ssr_info_dict_list)           
+        with open(SERVER_JSON_FILE_PATH, 'w') as file:
+            file.write(json_str)
 

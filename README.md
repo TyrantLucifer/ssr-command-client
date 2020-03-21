@@ -21,7 +21,7 @@
 
 ```shell
 
-git clone https://github.com/TyrantLucifer/ssr-commend-client.git
+git clone https://github.com/TyrantLucifer/ssr-command-client.git
 pip3 install -r requirement.txt
 
 ```
@@ -40,7 +40,7 @@ OPTIONS
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
 -u --update "update ssr list" 更新ssr节点列表
 --fast-node "generate fast ssr config json file" 生成最快节点json文件
---setting-url "set ssr subscribe url" 设置ssr订阅链接
+--setting-url "set ssr subscribe url" 重置ssr订阅链接
 --setting-address "set ssr local address" 设置ssr本地代理地址
 --add-url "add ssr subscribe url" 增加ssr订阅链接·
 --remove-url "remove ssr subscribe url" 移除ssr订阅链接

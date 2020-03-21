@@ -130,6 +130,8 @@ def display_ssr_subcribe_url():
 def add_ssr_subcribe_url(url):
     color = colored()
     url_list = SUBSCRIBE_URL.split(",")
+    if url_list[0] == '':
+        del url_list[0]
     url_list.append(url)
     url = ",".join(url_list)
     set_config_value("SUBSCRIBE_URL", url)

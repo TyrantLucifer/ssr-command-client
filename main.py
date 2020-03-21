@@ -5,7 +5,7 @@ import argparse
 from funtions import *
 
 def get_parser():
-    parser = argparse.ArgumentParser(description="The ssr commend client based Python.")
+    parser = argparse.ArgumentParser(description="The ssr command client based Python.")
     parser.add_argument("-l", "--list", action="store_true", help="show ssr list")
     parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int, help="assign local proxy port,use with -c or --fast-node")
     parser.add_argument("-s", "--start", action="store_true", help="start ssr proxy")

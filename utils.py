@@ -124,6 +124,7 @@ def analysis_ssr_url(ssr_url):
         ssr_dict['password'] = password
         ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
         ssr_dict['port_status'] = get_port_status(server, int(port))
+        ssr_dict['protocol'] = protocol
         return ssr_dict
 
 # 生成ssr 信息列表字典

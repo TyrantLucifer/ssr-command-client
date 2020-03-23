@@ -198,3 +198,38 @@ def add_ssr_node(url):
         with open(SERVER_JSON_FILE_PATH, 'w') as file:
             file.write(json_str)
 
+
+def test_node_again(id):
+    if os.path.exists(SERVER_JSON_FILE_PATH):
+        with open(SERVER_JSON_FILE_PATH, 'r') as file:
+            json_str = file.read()
+        ssr_info_dict_list = json.loads(json_str)
+    else:
+        ssr_info_dict_list = update_ssr_list_info()
+    color = colored()
+    ssr_info_dict = ssr_info_dict_list[id - 1]
+    port = ssr_info_dict['server_port']
+    server = ssr_info_dict['server']
+    remarks = ssr_info_dict['remarks']
+    ping = get_ping_speed(server, remarks)
+    port_status = get_port_status(server, port)
+
+    if ping == '∞':
+        ping = color.red(ping)
+    else:
+        ping = color.green(str(ping))
+    if port_status == "×":
+        port_status = color.red(port_status)
+    else:
+        port_status = color.green(port_status)
+    
+    ssr_info_dict_list[id - 1]['ping'] = ping
+    ssr_info_dict_list[id - 1]['port_status'] = port_status
+    print("ping:", ping)
+    print("port_status:", port_status)
+    json_str = json.dumps(ssr_info_dict_list)
+    with open(SERVER_JSON_FILE_PATH, 'w') as file:
+        file.write(json_str)
+    print("ssr info is update~~")
+    
+

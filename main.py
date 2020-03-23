@@ -22,6 +22,7 @@ def get_parser():
     parser.add_argument("--list-address", action="store_true", help="list ssr local address")
     parser.add_argument("--parse-url", metavar="ssr_url", help="pares ssr url")
     parser.add_argument("--add-ssr", metavar="ssr_url", help="add ssr node")
+    parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
     return parser
 
 def main():
@@ -58,6 +59,8 @@ def main():
         parse_ssr_url(args.parse_url)
     elif args.add_ssr:
         add_ssr_node(args.add_ssr)
+    elif args.test_again:
+        test_node_again(args.test_again)
     else:
         parser.print_help()
 

@@ -225,7 +225,7 @@ def test_node_again(id):
     
     ssr_info_dict_list[id - 1]['ping'] = ping
     ssr_info_dict_list[id - 1]['port_status'] = port_status
-    print("ping:", ping)
+    print("ping(ms):", ping)
     print("port_status:", port_status)
     json_str = json.dumps(ssr_info_dict_list)
     with open(SERVER_JSON_FILE_PATH, 'w') as file:

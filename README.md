@@ -48,6 +48,7 @@ OPTIONS
 --list-address "display ssr local address" 显示当前ssr本地代理地址
 --parse-url "parse ssr url" 解析ssr链接
 --add-ssr "add ssr node" 添加ssr节点
+--test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态
 -v --version "display version" 显示当前版本
 ```
 

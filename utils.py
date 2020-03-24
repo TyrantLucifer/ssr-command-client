@@ -101,31 +101,36 @@ def analysis_ssr_url(ssr_url):
     else:
         ssr_dict = dict()
         param_list = ssr_url.split(':')
-        server = param_list[0]
-        port = param_list[1]
-        protocol = param_list[2]
-        method = param_list[3]
-        obfs = param_list[4]
-        second_encryption_param_list = param_list[-1].split('/?')
-        password = base64decode(second_encryption_param_list[0])
-        encryption_param_list = second_encryption_param_list[-1].split('&')
-        for params in encryption_param_list:
-            key = params.split('=')[0]
-            value = params.split('=')[1]
-            if key == 'obfsparam':
-                key = 'obfs_param'
-            if key == 'protoparam':
-                key = 'protocol_param'
-            ssr_dict[key] = base64decode(value)
-        ssr_dict['server'] = server
-        ssr_dict['server_port'] = int(port)
-        ssr_dict['method'] = method
-        ssr_dict['obfs'] = obfs
-        ssr_dict['password'] = password
-        ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
-        ssr_dict['port_status'] = get_port_status(server, int(port))
-        ssr_dict['protocol'] = protocol
-        return ssr_dict
+        if len(param_list) == 6:
+            server = param_list[0]
+            port = param_list[1]
+            protocol = param_list[2]
+            method = param_list[3]
+            obfs = param_list[4]
+            second_encryption_param_list = param_list[-1].split('/?')
+            password = base64decode(second_encryption_param_list[0])
+            encryption_param_list = second_encryption_param_list[-1].split('&')
+            for params in encryption_param_list:
+                key = params.split('=')[0]
+                value = params.split('=')[1]
+                if key == 'obfsparam':
+                    key = 'obfs_param'
+                if key == 'protoparam':
+                    key = 'protocol_param'
+                ssr_dict[key] = base64decode(value)
+            ssr_dict['server'] = server
+            ssr_dict['server_port'] = int(port)
+            ssr_dict['method'] = method
+            ssr_dict['obfs'] = obfs
+            ssr_dict['password'] = password
+            ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
+            ssr_dict['port_status'] = get_port_status(server, int(port))
+            ssr_dict['protocol'] = protocol
+            return ssr_dict
+        else:
+            color = colored()
+            print(color.yellow("Sorry, Not support ipv6 node~~"))
+            return None
 
 # 生成ssr 信息列表字典
 def generate_ssr_info_dict_list(ssr_url_list):

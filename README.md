@@ -121,6 +121,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 - Email:Tyrantlucifer@linuxstudy.cn
 - Blog:www.linuxstudy.cn
+- Telegram:https://t.me/ssr_command_client
 - Personal Wechat
 
 ![我的微信公众号](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg)

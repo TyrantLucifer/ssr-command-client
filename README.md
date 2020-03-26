@@ -34,17 +34,17 @@ OPTIONS
 -S --stop "stop ssr proxy" 停止ssr代理服务
 -p --port port "assign local port" 指定本地代理端口
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
--u --update "update ssr list" 更新ssr节点列表
+-u --update "update ssr list" 更新ssr节点列表(需要sudo权限)
 --fast-node "generate fast ssr config json file" 生成最快节点json文件
 --setting-url "set ssr subscribe url" 重置ssr订阅链接
 --setting-address "set ssr local address" 设置ssr本地代理地址
---add-url "add ssr subscribe url" 增加ssr订阅链接·
+--add-url "add ssr subscribe url" 增加ssr订阅链接
 --remove-url "remove ssr subscribe url" 移除ssr订阅链接
 --list-url "display ssr subscribe url" 显示当前ssr订阅链接
 --list-address "display ssr local address" 显示当前ssr本地代理地址
---parse-url "parse ssr url" 解析ssr链接
---add-ssr "add ssr node" 添加ssr节点
---test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态
+--parse-url "parse ssr url" 解析ssr链接(需要sudo权限)
+--add-ssr "add ssr node" 添加ssr节点(需要sudo权限)
+--test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态(需要sudo权限)
 -v --version "display version" 显示当前版本
 ```
 

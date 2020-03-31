@@ -215,18 +215,18 @@ def test_node_again(id):
     port_status = get_port_status(server, port)
 
     if ping == '∞':
-        ping = color.red(ping)
+        display_ping = color.red(ping)
     else:
-        ping = color.green(str(ping))
+        display_ping = color.green(str(ping))
     if port_status == "×":
-        port_status = color.red(port_status)
+        display_port_status = color.red(port_status)
     else:
-        port_status = color.green(port_status)
+        display_port_status = color.green(port_status)
     
     ssr_info_dict_list[id - 1]['ping'] = ping
     ssr_info_dict_list[id - 1]['port_status'] = port_status
-    print("ping(ms):", ping)
-    print("port_status:", port_status)
+    print("ping(ms):", display_ping)
+    print("port_status:", display_port_status)
     json_str = json.dumps(ssr_info_dict_list)
     with open(SERVER_JSON_FILE_PATH, 'w') as file:
         file.write(json_str)

@@ -98,7 +98,9 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 这样下面这几个命令就会有以下功能：
 
 `setproxy` 开启代理
+
 `unsetproxy` 关闭代理
+
 `ip` 查看ip归属地
 
 ## 未来计划

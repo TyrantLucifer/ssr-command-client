@@ -252,7 +252,7 @@ def open_pac_proxy():
     os.system(cmd)
     print("open system pac proxy is success~~")
 
-def close_proxy():
+def close_system_proxy():
     cmd = "gsettings set org.gnome.system.proxy mode 'none'"
     os.system(cmd)
     print("close system proxy is success~~")

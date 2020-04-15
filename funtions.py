@@ -247,6 +247,7 @@ def open_pac_proxy():
     os.system(cmd)
     cu_dir = os.getcwd()
     cmd = "gsettings set org.gnome.system.proxy autoconfig-url file//{0}".format(os.path.join(cu_dir, 'autoproxy.pac'))
+    os.system(cmd)
     print("open system pac proxy is success~~")
 
 def close_proxy():

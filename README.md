@@ -45,6 +45,9 @@ OPTIONS
 --parse-url "parse ssr url" 解析ssr链接(需要sudo权限)
 --add-ssr "add ssr node" 添加ssr节点(需要sudo权限)
 --test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态(需要sudo权限)
+--setting-pac-proxy "setting system pac proxy,only support Ubuntu Desktop" 设置系统代理模式为pac代理，注：仅支持Ubuntu桌面系统
+--setting-global-proxy "setting system global proxy,only support Ubuntu Desktop" 设置系统代理模式为全局代理，注：仅支持Ubuntu桌面系统
+--close-system-proxy "close system proxy,only support Ubuntu Desktop" 关闭系统代理，注：仅支持Ubuntu桌面系统
 -v --version "display version" 显示当前版本
 ```
 

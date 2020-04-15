@@ -245,7 +245,7 @@ def open_pac_proxy():
     home_dir = get_home_dir()
     cmd = "gsettings set org.gnome.system.proxy mode 'auto'"
     os.system(cmd)
-    cmd = '{0}/genpac --proxy="SOCKS5 {1}:1080" -o autoproxy.pac --gfwlist-url="https://www.linuxstudy.cn/gfwlist.txt"'.format(
+    cmd = '{0} --proxy="SOCKS5 {1}:1080" -o autoproxy.pac --gfwlist-url="https://www.linuxstudy.cn/gfwlist.txt"'.format(
             os.path.join(home_dir,'.local/bin/genpac'), LOCAL_ADDRESS)
     os.system(cmd)
     cmd = "gsettings set org.gnome.system.proxy autoconfig-url file//{0}".format(os.path.join(cu_dir, 'autoproxy.pac'))

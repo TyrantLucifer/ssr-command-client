@@ -238,6 +238,18 @@ def open_global_proxy():
     cmd = "gsettings set org.gnome.system.proxy.socks host {0}".format(LOCAL_ADDRESS)
     os.system(cmd)
     cmd = "gsettings set org.gnome.system.proxy.socks port 1080"
-    print("open global proxy is success~~")
+    print("open system global proxy is success~~")
 
+def open_pac_proxy():
+    cmd = "gsettings set org.gnome.system.proxy mode 'auto'"
+    os.system(cmd)
+    cmd = 'genpac --proxy="SOCKS5 {0}:1080" -o autoproxy.pac --gfwlist-url="https://www.linuxstudy.cn/gfwlist.txt"'.format(LOCAL_ADDRESS)
+    os.system(cmd)
+    cu_dir = os.getcwd()
+    cmd = "gsettings set org.gnome.system.proxy autoconfig-url file//{0}".format(os.path.join(cu_dir, 'autoproxy.pac'))
+    print("open system pac proxy is success~~")
 
+def close_proxy():
+    cmd = "gsettings set org.gnome.system.proxy mode 'none'"
+    os.system(cmd)
+    print("close system proxy is success~~")

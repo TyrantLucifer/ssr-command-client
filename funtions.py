@@ -232,4 +232,12 @@ def test_node_again(id):
         file.write(json_str)
     print("ssr info is update~~")
     
+def open_global_proxy():
+    cmd = "gsettings set org.gnome.system.proxy mode 'manual'"
+    os.system(cmd)
+    cmd = "gsettings set org.gnome.system.proxy.socks host {0}".format(LOCAL_ADDRESS)
+    os.system(cmd)
+    cmd = "gsettings set org.gnome.system.proxy.socks port 1080"
+    print("open global proxy is success~~")
+
 

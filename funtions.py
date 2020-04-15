@@ -248,7 +248,7 @@ def open_pac_proxy():
     cmd = '{0} --proxy="SOCKS5 {1}:1080" -o autoproxy.pac --gfwlist-url="https://www.linuxstudy.cn/gfwlist.txt"'.format(
             os.path.join(home_dir,'.local/bin/genpac'), LOCAL_ADDRESS)
     os.system(cmd)
-    cmd = "gsettings set org.gnome.system.proxy autoconfig-url file//{0}".format(os.path.join(cu_dir, 'autoproxy.pac'))
+    cmd = "gsettings set org.gnome.system.proxy autoconfig-url file://{0}".format(os.path.join(cu_dir, 'autoproxy.pac'))
     os.system(cmd)
     print("open system pac proxy is success~~")
 

@@ -3,3 +3,4 @@ ping3
 colorama
 shadowsocks
 prettytable
+genpac

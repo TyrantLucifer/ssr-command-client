@@ -112,9 +112,23 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 - [x] ~支持自动选择速度最优节点~
 - [x] ~支持命令行解析ssr链接信息~
 - [x] ~支持使用ssr链接添加节点~
+- [x] 支持自动生成PAC代理文件
+- [x] 支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)
 - [ ] 支持Windows Linux双平台
-- [ ] 支持自动生成PAC代理文件
-- [ ] 支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)
+
+## 常见问题
+
+- 我的代理打开了，为什么还是翻不出去？
+
+> ssr-command-client的实质是使用Python版本的ssr开启了一个本地socks5代理，并没有实现自动分流和开启代理的功能，要想知道自己有没有开启成功，看上面使用方法章节，学习如何命令行设置socks5代理
+
+- 我的按照那几条命令查看了我的ip和设置了代理，都成功了，可是我执行`wget www.google.com`怎么还是不行？
+
+> 命令行虽然设置好代理了，但是默认用的是我们本地的dns，没有用socks5代理的dns，国内早把google给污染了，google被解析到一个鬼一样的ip上，你说它咋能成功呢？你要是非要想用这种方法测试，使用`curl --proxy socks5h://127.0.0.1:1080 www.google.com`去查看是否有输出内容
+
+- 针对Ubuntu桌面用户的一些通知
+
+> 目前项目已经支持设置网络全局代理和pac代理，但是pac代理使用的`file://`协议指向的文件，新版chrome已经不支持这种协议的pac文件了，所以在设置完pac代理之后，chrome无法扶墙出去，但是火狐可以，如果chrome也想扶墙出去，建议使用`SwitchyOmega`插件进行分流，或者本地搭建一个http服务器，然后将项目目录下自动生成的autoproxy.pac扔到网站目录里去，在系统设置里把`file://`协议设置成`http://`协议即可
 
 ## Tips
 
@@ -126,5 +140,4 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 - Personal Wechat
 
 ![我的微信公众号](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg)
-
 

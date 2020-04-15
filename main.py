@@ -23,6 +23,9 @@ def get_parser():
     parser.add_argument("--parse-url", metavar="ssr_url", help="pares ssr url")
     parser.add_argument("--add-ssr", metavar="ssr_url", help="add ssr node")
     parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
+    parser.add_argument("--setting-global-proxy", action="store_true", help="setting system global proxy,only support Ubuntu Desktop")
+    parser.add_argument("--setting-pac-proxy", action="store_true", help="setting system pac proxy,only support Ubuntu Desktop")
+    parser.add_argument("--close-system-proxy", action="store_true", help="close system proxy,only support Ubuntu Desktop")
     return parser
 
 def main():
@@ -61,6 +64,12 @@ def main():
         add_ssr_node(args.add_ssr)
     elif args.test_again:
         test_node_again(args.test_again)
+    elif args.setting_global_proxy:
+        open_global_proxy()
+    elif args.setting_pac_proxy:
+        open_pac_proxy()
+    elif args.close_system_proxy:
+        close_system_proxy()
     else:
         parser.print_help()
 

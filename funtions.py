@@ -238,6 +238,7 @@ def open_global_proxy():
     cmd = "gsettings set org.gnome.system.proxy.socks host {0}".format(LOCAL_ADDRESS)
     os.system(cmd)
     cmd = "gsettings set org.gnome.system.proxy.socks port 1080"
+    os.system(cmd)
     print("open system global proxy is success~~")
 
 def open_pac_proxy():

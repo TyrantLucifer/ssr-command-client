@@ -26,6 +26,7 @@ def get_parser():
     parser.add_argument("--setting-global-proxy", action="store_true", help="setting system global proxy,only support Ubuntu Desktop")
     parser.add_argument("--setting-pac-proxy", action="store_true", help="setting system pac proxy,only support Ubuntu Desktop")
     parser.add_argument("--close-system-proxy", action="store_true", help="close system proxy,only support Ubuntu Desktop")
+    parser.add_argument("--setting-auto-start", action="store_true", help="setting ssr auto start")
     return parser
 
 def main():
@@ -70,6 +71,8 @@ def main():
         open_pac_proxy()
     elif args.close_system_proxy:
         close_system_proxy()
+    elif args.setting_auto_start:
+        setting_auto_start()
     else:
         parser.print_help()
 

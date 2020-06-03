@@ -10,6 +10,7 @@
 - 支持节点测试ping值
 - 自定义订阅链接
 - 支持测试端口是否被tcp阻断
+- 支持设置开机自启
 - 暂时不支持`ipv6`节点，默认解析节点时会进行屏蔽
 
 ## 安装方式
@@ -48,6 +49,7 @@ OPTIONS
 --setting-pac-proxy "setting system pac proxy,only support Ubuntu Desktop" 设置系统代理模式为pac代理，注：仅支持Ubuntu桌面系统
 --setting-global-proxy "setting system global proxy,only support Ubuntu Desktop" 设置系统代理模式为全局代理，注：仅支持Ubuntu桌面系统
 --close-system-proxy "close system proxy,only support Ubuntu Desktop" 关闭系统代理，注：仅支持Ubuntu桌面系统
+--setting-auto-start "setting ssr auto start" 设置开机自启
 -v --version "display version" 显示当前版本
 ```
 
@@ -114,7 +116,6 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 - [x] ~支持使用ssr链接添加节点~
 - [x] 支持自动生成PAC代理文件
 - [x] 支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)
-- [ ] 支持Windows Linux双平台
 
 ## 常见问题
 
@@ -129,6 +130,14 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 - 针对Ubuntu桌面用户的一些通知
 
 > 目前项目已经支持设置网络全局代理和pac代理，但是pac代理使用的`file://`协议指向的文件，新版chrome已经不支持这种协议的pac文件了，所以在设置完pac代理之后，chrome无法扶墙出去，但是火狐可以，如果chrome也想扶墙出去，建议使用`SwitchyOmega`插件进行分流，或者本地搭建一个http服务器，然后将项目目录下自动生成的autoproxy.pac扔到网站目录里去，在系统设置里把`file://`协议设置成`http://`协议即可
+
+- 设置完开机自启之后，如何更加爽快的启动服务？
+
+> (sudo) systemctl start ssr 启动ssr
+
+> (sudo) systemctl stop ssr 停止ssr
+
+> (sudo) systemctl restart ssr 重启ssr
 
 ## Tips
 

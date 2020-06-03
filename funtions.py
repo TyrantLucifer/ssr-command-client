@@ -257,3 +257,7 @@ def close_system_proxy():
     cmd = "gsettings set org.gnome.system.proxy mode 'none'"
     os.system(cmd)
     print("close system proxy is success~~")
+
+def setting_auto_start():
+    cmd = "sh autoStart.sh"
+    os.system(cmd)

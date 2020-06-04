@@ -146,19 +146,19 @@ test_ssr_node(){
 }
 
 setting_global_proxy(){
-    python3 main.py --setting_global_proxy
+    python3 main.py --setting-global-proxy
 }
 
 setting_pac_proxy(){
-    python3 main.py --setting_pac_proxy
+    python3 main.py --setting-pac-proxy
 }
 
 close_system_proxy(){
-    python3 main.py --close_system_proxy
+    python3 main.py --close-system-proxy
 }
 
 setting_auto_start(){
-    python3 main.py --setting_auto_start
+    python3 main.py --setting-auto-start
 }
 
 update_ssr_command_client(){
@@ -222,6 +222,9 @@ case "$num" in
         ;;
     18)
         update_ssr_command_client
+        ;;
+    *)
+        echo -e "${red}请输入正确选项[1-18]${plain}"
         ;;
 esac
 

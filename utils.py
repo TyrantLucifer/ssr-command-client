@@ -110,6 +110,7 @@ def analysis_ssr_url(ssr_url):
             second_encryption_param_list = param_list[-1].split('/?')
             password = base64decode(second_encryption_param_list[0])
             encryption_param_list = second_encryption_param_list[-1].split('&')
+            key_list = ['obfs_param','protocol_param','remarks','group']
             for params in encryption_param_list:
                 key = params.split('=')[0]
                 value = params.split('=')[1]
@@ -117,7 +118,8 @@ def analysis_ssr_url(ssr_url):
                     key = 'obfs_param'
                 if key == 'protoparam':
                     key = 'protocol_param'
-                ssr_dict[key] = base64decode(value)
+                if key in key_list:
+                    ssr_dict[key] = base64decode(value)
             ssr_dict['server'] = server
             ssr_dict['server_port'] = int(port)
             ssr_dict['method'] = method

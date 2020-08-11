@@ -29,7 +29,7 @@ ExecStart=/usr/bin/python3 ${directory}/main.py -s
 ExecStop=/usr/bin/python3 ${directory}/main.py -S
 
 [Install]
-WantedBy=mutli-user.target
+WantedBy=default.target
 " > /lib/systemd/system/ssr.service
 
 sudo systemctl enable ssr

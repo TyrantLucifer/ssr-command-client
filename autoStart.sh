@@ -19,7 +19,7 @@ sudo echo "
 [Unit]
 Description=ssr service
 After=network.target syslog.target
-Wants=network.target
+Wants=network.target default.target
 
 [Service]
 Type=forking

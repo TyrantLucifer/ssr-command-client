@@ -174,7 +174,7 @@ def generate_ssr_display_table(ssr_info_dict_list):
 def get_ping_speed(server, remarks):
     color = colored()
     try:
-        ping_result = subprocess.run(['/usr/bin/fping', '-Dae', server], capture_output=True).stdout.decode().strip()
+        ping_result = subprocess.run(['/usr/bin/fping', '-Dae4', server], capture_output=True).stdout.decode().strip()
         ping_speed = float(re.findall(r'\((.*)\ ms\)$', ping_result)[0])
     except:
         ping_speed = None

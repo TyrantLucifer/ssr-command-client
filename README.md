@@ -1,6 +1,6 @@
 # The command client of ShadowsocksR based Python3
 
-在命令行下使用的一款ssr客户端
+在命令行下使用的一款ssr客户端(新特性尝鲜版)
 
 ## 特性
 
@@ -12,15 +12,25 @@
 - 支持测试端口是否被tcp阻断
 - 支持设置开机自启
 - 暂时不支持`ipv6`节点，默认解析节点时会进行屏蔽
+- 该版本将测试ping值的方式从python的ping3修改为fping，提高了ping测试的效率和时间，且更新节点列表时不再需要root权限，在这里特别感谢qwqVictor(https://github.com/qwqVictor)给出的修改建议
 
-## 安装方式
+## 安装ssr-command-client
 
 ```shell
-
-git clone https://github.com/TyrantLucifer/ssr-command-client.git
+git clone -b develop https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
 pip3 install -r requirement.txt
+```
 
+## 安装fping3
+
+```shell
+# 如果你是Ubuntu用户
+(sudo) apt install fping -y
+
+# 如果你是Centos用户(如果以下命令安装不成功，请编译安装)
+(sudo) yum install epel-release -y
+(sudo) yum install fping -y
 ```
 
 ## 使用方法
@@ -55,7 +65,7 @@ OPTIONS
 
 ## 效果展示
 
-- 输出ssr链接节点列表 python3 main.py -l，新版本的`ssr-command-client`更新列表需要`sudo`权限，如果以普通用户运行，请加`sudo`
+- 输出ssr链接节点列表 python3 main.py -l，~~新版本的`ssr-command-client`更新列表需要`sudo`权限，如果以普通用户运行，请加`sudo`~~，此版本不再需要`root`权限
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315024222.png)
 
@@ -81,7 +91,6 @@ OPTIONS
 ``` shell
 git pull
 pip3 install -r requirement.txt
-
 ```
 
 
@@ -91,14 +100,12 @@ pip3 install -r requirement.txt
 export ALL_PROXY=socks5://127.0.0.1:1080 # 设置代理
 unset ALL_PROXY # 关闭代理
 curl http://ip-api.com/json/?lang=zh-CN # 查看当前ip归属地
-
 ```
 如果想要方便的使用命令开关代理，可以将以下内容加入到自己的shell环境文件中：
 ``` shell
 alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
-
 ```
 这样下面这几个命令就会有以下功能：
 

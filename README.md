@@ -12,7 +12,7 @@
 - 支持测试端口是否被tcp阻断
 - 支持设置开机自启
 - 暂时不支持`ipv6`节点，默认解析节点时会进行屏蔽
-- 该版本将测试ping值的方式从python的ping3修改为fping，提高了ping测试的效率和时间，且更新节点列表时不再需要root权限，在这里特别感谢qwqVictor(https://github.com/qwqVictor)给出的修改建议
+- 该版本将测试ping值的方式从python的ping3修改为fping，提高了ping测试的效率和时间，且更新节点列表时不再需要root权限，在这里特别感谢[qwqVictor](https://github.com/qwqVictor)给出的修改建议
 
 ## 安装ssr-command-client
 

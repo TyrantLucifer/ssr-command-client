@@ -66,7 +66,7 @@ change_ssr_node(){
 
 update_ssr_list(){
     clear
-    sudo python3 main.py -u
+    python3 main.py -u
     clear
     list_ssr
 }

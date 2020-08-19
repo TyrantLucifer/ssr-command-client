@@ -7,7 +7,7 @@ import base64
 import zipfile
 import configparser
 import socket
-import ping3
+import subprocess
 import re
 import os
 from prettytable import PrettyTable
@@ -173,7 +173,11 @@ def generate_ssr_display_table(ssr_info_dict_list):
 # 获取ssr节点ping值
 def get_ping_speed(server, remarks):
     color = colored()
-    ping_speed = ping3.ping(server, timeout=5, unit='ms')
+    try:
+        ping_result = subprocess.run(['/usr/bin/fping', '-Dae', server], capture_output=True).stdout.decode().strip()
+        ping_speed = float(re.findall(r'\((.*)\ ms\)$', ping_result)[0])
+    except:
+        ping_speed = None
     if ping_speed:
         flag = color.green('√')
         ping_speed = format(ping_speed, '.3f')

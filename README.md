@@ -1,6 +1,8 @@
 # The command client of ShadowsocksR based Python3
 
-在命令行下使用的一款ssr客户端
+在命令行下使用的一款ssr客户端(稳定版)
+
+**此版本为稳定版本，几乎不会更新，除非有bug，如果想尝试更加新的特性请移步至开发版[develop](https://github.com/TyrantLucifer/ssr-command-client/tree/develop)**
 
 ## 特性
 
@@ -16,11 +18,9 @@
 ## 安装方式
 
 ```shell
-
 git clone https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
 pip3 install -r requirement.txt
-
 ```
 
 ## 使用方法
@@ -81,7 +81,6 @@ OPTIONS
 ``` shell
 git pull
 pip3 install -r requirement.txt
-
 ```
 
 
@@ -91,14 +90,12 @@ pip3 install -r requirement.txt
 export ALL_PROXY=socks5://127.0.0.1:1080 # 设置代理
 unset ALL_PROXY # 关闭代理
 curl http://ip-api.com/json/?lang=zh-CN # 查看当前ip归属地
-
 ```
 如果想要方便的使用命令开关代理，可以将以下内容加入到自己的shell环境文件中：
 ``` shell
 alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
-
 ```
 这样下面这几个命令就会有以下功能：
 

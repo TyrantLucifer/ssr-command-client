@@ -22,7 +22,7 @@ cd ssr-command-client
 pip3 install -r requirement.txt
 ```
 
-## 安装fping3
+## 安装fping
 
 ```shell
 # 如果你是Ubuntu用户

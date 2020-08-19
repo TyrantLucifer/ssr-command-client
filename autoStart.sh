@@ -1,10 +1,10 @@
+#!/bin/bash
 ##########################################################################
 # File Name: autoStart.sh
 # Author: TyrantLucifer
 # mail: TyrantLucifer@linuxstudy.cn
 # Created Time: Wed 03 Jun 2020 09:49:37 PM CST
 ##########################################################################
-#!/bin/bash
 
 # 初始化环境变量
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin

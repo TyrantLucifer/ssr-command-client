@@ -1,10 +1,11 @@
+#!/bin/bash
+
 ##########################################################################
 # File Name: main.sh
 # Author: TyrantLucifer
 # mail: TyrantLucifer@linuxstudy.cn
 # Created Time: Wed 03 Jun 2020 10:17:52 PM CST
 ##########################################################################
-#!/bin/bash
 
 # 初始化环境变量
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
@@ -209,10 +210,10 @@ case "$num" in
         test_ssr_node
         ;;
     14)
-        setting_global_proxy
+        setting_pac_proxy
         ;;
     15)
-        setting_pac_proxy
+        setting_global_proxy
         ;;
     16)
         close_system_proxy

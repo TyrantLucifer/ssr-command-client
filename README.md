@@ -23,6 +23,12 @@ pip3 install -r requirement.txt
 
 ```
 
+需要 fping 来进行 ping 测试，如果您不需要可不安装，如果需要，请根据您的操作系统发行版进行安装。  
+对于 Debian 系发行版：
+```shell
+apt install fping
+```
+
 ## 使用方法
 
 ```

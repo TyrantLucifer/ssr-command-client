@@ -67,7 +67,7 @@ change_ssr_node(){
 
 update_ssr_list(){
     clear
-    sudo python3 main.py -u
+    python3 main.py -u
     clear
     list_ssr
 }
@@ -143,7 +143,7 @@ test_ssr_node(){
     echo "请输入你要测试的节点id:" 
     read id
     echo -e "你输入的节点id为:${green} ${id} ${plain}"
-    sudo python3 main.py --test-again ${id}
+    python3 main.py --test-again ${id}
 }
 
 setting_global_proxy(){

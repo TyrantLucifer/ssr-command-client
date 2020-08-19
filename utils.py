@@ -173,7 +173,12 @@ def generate_ssr_display_table(ssr_info_dict_list):
 # 获取ssr节点ping值
 def get_ping_speed(server, remarks):
     color = colored()
-    ping_speed = ping3.ping(server, timeout=5, unit='ms')
+    result = os.popen('/usr/bin/fping -Dae {0}'.format(server)).read()
+    try:
+        ping_speed = re.match(r'.*?\((.*?) ms.*?', result).group(1)
+        ping_speed = float(ping_speed)
+    except:
+        ping_speed = None
     if ping_speed:
         flag = color.green('√')
         ping_speed = format(ping_speed, '.3f')

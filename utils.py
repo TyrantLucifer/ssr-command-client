@@ -7,7 +7,6 @@ import base64
 import zipfile
 import configparser
 import socket
-import ping3
 import re
 import os
 from prettytable import PrettyTable

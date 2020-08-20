@@ -13,6 +13,7 @@
 - 支持设置开机自启
 - 暂时不支持`ipv6`节点，默认解析节点时会进行屏蔽
 - 该版本将测试ping值的方式从python的ping3修改为fping，提高了ping测试的效率和时间，且更新节点列表时不再需要root权限，在这里特别感谢[qwqVictor](https://github.com/qwqVictor)给出的修改建议
+- 该版本支持打印节点信息二维码，由于终端输出二维码占字符太多，故输出的二维码十分大，需要缩小字体才能看全，后期优化
 
 ## 安装ssr-command-client
 
@@ -45,7 +46,7 @@ OPTIONS
 -S --stop "stop ssr proxy" 停止ssr代理服务
 -p --port port "assign local port" 指定本地代理端口
 -c --config ssr_node_id "generate config json file" 生成指定节点json文件
--u --update "update ssr list" 更新ssr节点列表(需要sudo权限)
+-u --update "update ssr list" 更新ssr节点列表
 --fast-node "generate fast ssr config json file" 生成最快节点json文件
 --setting-url "set ssr subscribe url" 重置ssr订阅链接
 --setting-address "set ssr local address" 设置ssr本地代理地址
@@ -53,9 +54,10 @@ OPTIONS
 --remove-url "remove ssr subscribe url" 移除ssr订阅链接
 --list-url "display ssr subscribe url" 显示当前ssr订阅链接
 --list-address "display ssr local address" 显示当前ssr本地代理地址
---parse-url "parse ssr url" 解析ssr链接(需要sudo权限)
---add-ssr "add ssr node" 添加ssr节点(需要sudo权限)
---test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态(需要sudo权限)
+--parse-url "parse ssr url" 解析ssr链接
+--add-ssr "add ssr node" 添加ssr节点
+--test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态
+--print-qrcode ssr_node_id "print ssr node qrcode" 打印节点二维码
 --setting-pac-proxy "setting system pac proxy,only support Ubuntu Desktop" 设置系统代理模式为pac代理，注：仅支持Ubuntu桌面系统
 --setting-global-proxy "setting system global proxy,only support Ubuntu Desktop" 设置系统代理模式为全局代理，注：仅支持Ubuntu桌面系统
 --close-system-proxy "close system proxy,only support Ubuntu Desktop" 关闭系统代理，注：仅支持Ubuntu桌面系统

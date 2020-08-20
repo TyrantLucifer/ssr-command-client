@@ -231,7 +231,19 @@ def test_node_again(id):
     with open(SERVER_JSON_FILE_PATH, 'w') as file:
         file.write(json_str)
     print("ssr info is update~~")
-    
+
+def print_ssr_qrcode(id):
+    if os.path.exists(SERVER_JSON_FILE_PATH):
+        with open(SERVER_JSON_FILE_PATH, 'r') as file:
+            json_str = file.read()
+        ssr_info_dict_list = json.loads(json_str)
+    else:
+        ssr_info_dict_list = update_ssr_list_info()
+    ssr_info_dict = ssr_info_dict_list[id - 1]
+    ssr_url = ssr_info_dict['ssr_url']
+    print_qrcode(ssr_url)
+
+
 def open_global_proxy():
     cmd = "gsettings set org.gnome.system.proxy mode 'manual'"
     os.system(cmd)

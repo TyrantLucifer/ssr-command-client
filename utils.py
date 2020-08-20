@@ -7,6 +7,7 @@ import base64
 import zipfile
 import configparser
 import socket
+import qrcode
 import re
 import os
 from prettytable import PrettyTable
@@ -94,6 +95,7 @@ def get_ssr_list(url):
 # 解析ssr url链接
 def analysis_ssr_url(ssr_url):
     try:
+        ssr_init_url = 'ssr://' + ssr_url
         ssr_url = base64decode(ssr_url)
     except:
         pass
@@ -127,6 +129,7 @@ def analysis_ssr_url(ssr_url):
             ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
             ssr_dict['port_status'] = get_port_status(server, int(port))
             ssr_dict['protocol'] = protocol
+            ssr_dict['ssr_url'] = ssr_init_url
             return ssr_dict
         else:
             color = colored()
@@ -280,3 +283,14 @@ def get_port_status(server, port):
         flag = "√"
     s.close()
     return flag
+
+# 打印节点二维码
+def print_qrcode(data):
+    qr = qrcode.QRCode(
+        version=2,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=1,
+        border=2,
+    );
+    qr.add_data(data)
+    qr.print_tty()

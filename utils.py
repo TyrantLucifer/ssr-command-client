@@ -8,6 +8,7 @@ import zipfile
 import configparser
 import socket
 import qrcode
+import subprocess
 import re
 import os
 from prettytable import PrettyTable
@@ -175,7 +176,9 @@ def generate_ssr_display_table(ssr_info_dict_list):
 # 获取ssr节点ping值
 def get_ping_speed(server, remarks):
     color = colored()
-    result = os.popen('/usr/bin/fping -Dae {0}'.format(server)).read()
+    result = subprocess.Popen(['/usr/bin/fping', '-Dae4', server], shell=False, stdout=subprocess.PIPE)
+    result.wait()
+    result = str(result.stdout.read(), encoding='utf-8')
     try:
         ping_speed = re.match(r'.*?\((.*?) ms.*?', result).group(1)
         ping_speed = float(ping_speed)

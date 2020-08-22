@@ -292,7 +292,7 @@ def print_qrcode(data):
     qr = qrcode.QRCode(
         version=2,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=1,
+        box_size=5,
         border=2,
     );
     qr.add_data(data)

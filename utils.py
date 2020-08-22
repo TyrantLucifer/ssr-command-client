@@ -290,13 +290,13 @@ def get_port_status(server, port):
 # 打印节点二维码
 def print_qrcode(data):
     qr = qrcode.QRCode(
-        version=2,
+        version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=5,
-        border=2,
+        box_size=3,
+        border=1,
     );
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image()
     img.save('qrcode.png')
-    qr.print_tty()
+    qr.print_ascii(tty=True, invert=True)

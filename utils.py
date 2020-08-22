@@ -298,5 +298,5 @@ def print_qrcode(data):
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image()
-    img.save()
+    img.save('qrcode.png')
     qr.print_tty()

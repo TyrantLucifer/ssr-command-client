@@ -3,4 +3,3 @@ colorama
 shadowsocks
 prettytable
 genpac
-subprocess

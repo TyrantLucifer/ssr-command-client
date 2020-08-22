@@ -296,4 +296,7 @@ def print_qrcode(data):
         border=2,
     );
     qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image()
+    img.save()
     qr.print_tty()

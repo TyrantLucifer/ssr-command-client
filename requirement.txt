@@ -3,3 +3,4 @@ colorama
 shadowsocks
 prettytable
 genpac
+qrcode

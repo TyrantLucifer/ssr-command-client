@@ -14,6 +14,7 @@ if os.path.exists(lock_file_dir):
     WORKERS = int(get_config_value('WORKERS'))
     SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
     SHADOWSOCKSR_LOG_FILE_PATH = get_config_value('SHADOWSOCKSR_LOG_FILE_PATH')
+    NODE_CONFIG_PATH = get_config_value('NODE_CONFIG_PATH')
 else:
     create_config_dir()
     download_ssr_source()
@@ -27,7 +28,18 @@ else:
     WORKERS = int(get_config_value('WORKERS'))
     SHADOWSOCKSR_PID_FILE_PATH = get_config_value('SHADOWSOCKSR_PID_FILE_PATH')
     SHADOWSOCKSR_LOG_FILE_PATH = get_config_value('SHADOWSOCKSR_LOG_FILE_PATH')
-    
+    NODE_CONFIG_PATH = get_config_value('NODE_CONFIG_PATH')
+def wirte_config(ssr_info_dict, port, node_id):
+    ssr_info_dict['local_address'] = LOCAL_ADDRESS 
+    ssr_info_dict['timeout'] = TIMEOUT
+    ssr_info_dict['workers'] = WORKERS
+    ssr_info_dict['local_port'] = port
+    ssr_info = json.dumps(ssr_info_dict)
+    path = os.path.join(NODE_CONFIG_PATH, "{}_{}_config.json".format(node_id, port))
+    with open(path, 'w') as file:
+        file.write(ssr_info)
+    print('config json file is update~~')
+
 def generate_config_json(id, port=1080):
     if os.path.exists(SERVER_JSON_FILE_PATH):
         with open(SERVER_JSON_FILE_PATH, 'r') as file:
@@ -36,14 +48,18 @@ def generate_config_json(id, port=1080):
     else:
         ssr_info_dict_list = update_ssr_list_info()
     ssr_info_dict = ssr_info_dict_list[id - 1]
-    ssr_info_dict['local_address'] = LOCAL_ADDRESS 
-    ssr_info_dict['timeout'] = TIMEOUT
-    ssr_info_dict['workers'] = WORKERS
-    ssr_info_dict['local_port'] = port
-    ssr_info = json.dumps(ssr_info_dict)
-    with open(CONFIG_JSON_FILE_PATH, 'w') as file:
-        file.write(ssr_info)
-    print('config json file is update~~')
+    wirte_config(ssr_info_dict, id, port)
+
+def generate_all_node_config_json(start_port=1080):
+    if os.path.exists(SERVER_JSON_FILE_PATH):
+        with open(SERVER_JSON_FILE_PATH, 'r') as file:
+            json_str = file.read()
+        ssr_info_dict_list = json.loads(json_str)
+    else:
+        ssr_info_dict_list = update_ssr_list_info()
+    for node, index in enumerate(ssr_info_dict_list):
+        wirte_config(node, index, start_port)
+        start_port = start_port + 1
 
 def serach_fast_node():
     if os.path.exists(SERVER_JSON_FILE_PATH):

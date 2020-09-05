@@ -233,7 +233,7 @@ def init_config_file():
     shadowsocksr_log_file_path = os.path.join(config_dir, 'shadowsocksr.log')
     cf = configparser.ConfigParser()
     cf.add_section('default')
-    cf.set('default', 'subscribe_url', 'https://raw.githubusercontent.com/satrom/V2SSR/master/SSR/Day.txt')
+    cf.set('default', 'subscribe_url', '')
     cf.set('default', 'server_json_file_path', server_json_file_path)
     cf.set('default', 'config_json_file_path', config_json_file_path)
     cf.set('default', 'local_address', '127.0.0.1')

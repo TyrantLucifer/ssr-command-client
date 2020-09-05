@@ -12,6 +12,8 @@ def get_parser():
     parser.add_argument("-S", "--stop", action="store_true", help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
+
+    parser.add_argument("-C", "--all-config", action="store_true",  help="generate all node ssr config json")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
     parser.add_argument("--fast-node", action="store_true", help="generate fast ssr config json")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
@@ -38,6 +40,8 @@ def main():
         update_ssr_list_info()
     elif args.config:
         generate_config_json(args.config, args.port)
+    elif args.all_config:
+      generate_all_node_config_json(args.port)
     elif args.fast_node:
         node_id = serach_fast_node() + 1
         generate_config_json(node_id, args.port)

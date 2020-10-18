@@ -19,7 +19,7 @@ plain='\033[0m'
 print_menu(){
     clear
     echo -e "SSR Command Client一键管理脚本
----- TyrantLucifer | tyrantnlucifer.com ----
+---- TyrantLucifer | tyrantlucifer.com ----
 ${yellow}1. ${plain} ${green}打印ssr节点列表${plain}
 ${yellow}2. ${plain} ${green}启动ssr代理服务${plain}
 ${yellow}3. ${plain} ${green}停止ssr代理服务${plain}

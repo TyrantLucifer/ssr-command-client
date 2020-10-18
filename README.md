@@ -113,7 +113,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 - [x] ~支持使用ssr链接添加节点~
 - [x] ~支持自动生成PAC代理文件~
 - [x] ~支持一键关闭、开启系统PAC网络代理(针对于Ubuntu 18.04)~
-- [ ] ~支持ipv6节点~
+- [ ] 支持ipv6节点
 
 ## 常见问题
 

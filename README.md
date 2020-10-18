@@ -2,7 +2,7 @@
 
 在命令行下使用的一款ssr客户端
 
-**新版本已经更新，彻底摆脱root权限的烦恼**
+**新版本已经更新，彻底摆脱root权限的烦恼，支持普通用户使用全部功能**
 
 ## 特性
 
@@ -13,7 +13,9 @@
 - 自定义订阅链接
 - 支持测试端口是否被tcp阻断
 - 支持设置开机自启
+- 支持打印节点信息二维码，由于终端输出二维码占字符太多，故输出的二维码十分大，需要缩小字体才能看全，或者打开保存在目录中的`qrcode.png`
 - 暂时不支持`ipv6`节点，默认解析节点时会进行屏蔽
+
 
 ## 安装方式
 
@@ -46,6 +48,7 @@ OPTIONS
 --parse-url "parse ssr url" 解析ssr链接
 --add-ssr "add ssr node" 添加ssr节点
 --test-again ssr_node_id "test ssr node again" 重新测试节点延迟及端口状态
+--print-qrcode ssr_node_id "print ssr node qrcode" 打印节点二维码及在目录下生成二维码图片
 --setting-pac-proxy "setting system pac proxy,only support Ubuntu Desktop" 设置系统代理模式为pac代理，注：仅支持Ubuntu桌面系统
 --setting-global-proxy "setting system global proxy,only support Ubuntu Desktop" 设置系统代理模式为全局代理，注：仅支持Ubuntu桌面系统
 --close-system-proxy "close system proxy,only support Ubuntu Desktop" 关闭系统代理，注：仅支持Ubuntu桌面系统
@@ -55,7 +58,7 @@ OPTIONS
 
 ## 效果展示
 
-- 输出ssr链接节点列表 python3 main.py -l，~新版本的`ssr-command-client`更新列表需要`sudo`权限，如果以普通用户运行，请加`sudo`~，全新版本已经不再需要`root`权限
+- 输出ssr链接节点列表 python3 main.py -l
 
 ![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315024222.png)
 

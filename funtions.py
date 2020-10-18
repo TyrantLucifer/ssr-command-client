@@ -116,7 +116,7 @@ def stop_ssr_proxy():
 
 def display_version():
     color = colored()
-    version = color.yellow("ssr-command-client v1.3")
+    version = color.yellow("ssr-command-client v1.4")
     author = color.blue("Powered by TyrantLucifer~~")
     print(version)
     print(author)

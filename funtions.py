@@ -211,8 +211,7 @@ def test_node_again(id):
     port = ssr_info_dict['server_port']
     server = ssr_info_dict['server']
     remarks = ssr_info_dict['remarks']
-    ping = get_ping_speed(server, remarks)
-    port_status = get_port_status(server, port)
+    ping, port_status = get_node_status(server, port, remarks)
 
     if ping == '∞':
         display_ping = color.red(ping)

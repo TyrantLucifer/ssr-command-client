@@ -10,6 +10,7 @@ import socket
 import ping3
 import re
 import os
+import datetime
 from prettytable import PrettyTable
 from colorama import init, Fore, Back, Style
 
@@ -125,8 +126,7 @@ def analysis_ssr_url(ssr_url):
             ssr_dict['method'] = method
             ssr_dict['obfs'] = obfs
             ssr_dict['password'] = password
-            ssr_dict['ping'] = get_ping_speed(server, ssr_dict['remarks'])
-            ssr_dict['port_status'] = get_port_status(server, int(port))
+            ssr_dict['ping'], ssr_dict['port_status'] = get_node_status(server, int(port), ssr_dict['remarks'])
             ssr_dict['protocol'] = protocol
             return ssr_dict
         else:
@@ -169,19 +169,6 @@ def generate_ssr_display_table(ssr_info_dict_list):
         )
         id = id + 1
     return table.str()
-
-# 获取ssr节点ping值
-def get_ping_speed(server, remarks):
-    color = colored()
-    ping_speed = ping3.ping(server, timeout=5, unit='ms')
-    if ping_speed:
-        flag = color.green('√')
-        ping_speed = format(ping_speed, '.3f')
-    else:
-        flag = color.red('×')
-        ping_speed = '∞'
-    print("Testing ping:", remarks, server, flag)
-    return ping_speed
 
 # 获取用户家目录
 def get_home_dir():
@@ -263,16 +250,27 @@ def set_config_value(key, value):
     with open(config_file_dir, 'w+') as file:
         cf.write(file)
 
-# 测试端口是否可以联通
-def get_port_status(server, port):
+# 测试节点是否可以联通
+def get_node_status(server, port, remarks):
+    color = colored()
     server_addr = (server, port)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(5)
+    startTime = datetime.datetime.now()
     try:
         s.connect(server_addr)
+        endTime = datetime.datetime.now()
     except:
         flag = "×"
+        inteval = '∞'
     else:
         flag = "√"
+        inteval = (endTime - startTime).microseconds / 1000
     s.close()
-    return flag
+    if flag == "×":
+        outFlag = color.red(flag)
+    else:
+        outFlag = color.green(flag)
+    print("Testing ping:", remarks, server, outFlag)
+    return inteval, flag
+

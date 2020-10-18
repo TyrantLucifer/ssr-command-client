@@ -274,3 +274,16 @@ def get_node_status(server, port, remarks):
     print("Testing ping:", remarks, server, outFlag)
     return inteval, flag
 
+# 打印节点二维码
+def print_qrcode(data):
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=3,
+        border=1,
+    );
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image()
+    img.save('qrcode.png')
+    qr.print_ascii(tty=True, invert=True)

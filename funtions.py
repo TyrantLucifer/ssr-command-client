@@ -40,7 +40,7 @@ def generate_config_json(id, port=1080):
     ssr_info_dict['timeout'] = TIMEOUT
     ssr_info_dict['workers'] = WORKERS
     ssr_info_dict['local_port'] = port
-    ssr_info = json.dumps(ssr_info_dict)
+    ssr_info = json.dumps(ssr_info_dict, ensure_ascii=False, indent=4)
     with open(CONFIG_JSON_FILE_PATH, 'w') as file:
         file.write(ssr_info)
     print('config json file is update~~')
@@ -68,7 +68,7 @@ def update_ssr_list_info():
     for url in url_list:
         ssr_url_list += get_ssr_list(url)
     ssr_info_dict_list = generate_ssr_info_dict_list(ssr_url_list)
-    json_str = json.dumps(ssr_info_dict_list)
+    json_str = json.dumps(ssr_info_dict_list, ensure_ascii=False, indent=4)
     with open(SERVER_JSON_FILE_PATH, 'w') as file:
         file.write(json_str)
     print('SSR list is update~~')
@@ -194,7 +194,7 @@ def add_ssr_node(url):
             ssr_info_dict_list = list()
             ssr_info_dict_list.append(ssr_info_dict)
 
-        json_str = json.dumps(ssr_info_dict_list)           
+        json_str = json.dumps(ssr_info_dict_list, ensure_ascii=False, indent=4)           
         with open(SERVER_JSON_FILE_PATH, 'w') as file:
             file.write(json_str)
 
@@ -227,7 +227,7 @@ def test_node_again(id):
     ssr_info_dict_list[id - 1]['port_status'] = port_status
     print("ping(ms):", display_ping)
     print("port_status:", display_port_status)
-    json_str = json.dumps(ssr_info_dict_list)
+    json_str = json.dumps(ssr_info_dict_list, ensure_ascii=False, indent=4)
     with open(SERVER_JSON_FILE_PATH, 'w') as file:
         file.write(json_str)
     print("ssr info is update~~")

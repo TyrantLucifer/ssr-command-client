@@ -7,10 +7,10 @@ import base64
 import zipfile
 import configparser
 import socket
-import ping3
 import re
 import os
 import datetime
+import qrcode
 from prettytable import PrettyTable
 from colorama import init, Fore, Back, Style
 
@@ -96,6 +96,7 @@ def get_ssr_list(url):
 # 解析ssr url链接
 def analysis_ssr_url(ssr_url):
     try:
+        ssr_init_url = 'ssr://' + ssr_url
         ssr_url = base64decode(ssr_url)
     except:
         pass
@@ -128,6 +129,7 @@ def analysis_ssr_url(ssr_url):
             ssr_dict['password'] = password
             ssr_dict['ping'], ssr_dict['port_status'] = get_node_status(server, int(port), ssr_dict['remarks'])
             ssr_dict['protocol'] = protocol
+            ssr_dict['ssr_url'] = ssr_init_url
             return ssr_dict
         else:
             color = colored()

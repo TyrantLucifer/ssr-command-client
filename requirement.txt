@@ -4,3 +4,4 @@ colorama
 shadowsocks
 prettytable
 genpac
+Image

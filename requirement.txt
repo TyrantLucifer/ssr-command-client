@@ -1,4 +1,5 @@
 requests
+qrcode
 colorama
 shadowsocks
 prettytable

@@ -274,7 +274,7 @@ def get_node_status(server, port, remarks):
     else:
         outFlag = color.green(flag)
     print("Testing ping:", remarks, server, outFlag)
-    return inteval, flag
+    return str(inteval), flag
 
 # 打印节点二维码
 def print_qrcode(data):

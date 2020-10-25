@@ -58,26 +58,50 @@ OPTIONS
 
 ## 效果展示
 
-- 输出ssr链接节点列表 python3 main.py -l
+- 设置ssr订阅链接 `python3 main.py --setting-url url`
 
-![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315024222.png)
+![setting-url](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025213743.gif)
 
-- 更新ssr订阅链接 python3 main.py -u
+- 查看ssr订阅链接`python3 main.py --list-url`
 
-![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315024425.png)
+![list-url](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025213544.gif)
 
-- 生成ssr节点配置文件 python3 main.py -c `ssr_node_id`
+- 更新ssr节点信息`python3 main.py -u`
 
-![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315023538.png)
+![update-ssr](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025214219.gif)
+
+- 输出ssr链接节点列表 `python3 main.py -l`
+
+![list-ssr-status](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025214316.gif)
+
+- 重新测试节点状态`python3 main.py --test-again ssr-node-id`
+
+![test-again](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025214658.gif)
+
+- 生成ssr节点配置文件`python3 main.py -c ssr_node_id`
+
+![config](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025214948.gif)
 
 
-- 启动ssr代理 python3 main.py -s
+- 启动ssr代理`python3 main.py -s`
 
-![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315023617.png)
+![start](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025215047.gif)
 
-- 停止ssr代理 python3 main.py -S
+- 终端设置代理`export ALL_PROXY=socks5://127.0.0.1:1080`
 
-![](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20200315023654.png)
+![setting-proxy](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025215402.gif)
+
+- 查看代理是否设置成功`curl http://ip-api.com/json/?lang=zh-CN`
+
+![ip](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025215721.gif)
+
+- 取消终端代理 `unset ALL_PROXY`
+
+![unset](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025215850.gif)
+
+- 停止ssr代理 `python3 main.py -S`
+
+![stop](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/20201025215937.gif)
 
 ## 更新ssr-command-client
 

@@ -21,11 +21,11 @@ ssrList = g.getNodeInfoList()
 pool = Pool(len(ssrList))
 thread = list()
 for ssr in ssrList:
-    t = pool.apply_async(s.testSsrNodes(ssr))
+    t = pool.apply_async(s.testSsrNodes, (ssr,))
     thread.append(t)
 
 pool.close()
 pool.join()
 
 for t in thread:
-    print(t.get())
+    print(t.get()['ping'])

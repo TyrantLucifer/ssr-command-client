@@ -1,7 +1,0 @@
-requests
-qrcode
-colorama
-shadowsocks
-prettytable
-genpac
-Image

@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/speed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/SsrTestUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/SsrTestUtils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +107,10 @@
       <screen x="0" y="28" width="3440" height="1412" />
     </state>
     <state x="1278" y="431" width="873" height="604" key="#Log_Highlighting_(ideolog)/0.28.3440.1412@0.28.3440.1412" timestamp="1607238360808" />
+    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607305960570">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607305960570" />
     <state x="439" y="343" width="840" height="1034" key="search.everywhere.popup" timestamp="1607237222959">
       <screen x="0" y="28" width="3440" height="1412" />
     </state>

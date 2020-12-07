@@ -21,9 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logger/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/SsrTestUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/SsrTestUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ParseUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ParseUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/PrintUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/PrintUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/SettingUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/SettingUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/SsrTestUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/SSRTestUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/speedtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/speedtest/speedtest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils/speedtest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,11 +63,43 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Thatcher.Tian\PycharmProjects\ssr-command-client\" />
+      <recent name="C:\Users\Thatcher.Tian\PycharmProjects\ssr-command-client\utils\speedtest" />
       <recent name="$PROJECT_DIR$/" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ssr-command-client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -80,7 +118,25 @@
       <workItem from="1607234568353" duration="5507000" />
       <workItem from="1607249697851" duration="132000" />
       <workItem from="1607249857596" duration="13673000" />
+      <workItem from="1607306222514" duration="6246000" />
+      <workItem from="1607320151949" duration="7917000" />
+      <workItem from="1607334028119" duration="607000" />
     </task>
+    <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
+      <created>1607305962586</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607305962586</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修复windows获取家目录的bug，减少导入不必要的模块">
+      <created>1607306060331</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607306060331</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +154,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修复windows获取家目录的bug，减少导入不必要的模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复windows获取家目录的bug，减少导入不必要的模块" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1345" y="400" width="740" height="666" key="#Inspections" timestamp="1607234392772">
       <screen x="0" y="28" width="3440" height="1412" />
@@ -107,13 +167,49 @@
       <screen x="0" y="28" width="3440" height="1412" />
     </state>
     <state x="1278" y="431" width="873" height="604" key="#Log_Highlighting_(ideolog)/0.28.3440.1412@0.28.3440.1412" timestamp="1607238360808" />
-    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607305960570">
+    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607306055066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607305960570" />
-    <state x="439" y="343" width="840" height="1034" key="search.everywhere.popup" timestamp="1607237222959">
-      <screen x="0" y="28" width="3440" height="1412" />
+    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607306055066" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607322889755">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607322889755" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1607332898460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607332898460" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1607332898460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607332898460" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1607332898460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607332898460" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1607332898460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607332898460" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1607320134988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607320134988" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1607306068747">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607306068747" />
+    <state x="245" y="232" width="672" height="762" key="search.everywhere.popup" timestamp="1607320487046">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="245" y="232" width="672" height="762" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607320487046" />
     <state x="439" y="343" width="840" height="1034" key="search.everywhere.popup/0.28.3440.1412@0.28.3440.1412" timestamp="1607237222959" />
+    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607309101731">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607309101731" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1607320259001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

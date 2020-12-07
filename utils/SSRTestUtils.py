@@ -4,11 +4,17 @@
 @Date: 2020/12/7 上午12:14
 '''
 
-from logger.Logging import *
-import socket
 import datetime
+import socket
+import sys
+from multiprocessing import Pool
 
-class SsrSpeedTest(object):
+sys.path.append('../')
+
+from logger.Logging import *
+from speedtest import speedtest
+
+class SSRSpeedTest(object):
 
     def __init__(self):
         pass
@@ -23,7 +29,7 @@ class SsrSpeedTest(object):
             endTime = datetime.datetime.now()
         except Exception as e:
             logger.error(e)
-            logger.error('Server: {0}  Port: {1} is invalid'.\
+            logger.error('Server: {0}  Port: {1} is invalid'. \
                          format(server, port))
             s.close()
             return False, '∞'
@@ -31,9 +37,25 @@ class SsrSpeedTest(object):
             delay = (endTime - startTime).microseconds / 1000
             return True, str(delay)
 
-    def testSsrNodes(self, ssrDict):
+    def testSSRConnect(self, ssrDict):
         portStatus, ping = self.isValidConnect(ssrDict['server'],
                                                int(ssrDict['server_port']))
         ssrDict['ping'] = ping
         ssrDict['port_status'] = portStatus
         return ssrDict
+
+    def testSSRSpeed(self, ssrDict):
+        s = speedtest.Speedtest()
+        s.upload()
+        s.download()
+        pass
+
+    def threadPool(self, func, args):
+        threadList = list()
+        pool = Pool(len(args))
+        for arg in args:
+            thread = pool.apply_async(func, (arg,))
+            threadList.append(thread)
+        pool.close()
+        pool.join()
+        return threadList

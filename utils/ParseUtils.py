@@ -82,6 +82,14 @@ class ParseShadowsocksR(object):
                 ssrDict['password'] = password
                 ssrDict['protocol'] = protocol
                 ssrDict['ssr_url'] = ssrUrl
+                ssrDict['port_password'] = None
+                ssrDict['additional_ports'] = {}
+                ssrDict['additional_ports_only'] = False
+                ssrDict['udp_timeout'] = 120
+                ssrDict['udp_cache'] = 64
+                ssrDict['fast_open'] = False
+                ssrDict['verbose'] = False
+                ssrDict['connect_verbose_info'] = 0
                 return ssrDict
             else:
                 logger.debug("Currently it is not support ipv6 node")

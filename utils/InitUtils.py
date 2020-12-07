@@ -9,6 +9,7 @@ import os
 import sys
 import configparser
 
+
 class InitConfigDir(object):
 
     def __init__(self):
@@ -25,9 +26,9 @@ class InitConfigDir(object):
         self.logFilePath = os.path.join(self.configDir,
                                         'shadowsocksr.log')
         self.ssrListJsonFile = os.path.join(self.configDir,
-                                       'ssr-list.json')
+                                            'ssr-list.json')
         self.ssrJsonFile = os.path.join(self.configDir,
-                                   'config.json')
+                                        'config.json')
         self.subscribeUrl = 'https://tyrantlucifer.com/ssr.txt'
         self.localAddress = '127.0.0.1'
         self.timeout = 300
@@ -70,5 +71,3 @@ class InitConfigDir(object):
         with open(self.configFilePath, 'w') as file:
             file.write('')
         self._initConfigFile()
-
-

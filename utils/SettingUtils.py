@@ -19,6 +19,7 @@ class Setting(object):
                      'SHADOWSCOKSR_PID',
                      'SHADOWSOCKSR_LOG'
                  ]):
+        self.keyList = keysList
         self.configFile = configFile
         self.config = configparser.ConfigParser()
         self.config.read(self.configFile)
@@ -31,6 +32,7 @@ class Setting(object):
         self.config.set('default', key, str(value))
         with open(self.configFile, 'w+') as file:
             self.config.write(file)
+        self.getAllValue(self.keyList)
 
     def getAllValue(self, keysList):
         valuesDict = dict()

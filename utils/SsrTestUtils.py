@@ -7,7 +7,6 @@
 from logger.Logging import *
 import socket
 import datetime
-from progressbar import *
 
 class SsrSpeedTest(object):
 

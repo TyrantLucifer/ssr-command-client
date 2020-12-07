@@ -13,7 +13,7 @@ class InitConfigDir(object):
 
     def __init__(self):
         self.platform = sys.platform
-        self.homeDir = os.environ['HOME']
+        self.homeDir = os.path.expanduser('~')
         self.configDir = os.path.join(self.homeDir,
                                       '.ssr-command-client')
         self.configFilePath = os.path.join(self.configDir,

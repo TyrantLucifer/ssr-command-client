@@ -13,3 +13,6 @@ formatter = logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 streamHandler.setLevel(logging.DEBUG)
 streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
+
+ssrLogger = logging.getLogger("shadowsocksr")
+ssrLogger.setLevel(logging.DEBUG)

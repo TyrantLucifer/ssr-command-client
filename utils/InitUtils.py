@@ -7,6 +7,7 @@
 from logger.Logging import *
 import os
 import sys
+import json
 import configparser
 
 
@@ -25,6 +26,8 @@ class InitConfigDir(object):
                                         'shadowsocksr.pid')
         self.logFilePath = os.path.join(self.configDir,
                                         'shadowsocksr.log')
+        self.debugLogFilePath = os.path.join(self.configDir,
+                                        'shadowsocksrDebug.log')
         self.ssrListJsonFile = os.path.join(self.configDir,
                                             'ssr-list.json')
         self.ssrJsonFile = os.path.join(self.configDir,
@@ -45,22 +48,26 @@ class InitConfigDir(object):
             return False
 
     def _setLogger(self):
-        fileHandler = logging.FileHandler(self.logFilePath)
-        fileHandler.setLevel(logging.DEBUG)
-        fileHandler.setFormatter(formatter)
-        logger.addHandler(fileHandler)
+        logFileHandler = logging.FileHandler(self.logFilePath)
+        logFileHandler.setLevel(logging.DEBUG)
+        logFileHandler.setFormatter(formatter)
+        logger.addHandler(logFileHandler)
+        debugFileHandler = logging.FileHandler(self.debugLogFilePath)
+        debugFileHandler.setLevel(logging.DEBUG)
+        debugFileHandler.setFormatter(formatter)
+        ssrLogger.addHandler(debugFileHandler)
 
     def _initConfigFile(self):
         config = configparser.ConfigParser()
         config.add_section('default')
-        config.set('default', 'SUBSCRIBE_URL', self.subscribeUrl)
-        config.set('default', 'SSR_LIST_JSON', self.ssrListJsonFile)
-        config.set('default', 'CONFIG_JSON', self.ssrJsonFile)
-        config.set('default', 'LOCAL_ADDRESS', self.localAddress)
-        config.set('default', 'TIMEOUT', str(self.timeout))
-        config.set('default', 'WORKERS', str(self.workers))
-        config.set('default', 'SHADOWSCOKSR_PID', self.pidFilePath)
-        config.set('default', 'SHADOWSOCKSR_LOG', self.logFilePath)
+        config.set('default', 'subscribe_url', self.subscribeUrl)
+        config.set('default', 'server_json_file_path', self.ssrListJsonFile)
+        config.set('default', 'config_json_file_path', self.ssrJsonFile)
+        config.set('default', 'local_address', self.localAddress)
+        config.set('default', 'timeout', str(self.timeout))
+        config.set('default', 'workers', str(self.workers))
+        config.set('default', 'shadowsocksr_pid_file_path', self.pidFilePath)
+        config.set('default', 'shadowsocksr_log_file_path', self.logFilePath)
         with open(self.configFilePath, 'w+') as file:
             config.write(file)
         with open(self.configLockFilePath, 'w') as lockFile:
@@ -71,3 +78,8 @@ class InitConfigDir(object):
         with open(self.configFilePath, 'w') as file:
             file.write('')
         self._initConfigFile()
+
+    def createJsonFile(self, ssrDict):
+        content = json.dumps(ssrDict, ensure_ascii=False, indent=4)
+        with open(self.configFilePath, 'w') as file:
+            file.write(content)

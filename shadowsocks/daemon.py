@@ -20,10 +20,10 @@ from __future__ import absolute_import, division, print_function, \
 
 import os
 import sys
-import logging
 import signal
 import time
 from shadowsocks import common, shell
+logging = shell.logging
 
 # this module is ported from ShadowVPN daemon.c
 

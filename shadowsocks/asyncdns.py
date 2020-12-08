@@ -22,7 +22,6 @@ import os
 import socket
 import struct
 import re
-import logging
 
 if __name__ == '__main__':
     import sys
@@ -32,6 +31,7 @@ if __name__ == '__main__':
     sys.path.insert(0, os.path.join(file_path, '../'))
 
 from shadowsocks import common, lru_cache, eventloop, shell
+logging = shell.logging
 
 CACHE_SWEEP_INTERVAL = 30
 

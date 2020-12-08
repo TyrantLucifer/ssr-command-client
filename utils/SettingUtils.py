@@ -10,14 +10,14 @@ class Setting(object):
 
     def __init__(self, configFile=None,
                  keysList=[
-                     'SUBSCRIBE_URL',
-                     'SSR_LIST_JSON',
-                     'CONFIG_JSON',
-                     'LOCAL_ADDRESS',
-                     'TIMEOUT',
-                     'WORKERS',
-                     'SHADOWSCOKSR_PID',
-                     'SHADOWSOCKSR_LOG'
+                     'subscribe_url',
+                     'server_json_file_path',
+                     'config_json_file_path',
+                     'local_address',
+                     'timeout',
+                     'workers',
+                     'shadowsocksr_pid_file_path',
+                     'shadowsocksr_log_file_path'
                  ]):
         self.keyList = keysList
         self.configFile = configFile

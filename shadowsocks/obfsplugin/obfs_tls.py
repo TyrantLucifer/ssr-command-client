@@ -20,7 +20,6 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 import binascii
 import struct
 import base64
@@ -32,7 +31,7 @@ import string
 
 from shadowsocks import common
 from shadowsocks.obfsplugin import plain
-from shadowsocks.common import to_bytes, to_str, ord
+from shadowsocks.common import to_bytes, to_str, ord, logging
 from shadowsocks import lru_cache
 
 def create_tls_ticket_auth_obfs(method):

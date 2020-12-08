@@ -22,10 +22,8 @@ import os
 import json
 import sys
 import getopt
-from logger.Logging import ssrLogger as logging
-from shadowsocks.common import to_bytes, to_str, IPNetwork, PortRange
 from shadowsocks import encrypt
-
+from shadowsocks.common import to_bytes, to_str, IPNetwork, PortRange, logging
 
 VERBOSE_LEVEL = 5
 

@@ -22,7 +22,6 @@ import time
 import socket
 import errno
 import struct
-import logging
 import binascii
 import traceback
 import random
@@ -30,7 +29,7 @@ import platform
 import threading
 
 from shadowsocks import encrypt, obfs, eventloop, shell, common, lru_cache, version
-from shadowsocks.common import pre_parse_header, parse_header
+from shadowsocks.common import pre_parse_header, parse_header, logging
 
 # we clear at most TIMEOUTS_CLEAN_SIZE timeouts each time
 TIMEOUTS_CLEAN_SIZE = 512

@@ -20,7 +20,6 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 
 from shadowsocks import common
 from shadowsocks.obfsplugin import plain, http_simple, obfs_tls, verify, auth, auth_chain

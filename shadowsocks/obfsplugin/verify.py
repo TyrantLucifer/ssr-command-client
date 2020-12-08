@@ -20,7 +20,6 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 import binascii
 import base64
 import time
@@ -34,7 +33,7 @@ import hashlib
 import shadowsocks
 from shadowsocks import common
 from shadowsocks.obfsplugin import plain
-from shadowsocks.common import to_bytes, to_str, ord, chr
+from shadowsocks.common import to_bytes, to_str, ord, chr, logging
 
 def create_verify_deflate(method):
     return verify_deflate(method)

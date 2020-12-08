@@ -23,9 +23,9 @@
 from __future__ import absolute_import, division, print_function, \
     with_statement
 
-import logging
 from ctypes import CDLL, c_char_p, c_int, c_ulonglong, byref, \
     create_string_buffer, c_void_p
+from shadowsocks.common import logging
 
 __all__ = ['ciphers']
 

@@ -19,7 +19,6 @@ from __future__ import absolute_import, division, print_function, \
     with_statement
 
 import hashlib
-import logging
 import binascii
 import base64
 import time
@@ -33,7 +32,7 @@ import bisect
 import shadowsocks
 from shadowsocks import common, lru_cache, encrypt
 from shadowsocks.obfsplugin import plain
-from shadowsocks.common import to_bytes, to_str, ord, chr
+from shadowsocks.common import to_bytes, to_str, ord, chr, logging
 from shadowsocks.crypto import openssl
 
 rand_bytes = openssl.rand_bytes

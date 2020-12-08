@@ -20,11 +20,12 @@ from __future__ import absolute_import, division, print_function, \
 
 import socket
 import struct
-import logging
 import binascii
 import re
 
 from shadowsocks import lru_cache
+
+from logger.Logging import ssrLogger as logging
 
 def compat_ord(s):
     if type(s) == int:

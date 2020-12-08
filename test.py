@@ -10,7 +10,7 @@ from utils.ParseUtils import *
 from utils.SettingUtils import *
 from utils.SSRTestUtils import *
 from utils.HandleSSRUtils import *
-from speedtest import speedtest
+
 i = InitConfigDir()
 g = UpdateSubscribeUrl()
 s = SSRSpeedTest()
@@ -21,14 +21,11 @@ settings = Setting(i.configFilePath)
 subscribeUrlList = settings.valueDict['subscribe_url'].split(',')
 ssrList = g.getNodeInfoList(i.ssrListJsonFile, subscribeUrlList)
 
-
 # h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFialePath, i.logFilePath)
 
 if __name__ == "__main__":
-    # s.testSSRSpeed(ssrList[20], '127.0.0.1', 60000, 300, 1)
-    s = speedtest.Speedtest()
-    s.upload()
-    s.download()
+    h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFilePath, i.logFilePath)
+# s.testSSRSpeed(ssrList[20], '127.0.0.1', 60000, 300, 1)
     # threadList = s.speedThreadPool(s.testSSRSpeed, ssrList)
     # for thread in threadList:
     #     print(thread.get())

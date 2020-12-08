@@ -20,9 +20,8 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 
-from shadowsocks.common import ord
+from shadowsocks.common import ord, logging
 
 def create_obfs(method):
     return plain(method)

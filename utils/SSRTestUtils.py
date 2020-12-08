@@ -4,6 +4,7 @@
 @Date: 2020/12/7 上午12:14
 '''
 
+import time
 import socks
 import socket
 import sys

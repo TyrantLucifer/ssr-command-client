@@ -20,11 +20,11 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 
 from shadowsocks import common, lru_cache
 from shadowsocks.crypto import rc4_md5, openssl, sodium, table
 
+logging = common.logging
 
 method_supported = {}
 method_supported.update(rc4_md5.ciphers)

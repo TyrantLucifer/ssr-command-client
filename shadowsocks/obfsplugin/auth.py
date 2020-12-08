@@ -20,7 +20,6 @@ from __future__ import absolute_import, division, print_function, \
 import os
 import sys
 import hashlib
-import logging
 import binascii
 import base64
 import time
@@ -35,7 +34,7 @@ import hashlib
 import shadowsocks
 from shadowsocks import common, lru_cache, encrypt
 from shadowsocks.obfsplugin import plain
-from shadowsocks.common import to_bytes, to_str, ord, chr
+from shadowsocks.common import to_bytes, to_str, ord, chr, logging
 
 def create_auth_sha1_v4(method):
     return auth_sha1_v4(method)

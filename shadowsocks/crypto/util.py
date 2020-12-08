@@ -18,8 +18,8 @@ from __future__ import absolute_import, division, print_function, \
     with_statement
 
 import os
-import logging
 
+from shadowsocks.common import logging
 
 def find_library_nt(name):
     # type: (str) -> list

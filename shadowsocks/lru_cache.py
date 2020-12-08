@@ -19,8 +19,9 @@ from __future__ import absolute_import, division, print_function, \
     with_statement
 
 import collections
-import logging
 import time
+
+from logger.Logging import ssrLogger as logging
 
 if __name__ == '__main__':
     import os, sys, inspect

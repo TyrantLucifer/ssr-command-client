@@ -7,14 +7,17 @@
 import socks
 import socket
 import sys
-from multiprocessing import Pool
+from multiprocessing import Pool, Process
+from multiprocessing.pool import ThreadPool
 
 sys.path.append('../')
 
 from logger.Logging import *
 from speedtest import speedtest
 from utils.PrintUtils import *
+from utils.HandleSSRUtils import *
 
+c = ControlSSR()
 color = Colored()
 
 class SSRSpeedTest(object):
@@ -56,6 +59,10 @@ class SSRSpeedTest(object):
         return ssrDict
 
     def testSSRSpeed(self, ssrDict, *args):
+        p = Process(target=c.startOnWindows, args=(ssrDict, *args))
+        p.daemon = True
+        p.start()
+        print(p.pid)
         socks.set_default_proxy(socks.SOCKS5, args[0], args[1])
         socket.socket = socks.socksocket
         try:
@@ -76,12 +83,25 @@ class SSRSpeedTest(object):
         return ssrDict
 
     @calculate
-    def threadPool(self, func, args):
+    def connectThreadPool(self, func, args):
         threadList = list()
         pool = Pool(len(args))
         for arg in args:
             thread = pool.apply_async(func, (arg,))
             threadList.append(thread)
+        pool.close()
+        pool.join()
+        return threadList
+
+    @calculate
+    def speedThreadPool(self, func, args):
+        port = 60000
+        threadList = list()
+        pool = ThreadPool(len(args))
+        for arg in args:
+            thread = pool.apply_async(func, (arg, '127.0.0.1', port, 300, 1))
+            threadList.append(thread)
+            port = port + 1
         pool.close()
         pool.join()
         return threadList

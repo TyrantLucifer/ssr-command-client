@@ -20,8 +20,6 @@ class ControlSSR(object):
         ssrDict['local_port'] = args[1]
         ssrDict['timeout'] = args[2]
         ssrDict['workers'] = args[3]
-        ssrDict['pid-file'] = args[4]
-        ssrDict['log-file'] = args[5]
         if not ssrDict.get('dns_ipv6', False):
             asyncdns.IPV6_CONNECTION_SUPPORT = False
         try:

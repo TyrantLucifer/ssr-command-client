@@ -10,7 +10,7 @@ from utils.ParseUtils import *
 from utils.SettingUtils import *
 from utils.SSRTestUtils import *
 from utils.HandleSSRUtils import *
-
+from speedtest import speedtest
 i = InitConfigDir()
 g = UpdateSubscribeUrl()
 s = SSRSpeedTest()
@@ -19,27 +19,34 @@ ssrTable = DrawInfoListTable()
 
 settings = Setting(i.configFilePath)
 subscribeUrlList = settings.valueDict['subscribe_url'].split(',')
-# ssrList = g.getNodeInfoList(i.ssrListJsonFile, subscribeUrlList)
+ssrList = g.getNodeInfoList(i.ssrListJsonFile, subscribeUrlList)
 
 
-# h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1)
+# h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFialePath, i.logFilePath)
 
 if __name__ == "__main__":
-    ssrList = g.update(i.ssrListJsonFile, subscribeUrlList)
-    threadList = s.threadPool(s.testSSRConnect, ssrList)
-    ssrList.clear()
-    for thread in threadList:
-        ssrList.append(thread.get())
-    g.updateCacheJson(i.ssrListJsonFile, ssrList)
-    for ssr in ssrList:
-        ssrTable.append(
-            id=ssr['id'],
-            name=ssr['remarks'],
-            ping=ssr['ping'],
-            port_status=ssr['port_status'],
-            server=ssr['server'],
-            port=ssr['server_port'],
-            method=ssr['method']
-        )
-    ssrTable.print()
+    # s.testSSRSpeed(ssrList[20], '127.0.0.1', 60000, 300, 1)
+    s = speedtest.Speedtest()
+    s.upload()
+    s.download()
+    # threadList = s.speedThreadPool(s.testSSRSpeed, ssrList)
+    # for thread in threadList:
+    #     print(thread.get())
+#     ssrList = g.update(i.ssrListJsonFile, subscribeUrlList)
+#     threadList = s.threadPool(s.testSSRConnect, ssrList)
+#     ssrList.clear()
+#     for thread in threadList:
+#         ssrList.append(thread.get())
+#     g.updateCacheJson(i.ssrListJsonFile, ssrList)
+#     for ssr in ssrList:
+#         ssrTable.append(
+#             id=ssr['id'],
+#             name=ssr['remarks'],
+#             ping=ssr['ping'],
+#             port_status=ssr['port_status'],
+#             server=ssr['server'],
+#             port=ssr['server_port'],
+#             method=ssr['method']
+#         )
+#     ssrTable.print()
 

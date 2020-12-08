@@ -116,26 +116,38 @@ class UpdateSubscribeUrl(object):
             return ssrUrlList
 
     def requestUrlList(self, urlList):
+        self.resultList.clear()
         for url in urlList:
             result = self.requestUrl(url)
             self.resultList.append(result)
         return self.resultList
 
-    def getNodeInfoList(self, cacheJsonPath):
+    def getNodeInfoList(self, cacheJsonPath, urlList):
         if os.path.exists(cacheJsonPath):
             with open(cacheJsonPath, 'r') as file:
                 content = file.read()
-                return json.loads(content)
+                self.ssrInfoList = json.loads(content)
+                return self.ssrInfoList
         else:
-            return self.update(cacheJsonPath)
+            return self.update(cacheJsonPath, urlList)
 
-    def update(self, cacheJsonPath):
+    @calculate
+    def update(self, cacheJsonPath, urlList):
         self.ssrInfoList.clear()
+        self.requestUrlList(urlList)
         for urlResult in self.resultList:
             for ssrUrl in urlResult:
                 if ssrUrl:
                     self.ssrInfoList.append(ParseShadowsocksR.parseShadowsocksR(ssrUrl))
+        for ssrInfo in self.ssrInfoList:
+            ssrInfo['id'] = self.ssrInfoList.index(ssrInfo)
         content = json.dumps(self.ssrInfoList, ensure_ascii=False, indent=4)
         with open(cacheJsonPath, 'w') as file:
             file.write(content)
         return self.ssrInfoList
+
+    def updateCacheJson(self, catheJsonPath, ssrInfoList):
+        with open(catheJsonPath, 'w') as file:
+            content = json.dumps(ssrInfoList, ensure_ascii=False, indent=4)
+            file.write(content)
+        logger.info("Update cache json file successfully")

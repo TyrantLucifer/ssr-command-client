@@ -5,6 +5,7 @@
 '''
 
 from utils.InitUtils import *
+from utils.PrintUtils import *
 from utils.ParseUtils import *
 from utils.SettingUtils import *
 from utils.SSRTestUtils import *
@@ -14,15 +15,31 @@ i = InitConfigDir()
 g = UpdateSubscribeUrl()
 s = SSRSpeedTest()
 h = ControlSSR()
+ssrTable = DrawInfoListTable()
+
 settings = Setting(i.configFilePath)
 subscribeUrlList = settings.valueDict['subscribe_url'].split(',')
-resultList = g.requestUrlList(subscribeUrlList)
-ssrList = g.getNodeInfoList(i.ssrListJsonFile)
-print(ssrList)
+# ssrList = g.getNodeInfoList(i.ssrListJsonFile, subscribeUrlList)
+
+
 # h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1)
 
-# if __name__ == "__main__":
-#     threadList = s.threadPool(s.testSSRConnect, ssrList)
-#     for thread in threadList:
-#         print(thread.get())
+if __name__ == "__main__":
+    ssrList = g.update(i.ssrListJsonFile, subscribeUrlList)
+    threadList = s.threadPool(s.testSSRConnect, ssrList)
+    ssrList.clear()
+    for thread in threadList:
+        ssrList.append(thread.get())
+    g.updateCacheJson(i.ssrListJsonFile, ssrList)
+    for ssr in ssrList:
+        ssrTable.append(
+            id=ssr['id'],
+            name=ssr['remarks'],
+            ping=ssr['ping'],
+            port_status=ssr['port_status'],
+            server=ssr['server'],
+            port=ssr['server_port'],
+            method=ssr['method']
+        )
+    ssrTable.print()
 

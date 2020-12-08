@@ -16,7 +16,7 @@ class DrawInfoListTable(object):
         header = [
             "id",
             "name",
-            "ping(ms)",
+            "ping",
             "port_status",
             "server",
             "port",
@@ -34,7 +34,7 @@ class DrawInfoListTable(object):
                 kwargs['port_status'],
                 kwargs['server'],
                 kwargs['port'],
-                kwargs['method'],
+                kwargs['method']
             ]
             self.x.add_row(content)
 

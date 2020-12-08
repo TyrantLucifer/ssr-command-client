@@ -8,7 +8,8 @@ from logger.Logging import *
 import requests
 import base64
 import re
-
+import json
+import os
 
 class ParseShadowsocksR(object):
     '''
@@ -95,7 +96,7 @@ class ParseShadowsocksR(object):
                 logger.debug("Currently it is not support ipv6 node")
 
 
-class GetSubscribeUrl(object):
+class UpdateSubscribeUrl(object):
 
     def __init__(self):
         self.resultList = list()
@@ -120,9 +121,21 @@ class GetSubscribeUrl(object):
             self.resultList.append(result)
         return self.resultList
 
-    def getNodeInfoList(self):
+    def getNodeInfoList(self, cacheJsonPath):
+        if os.path.exists(cacheJsonPath):
+            with open(cacheJsonPath, 'r') as file:
+                content = file.read()
+                return json.loads(content)
+        else:
+            return self.update(cacheJsonPath)
+
+    def update(self, cacheJsonPath):
+        self.ssrInfoList.clear()
         for urlResult in self.resultList:
             for ssrUrl in urlResult:
                 if ssrUrl:
                     self.ssrInfoList.append(ParseShadowsocksR.parseShadowsocksR(ssrUrl))
+        content = json.dumps(self.ssrInfoList, ensure_ascii=False, indent=4)
+        with open(cacheJsonPath, 'w') as file:
+            file.write(content)
         return self.ssrInfoList

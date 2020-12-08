@@ -11,14 +11,15 @@ from utils.SSRTestUtils import *
 from utils.HandleSSRUtils import *
 
 i = InitConfigDir()
-g = GetSubscribeUrl()
+g = UpdateSubscribeUrl()
 s = SSRSpeedTest()
 h = ControlSSR()
 settings = Setting(i.configFilePath)
 subscribeUrlList = settings.valueDict['subscribe_url'].split(',')
 resultList = g.requestUrlList(subscribeUrlList)
-ssrList = g.getNodeInfoList()
-h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1)
+ssrList = g.getNodeInfoList(i.ssrListJsonFile)
+print(ssrList)
+# h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1)
 
 # if __name__ == "__main__":
 #     threadList = s.threadPool(s.testSSRConnect, ssrList)

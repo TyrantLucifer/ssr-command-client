@@ -154,6 +154,7 @@ def daemon_stop(pid_file):
         except OSError as e:
             if e.errno == errno.ESRCH:
                 logging.error('not running')
+                # remove pid file
                 os.remove(pid_file)
                 # always exit 0 if we are sure daemon is not running
                 return

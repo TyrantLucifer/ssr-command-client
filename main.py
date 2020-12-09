@@ -47,11 +47,11 @@ def main():
     elif args.config:
         pass
     elif args.fast_node:
-        pass
+        h.startFastNode()
     elif args.start:
-        h.start(int(args.start))
+        h.start(id=int(args.start), port=int(args.port))
     elif args.stop:
-        h.stop(int(args.stop))
+        h.stop(id=int(args.stop), port=int(args.port))
     elif args.version:
         pass
     elif args.setting_url:

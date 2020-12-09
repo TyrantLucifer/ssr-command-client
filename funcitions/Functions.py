@@ -12,13 +12,13 @@ h = ControlSSR()
 ssrTable = DrawInfoListTable()
 
 def isIDValid(func):
-    def judge(*args):
-        if args[1] < 0 or args[1] >= len(u.ssrInfoList):
+    def judge(*args, **kwargs):
+        if kwargs['id'] < 0 or kwargs['id'] >= len(u.ssrInfoList):
             logger.error('ssr id error')
             sys.exit(1)
         else:
             ssrLogger.addHandler(streamHandler)
-            func(*args)
+            func(*args, **kwargs)
             ssrLogger.removeFilter(streamHandler)
     return judge
 
@@ -52,6 +52,19 @@ class Hanlder(object):
                       i.pidFilePath,
                       i.logFilePath)
         os.remove(i.pidFilePath)
+
+    def startFastNode(self):
+        pingList = list()
+        for ssrInfo in u.ssrInfoList:
+            if ssrInfo['ping'] == '∞':
+                ping = 10000
+            else:
+                ping = float(ssrInfo['ping'])
+            pingList.append(ping)
+        index = pingList.index(min(pingList))
+        logger.info("select fast node {0} ping {1}ms".
+                    format(u.ssrInfoList[index]['remarks'], pingList[index]))
+        self.start(id=index)
 
 class Update(object):
 

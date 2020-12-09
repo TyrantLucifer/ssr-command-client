@@ -15,8 +15,8 @@ def get_parser():
     parser = argparse.ArgumentParser(description="The ssr command client based Python.")
     parser.add_argument("-l", "--list", action="store_true", help="show ssr list")
     parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int, help="assign local proxy port,use with -c or --fast-node")
-    parser.add_argument("-s", "--start", metavar="ssr id", help="start ssr proxy")
-    parser.add_argument("-S", "--stop", metavar="ssr id", help="stop ssr proxy")
+    parser.add_argument("-s", "--start", metavar="ssr_id", type=int,help="start ssr proxy")
+    parser.add_argument("-S", "--stop", default=0, metavar="ssr_id", type=int, help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
@@ -50,9 +50,9 @@ def main():
     elif args.fast_node:
         h.startFastNode()
     elif args.start:
-        h.start(id=int(args.start), port=int(args.port))
+        h.start(id=args.start, port=args.port)
     elif args.stop:
-        h.stop(id=int(args.stop), port=int(args.port))
+        h.stop(id=args.stop, port=args.port)
     elif args.version:
         pass
     elif args.setting_url:

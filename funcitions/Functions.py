@@ -30,8 +30,13 @@ class Hanlder(object):
                           i.pidFilePath,
                           i.logFilePath)
 
-    def stop(self):
-        pass
+    def stop(self, port=1080):
+        h.startOnUnix(u.ssrInfoList[id], settings.local_address,
+                      port,
+                      settings.timeout,
+                      settings.workers,
+                      i.pidFilePath,
+                      i.logFilePath)
 
 class Update(object):
 

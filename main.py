@@ -12,3 +12,4 @@ h = Hanlder()
 if __name__ == "__main__":
     # sss
     h.start(20)
+    h.stop(20)

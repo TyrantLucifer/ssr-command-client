@@ -90,11 +90,18 @@ class Update(object):
     def testSSRSpeed(self):
         ssrInfoList = s.startSpeedTest(u.ssrInfoList)
         for ssrInfo in ssrInfoList:
+            if ssrInfo['connect']:
+                download = color.green(str(ssrInfo['download']))
+                upload= color.green(str(ssrInfo['upload']))
+            else:
+                download = color.red(ssrInfo['download'])
+                upload= color.red(ssrInfo['upload'])
+                
             ssrSpeedTable.append(
                 id=ssrInfo['id'],
                 name=ssrInfo['remarks'],
-                download=ssrInfo['download'],
-                upload=ssrInfo['upload'],
+                download=download,
+                upload=upload,
                 server=ssrInfo['server'],
                 port=ssrInfo['server_port'],
                 method=ssrInfo['method']
@@ -111,11 +118,18 @@ class Display(object):
 
     def displaySSRList(self):
         for ssrInfo in u.ssrInfoList:
+            if ssrInfo['connect']:
+                delay = color.green(ssrInfo['ping'])
+                connect = color.green('√')
+            else:
+                delay = color.red(ssrInfo['ping'])
+                connect = color.red('×')
+
             ssrTable.append(
                 id=ssrInfo['id'],
                 name=ssrInfo['remarks'],
-                delay=ssrInfo['ping'],
-                connect=ssrInfo['connect'],
+                delay=delay,
+                connect=connect,
                 server=ssrInfo['server'],
                 port=ssrInfo['server_port'],
                 method=ssrInfo['method']

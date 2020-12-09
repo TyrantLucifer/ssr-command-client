@@ -16,7 +16,7 @@ class DrawInfoListTable(object):
         header = [
             "id",
             "name",
-            "delay",
+            "delay(ms)",
             "connect",
             "server",
             "port",

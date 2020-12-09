@@ -51,6 +51,7 @@ class Hanlder(object):
                       settings.workers,
                       i.pidFilePath,
                       i.logFilePath)
+        os.remove(i.pidFilePath)
 
 class Update(object):
 

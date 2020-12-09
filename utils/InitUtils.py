@@ -53,7 +53,7 @@ class InitConfigDir(object):
         logFileHandler.setFormatter(formatter)
         logger.addHandler(logFileHandler)
         debugFileHandler = logging.FileHandler(self.debugLogFilePath)
-        debugFileHandler.setLevel(logging.DEBUG)
+        debugFileHandler.setLevel(logging.ERROR)
         debugFileHandler.setFormatter(formatter)
         ssrLogger.addHandler(debugFileHandler)
 

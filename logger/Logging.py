@@ -25,4 +25,4 @@ streamHandler.setFormatter(formatter)
 logger.addHandler(streamHandler)
 
 ssrLogger = logging.getLogger("shadowsocksr")
-ssrLogger.setLevel(logging.DEBUG)
+ssrLogger.setLevel(logging.INFO)

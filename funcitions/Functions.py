@@ -11,11 +11,22 @@ u = UpdateSubscribeUrl(i.ssrListJsonFile, settings.valueDict['subscribe_url'])
 h = ControlSSR()
 ssrTable = DrawInfoListTable()
 
+def isIDValid(func):
+    def judge(*args):
+        if args[1] < 0 or args[1] >= len(u.ssrInfoList):
+            logger.error('ssr id error')
+            sys.exit(1)
+        else:
+            func(*args)
+    return judge
+
+
 class Hanlder(object):
 
     def __init__(self):
         pass
 
+    @isIDValid
     def start(self, id, port=1080):
         if i.platform == 'win32':
             h.startOnWindows(u.ssrInfoList[id], settings.local_address,
@@ -30,8 +41,9 @@ class Hanlder(object):
                           i.pidFilePath,
                           i.logFilePath)
 
-    def stop(self, port=1080):
-        h.startOnUnix(u.ssrInfoList[id], settings.local_address,
+    @isIDValid
+    def stop(self, id, port=1080):
+        h.stopOnUnix(u.ssrInfoList[id], settings.local_address,
                       port,
                       settings.timeout,
                       settings.workers,
@@ -85,13 +97,11 @@ class Display(object):
         for url in u.urlList:
             color.print(url, 'blue')
 
-
     def displayLocalAddress(self):
         color.print(settings.valueDict['local_address'],
                     'blue')
 
     def displaySSRJson(self, id):
-        i.createJsonFile(u.ssrInfoList[id])
         color.print(json.dumps(u.ssrInfoList[id], ensure_ascii=False, indent=4),
                     'yellow')
 

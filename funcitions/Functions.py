@@ -24,6 +24,7 @@ class Hanlder(object):
                              settings.workers)
         else:
             h.startOnUnix(u.ssrInfoList[id], settings.local_address,
+                          port,
                           settings.timeout,
                           settings.workers,
                           i.pidFilePath,

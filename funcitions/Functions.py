@@ -62,8 +62,8 @@ class Hanlder(object):
                 ping = float(ssrInfo['ping'])
             pingList.append(ping)
         index = pingList.index(min(pingList))
-        logger.info("select fast node {0} ping {1}ms".
-                    format(u.ssrInfoList[index]['remarks'], pingList[index]))
+        logger.info("select fast node id - {0} name - {1} ping - {1}ms".
+                    format(index, u.ssrInfoList[index]['remarks'], pingList[index]))
         self.start(id=index)
 
 class Update(object):

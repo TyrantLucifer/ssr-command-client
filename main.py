@@ -10,4 +10,5 @@ u = Update()
 d = Display()
 h = Hanlder()
 if __name__ == "__main__":
+    # sss
     h.start(20)

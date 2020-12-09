@@ -21,10 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcitions/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcitions/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logger/Logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/logger/Logging.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +144,7 @@
       <workItem from="1607320151949" duration="7917000" />
       <workItem from="1607334028119" duration="728000" />
       <workItem from="1607390304026" duration="54331000" />
-      <workItem from="1607514737845" duration="6829000" />
+      <workItem from="1607514737845" duration="7515000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607518592875</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="增加主模块">
+      <created>1607521624925</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607521624925</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +304,8 @@
     <MESSAGE value="修复多线程测速模块" />
     <MESSAGE value="增加funtions模块" />
     <MESSAGE value="修复ssr启动bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复ssr启动bug" />
+    <MESSAGE value="增加主模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加主模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1345" y="400" width="740" height="666" key="#Inspections" timestamp="1607234392772">
@@ -315,11 +320,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607397406216" />
-    <state x="971" y="114" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607518590800">
+    <state x="971" y="114" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607521622644">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607411518828" />
-    <state x="971" y="114" key="CommitChangelistDialog2/0.0.3440.1400@0.0.3440.1400" timestamp="1607518590800" />
+    <state x="971" y="114" key="CommitChangelistDialog2/0.0.3440.1400@0.0.3440.1400" timestamp="1607521622644" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607322889755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -364,11 +369,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607320134988" />
-    <state x="989" y="322" key="Vcs.Push.Dialog.v2" timestamp="1607518595735">
+    <state x="989" y="322" key="Vcs.Push.Dialog.v2" timestamp="1607521626397">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607411522877" />
-    <state x="989" y="322" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607518595735" />
+    <state x="989" y="322" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607521626397" />
     <state x="1351" y="582" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607518063823">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

@@ -51,7 +51,7 @@ def main():
     elif args.start:
         h.start(int(args.start))
     elif args.stop:
-        h.start(int(args.stop))
+        h.stop(int(args.stop))
     elif args.version:
         pass
     elif args.setting_url:

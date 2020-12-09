@@ -17,7 +17,9 @@ def isIDValid(func):
             logger.error('ssr id error')
             sys.exit(1)
         else:
+            ssrLogger.addHandler(streamHandler)
             func(*args)
+            ssrLogger.removeFilter(streamHandler)
     return judge
 
 

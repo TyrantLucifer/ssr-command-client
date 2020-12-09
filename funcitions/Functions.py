@@ -18,10 +18,16 @@ class Hanlder(object):
 
     def start(self, id, port=1080):
         if i.platform == 'win32':
-            h.startOnWindows(u.ssrInfoList[id], settings.valueDict['local_address'],
+            h.startOnWindows(u.ssrInfoList[id], settings.local_address,
                              port,
-                             settings.valueDict['timeout'],
-                             settings.valueDict['workers'])
+                             settings.timeout,
+                             settings.workers)
+        else:
+            h.startOnUnix(u.ssrInfoList[id], settings.local_address,
+                          settings.timeout,
+                          settings.workers,
+                          i.pidFilePath,
+                          i.logFilePath)
 
     def stop(self):
         pass

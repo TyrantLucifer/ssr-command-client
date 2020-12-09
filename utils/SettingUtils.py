@@ -24,6 +24,10 @@ class Setting(object):
         self.config = configparser.ConfigParser()
         self.config.read(self.configFile)
         self.valueDict = self.getAllValue(keysList)
+        self.subscribe_url = self.valueDict['subscribe_url']
+        self.local_address = self.valueDict['local_address']
+        self.timeout = int(self.valueDict['timeout'])
+        self.workers = int(self.valueDict['workers'])
 
     def getValue(self, key):
         return self.config.get('default', key)
@@ -38,4 +42,9 @@ class Setting(object):
         valuesDict = dict()
         for key in keysList:
             valuesDict[key] = self.getValue(key)
+        self.valueDict = valuesDict
+        self.subscribe_url = self.valueDict['subscribe_url']
+        self.local_address = self.valueDict['local_address']
+        self.timeout = int(self.valueDict['timeout'])
+        self.workers = int(self.valueDict['workers'])
         return valuesDict

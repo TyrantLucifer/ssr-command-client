@@ -21,14 +21,21 @@ settings = Setting(i.configFilePath)
 subscribeUrlList = settings.valueDict['subscribe_url'].split(',')
 ssrList = g.getNodeInfoList(i.ssrListJsonFile, subscribeUrlList)
 
-# h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFialePath, i.logFilePath)
+
 
 if __name__ == "__main__":
-    h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFilePath, i.logFilePath)
+    # h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFilePath, i.logFilePath)
 # s.testSSRSpeed(ssrList[20], '127.0.0.1', 60000, 300, 1)
-    # threadList = s.speedThreadPool(s.testSSRSpeed, ssrList)
-    # for thread in threadList:
-    #     print(thread.get())
+#     threadList = s.connectThreadPool(s.testSSRConnect, ssrList)
+#     ssrList.clear()
+#     for thread in threadList:
+#         ssrList.append(thread.get())
+    # h.startOnWindows(ssrList[20], '127.0.0.1', 1080, 300, 1, i.pidFialePath, i.logFilePath)
+
+    # g.updateCacheJson(i.ssrListJsonFile, ssrList)
+    threadList = s.speedThreadPool(s.testSSRSpeed, ssrList)
+    for thread in threadList:
+        print(thread.get())
 #     ssrList = g.update(i.ssrListJsonFile, subscribeUrlList)
 #     threadList = s.threadPool(s.testSSRConnect, ssrList)
 #     ssrList.clear()

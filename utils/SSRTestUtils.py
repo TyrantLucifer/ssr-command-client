@@ -9,7 +9,7 @@ import socks
 import socket
 import sys
 from multiprocessing import Pool, Process
-from multiprocessing.pool import ThreadPool
+import multiprocessing.pool
 
 sys.path.append('../')
 
@@ -20,6 +20,17 @@ from utils.HandleSSRUtils import *
 
 c = ControlSSR()
 color = Colored()
+
+class NoDaemonProcess(multiprocessing.Process):
+    # make 'daemon' attribute always return False
+    def _get_daemon(self):
+        return False
+    def _set_daemon(self, value):
+        pass
+    daemon = property(_get_daemon, _set_daemon)
+
+class MyPool(multiprocessing.pool.Pool):
+    Process = NoDaemonProcess
 
 class SSRSpeedTest(object):
 
@@ -47,6 +58,7 @@ class SSRSpeedTest(object):
     def testSSRConnect(self, ssrDict):
         portStatus, ping = self.isValidConnect(ssrDict['server'],
                                                int(ssrDict['server_port']))
+        ssrDict['connect'] = portStatus
         if ping == '∞':
             ping = color.red(ping)
         else:
@@ -60,27 +72,31 @@ class SSRSpeedTest(object):
         return ssrDict
 
     def testSSRSpeed(self, ssrDict, *args):
-        p = Process(target=c.startOnWindows, args=(ssrDict, *args))
-        p.daemon = True
-        p.start()
-        print(p.pid)
-        socks.set_default_proxy(socks.SOCKS5, args[0], args[1])
-        socket.socket = socks.socksocket
-        try:
-            s = speedtest.Speedtest()
-            s.upload()
-            s.download()
-        except Exception as e:
-            logger.debug(e)
-            logger.debug("This ssr node is invalid")
-            download = '∞'
-            upload = '∞'
+        if ssrDict['connect']:
+            p = Process(target=c.startOnWindows, args=(ssrDict, *args))
+            p.daemon = True
+            p.start()
+            socks.set_default_proxy(socks.SOCKS5, args[0], args[1])
+            socket.socket = socks.socksocket
+            try:
+                s = speedtest.Speedtest()
+                s.upload()
+                s.download()
+            except Exception as e:
+                logger.debug(e)
+                logger.debug("This ssr node is invalid")
+                download = '∞'
+                upload = '∞'
+            else:
+                result = s.results.dict()
+                download = round(result['download'] / 1000.0 / 1000.0, 2)
+                upload = round(result['upload'] / 1000.0 / 1000.0, 2)
+            ssrDict['download'] = download
+            ssrDict['upload'] = upload
         else:
-            result = s.results.dict()
-            download = round(result['download'] / 1000.0 / 1000.0, 2)
-            upload = round(result['upload'] / 1000.0 / 1000.0, 2)
-        ssrDict['download'] = download
-        ssrDict['upload'] = upload
+            ssrDict['download'] = '0'
+            ssrDict['upload'] = '0'
+
         return ssrDict
 
     @calculate
@@ -98,7 +114,7 @@ class SSRSpeedTest(object):
     def speedThreadPool(self, func, args):
         port = 60000
         threadList = list()
-        pool = ThreadPool(len(args))
+        pool = MyPool(len(args))
         for arg in args:
             thread = pool.apply_async(func, (arg, '127.0.0.1', port, 300, 1))
             threadList.append(thread)
@@ -106,3 +122,4 @@ class SSRSpeedTest(object):
         pool.close()
         pool.join()
         return threadList
+

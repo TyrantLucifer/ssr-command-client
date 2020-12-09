@@ -86,6 +86,10 @@ class Update(object):
         settings.setValue('local_address', address)
         logger.info('change subscribe url to: {0}'.format(address))
 
+    def testSSRSpeed(self):
+        ssrInfoList = s.startSpeedTest(u.ssrInfoList)
+        print(ssrInfoList)
+
 
 
 class Display(object):

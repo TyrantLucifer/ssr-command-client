@@ -3,13 +3,15 @@
 @E-mail: tyrantlucifer@gmail.com
 @Date: 2020/12/6 下午6:36
 '''
-
 from logger.Logging import *
+from utils.SSRTestUtils import *
 import requests
 import base64
 import re
 import json
 import os
+
+s = SSRSpeedTest()
 
 class ParseShadowsocksR(object):
     '''
@@ -98,12 +100,15 @@ class ParseShadowsocksR(object):
 
 class UpdateSubscribeUrl(object):
 
-    def __init__(self):
+    def __init__(self, cacheJsonPath, subcribeUrl):
+        self.urlList = subcribeUrl.split(',')
         self.resultList = list()
         self.ssrInfoList = list()
+        self.getNodeInfoList(cacheJsonPath, self.urlList)
 
     @staticmethod
     def requestUrl(url):
+        logger.info('start parse ssr subcribe: {0}'.format(url))
         try:
             result = requests.get(url)
             result.encoding = 'utf-8'
@@ -129,7 +134,10 @@ class UpdateSubscribeUrl(object):
                 self.ssrInfoList = json.loads(content)
                 return self.ssrInfoList
         else:
-            return self.update(cacheJsonPath, urlList)
+            self.update(cacheJsonPath, urlList)
+            self.ssrInfoList = s.startConnectTest(self.ssrInfoList)
+            self.updateCacheJson(cacheJsonPath, self.ssrInfoList)
+
 
     @calculate
     def update(self, cacheJsonPath, urlList):

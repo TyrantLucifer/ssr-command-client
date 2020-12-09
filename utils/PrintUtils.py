@@ -17,7 +17,7 @@ class DrawInfoListTable(object):
             "id",
             "name",
             "ping",
-            "port_status",
+            "connect",
             "server",
             "port",
             "method"
@@ -31,7 +31,7 @@ class DrawInfoListTable(object):
                 kwargs['id'],
                 kwargs['name'],
                 kwargs['ping'],
-                kwargs['port_status'],
+                kwargs['connect'],
                 kwargs['server'],
                 kwargs['port'],
                 kwargs['method']

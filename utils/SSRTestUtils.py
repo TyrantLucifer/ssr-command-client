@@ -56,19 +56,10 @@ class SSRSpeedTest(object):
             return True, str(delay)
 
     def testSSRConnect(self, ssrDict):
-        portStatus, ping = self.isValidConnect(ssrDict['server'],
+        connect, ping = self.isValidConnect(ssrDict['server'],
                                                int(ssrDict['server_port']))
-        ssrDict['connect'] = portStatus
-        if ping == '∞':
-            ping = color.red(ping)
-        else:
-            ping = color.green(ping)
-        if portStatus:
-            portStatus = color.green('True')
-        else:
-            portStatus = color.red('False')
         ssrDict['ping'] = ping
-        ssrDict['port_status'] = portStatus
+        ssrDict['connect'] = connect
         return ssrDict
 
     def testSSRSpeed(self, ssrDict, *args):
@@ -94,12 +85,11 @@ class SSRSpeedTest(object):
             ssrDict['download'] = download
             ssrDict['upload'] = upload
         else:
-            ssrDict['download'] = '0'
-            ssrDict['upload'] = '0'
+            ssrDict['download'] = '∞'
+            ssrDict['upload'] = '∞'
 
         return ssrDict
 
-    @calculate
     def connectThreadPool(self, func, args):
         threadList = list()
         pool = Pool(len(args))
@@ -110,7 +100,6 @@ class SSRSpeedTest(object):
         pool.join()
         return threadList
 
-    @calculate
     def speedThreadPool(self, func, args):
         port = 60000
         threadList = list()
@@ -123,3 +112,17 @@ class SSRSpeedTest(object):
         pool.join()
         return threadList
 
+    @calculate
+    def startConnectTest(self, ssrDictList):
+        result = list()
+        threadList = self.connectThreadPool(self.testSSRConnect, ssrDictList)
+        for thread in threadList:
+            result.append(thread.get())
+        return result
+
+    def startSpeedTest(self, ssrDictList):
+        result = list()
+        threadList = self.speedThreadPool(self.testSSRSpeed, ssrDictList)
+        for thread in threadList:
+            result.append(thread.get())
+        return result

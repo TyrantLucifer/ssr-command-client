@@ -12,7 +12,7 @@ def calculate(func):
         start = datetime.datetime.now()
         content = func(*args)
         end = datetime.datetime.now()
-        logger.info("Func - {0} Total time: {1}s".format(func.__name__, (end - start).microseconds / 100000))
+        logger.info("Func - {0} Total time: {1}s".format(func.__name__, (end - start).microseconds / 1000000))
         return content
     return main
 

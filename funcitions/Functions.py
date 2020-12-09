@@ -62,7 +62,7 @@ class Hanlder(object):
                 ping = float(ssrInfo['ping'])
             pingList.append(ping)
         index = pingList.index(min(pingList))
-        logger.info("select fast node id - {0} name - {1} ping - {2}ms".
+        logger.info("select fast node id - {0} name - {1} delay - {2}ms".
                     format(index, u.ssrInfoList[index]['remarks'], pingList[index]))
         self.start(id=index)
 
@@ -98,7 +98,7 @@ class Display(object):
             ssrTable.append(
                 id=ssrInfo['id'],
                 name=ssrInfo['remarks'],
-                ping=ssrInfo['ping'],
+                delay=ssrInfo['ping'],
                 connect=ssrInfo['connect'],
                 server=ssrInfo['server'],
                 port=ssrInfo['server_port'],

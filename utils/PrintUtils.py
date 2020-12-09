@@ -16,7 +16,7 @@ class DrawInfoListTable(object):
         header = [
             "id",
             "name",
-            "ping",
+            "delay",
             "connect",
             "server",
             "port",
@@ -30,7 +30,7 @@ class DrawInfoListTable(object):
             content=[
                 kwargs['id'],
                 kwargs['name'],
-                kwargs['ping'],
+                kwargs['delay'],
                 kwargs['connect'],
                 kwargs['server'],
                 kwargs['port'],

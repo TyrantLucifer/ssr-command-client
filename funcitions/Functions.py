@@ -10,6 +10,7 @@ settings = Setting(i.configFilePath)
 u = UpdateSubscribeUrl(i.ssrListJsonFile, settings.valueDict['subscribe_url'])
 h = ControlSSR()
 ssrTable = DrawInfoListTable()
+ssrSpeedTable = DrawSpeedTable()
 
 def isIDValid(func):
     def judge(*args, **kwargs):
@@ -88,7 +89,18 @@ class Update(object):
 
     def testSSRSpeed(self):
         ssrInfoList = s.startSpeedTest(u.ssrInfoList)
-        print(ssrInfoList)
+        for ssrInfo in ssrInfoList:
+            ssrSpeedTable.append(
+                id=ssrInfo['id'],
+                name=ssrInfo['remarks'],
+                download=ssrInfo['download'],
+                upload=ssrInfo['upload'],
+                server=ssrInfo['server'],
+                port=ssrInfo['server_port'],
+                method=ssrInfo['method']
+            )
+        ssrSpeedTable.print()
+
 
 
 

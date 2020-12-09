@@ -120,7 +120,7 @@ def daemon_start(pid_file, log_file):
     signal.signal(signal.SIG_IGN, signal.SIGHUP)
 
     # print('started')
-    logging.info('started')
+    logging.info('ShadowsocksR is started')
     os.kill(ppid, signal.SIGTERM)
 
     sys.stdin.close()
@@ -176,7 +176,7 @@ def daemon_stop(pid_file):
         logging.error('timed out when stopping pid %d', pid)
         sys.exit(1)
     # print('stopped')
-    logging.info('stopped')
+    logging.info('ShadowsocksR is stopped')
     os.unlink(pid_file)
 
 

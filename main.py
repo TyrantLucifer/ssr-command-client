@@ -44,7 +44,8 @@ def get_parser():
                         help="setting system pac proxy,only support on " + color.red('Ubuntu Desktop'))
     parser.add_argument("--close-system-proxy", action="store_true",
                         help="close system proxy,only support on " + color.red('Ubuntu Desktop'))
-    parser.add_argument("--setting-auto-start", action="store_true", help="setting ssr auto start, only support on " + color.red('Linux'))
+    # TODO
+    # parser.add_argument("--setting-auto-start", action="store_true", help="setting ssr auto start, only support on " + color.red('Linux'))
     return parser
 
 

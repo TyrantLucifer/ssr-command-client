@@ -33,7 +33,9 @@ class InitConfigDir(object):
                                             'ssr-list.json')
         self.ssrJsonFile = os.path.join(self.configDir,
                                         'config.json')
-        self.subscribeUrl = 'https://tyrantlucifer.com/ssr.txt'
+        self.pacFilePath = os.path.join(self.configDir,
+                                        'autoproxy.pac')
+        self.subscribeUrl = 'https://tyrantlucifer.com/ssr/ssr.txt'
         self.localAddress = '127.0.0.1'
         self.timeout = 300
         self.workers = 1

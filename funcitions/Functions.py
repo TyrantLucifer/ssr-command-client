@@ -1,7 +1,4 @@
 from utils.InitUtils import *
-from utils.HandleSSRUtils import *
-from utils.PrintUtils import *
-from utils.SSRTestUtils import *
 from utils.SettingUtils import *
 from utils.ParseUtils import *
 
@@ -25,6 +22,7 @@ def is_id_valid(func):
 
     return judge
 
+
 def is_ubuntu(func):
     def judge(*args, **kwargs):
         if i.system != 'Ubuntu':
@@ -32,7 +30,9 @@ def is_ubuntu(func):
             sys.exit(1)
         else:
             func(*args, **kwargs)
+
     return judge
+
 
 class Handler(object):
 
@@ -89,7 +89,15 @@ class Handler(object):
 
     @is_ubuntu
     def openPacProxy(self):
-        pass
+        logger.info("start to create pac file, it will take a lot of time")
+        result = requests.get('https://tyrantlucifer.com/ssr/autoproxy.pac')
+        result.encoding = 'utf-8'
+        with open(i.pacFilePath, 'w', encoding='utf-8') as file:
+            file.write(result.text)
+        logger.info('generate pac file successfully')
+        cmd = "gsettings set org.gnome.system.proxy autoconfig-url file://{0}".format(i.pacFilePath)
+        os.system(cmd)
+        logger.info('open pac proxy - {0}:{1}'.format(settings.local_address, 1080))
 
     @is_ubuntu
     def closeProxy(self):
@@ -195,9 +203,6 @@ class Display(object):
             )
         ssrTable.print()
 
-    def displaySSRSpeedList(self):
-        pass
-
     def displaySuscribeUrl(self):
         for url in u.urlList:
             color.print(url, 'blue')
@@ -206,9 +211,9 @@ class Display(object):
         color.print(settings.local_address, 'blue')
 
     @is_id_valid
-    def displaySSRJson(self, id):
-        i.createJsonFile(u.ssrInfoList[id])
-        color.print(json.dumps(u.ssrInfoList[id], ensure_ascii=False, indent=4),
+    def displaySSRJson(self, ssr_id):
+        i.createJsonFile(u.ssrInfoList[ssr_id])
+        color.print(json.dumps(u.ssrInfoList[ssr_id], ensure_ascii=False, indent=4),
                     'yellow')
 
     def parseSSRUrl(self, ssrUrl):
@@ -216,6 +221,15 @@ class Display(object):
         ssrInfo = s.testSSRConnect(ssrInfo)
         color.print(json.dumps(ssrInfo, ensure_ascii=False, indent=4),
                     'yellow')
+
+    def displayVersion(self):
+        logger.info("start get version from cloud, it will take a lot of time")
+        result = requests.get('https://tyrantlucifer.com/ssr/version.json')
+        result.encoding = 'utf-8'
+        version = result.json()['version']
+        tips_message = result.json()['tips_message']
+        logger.info("Current version: {0}".format(version))
+        logger.info(tips_message)
 
     @is_id_valid
     def printQrCode(self, ssr_id):

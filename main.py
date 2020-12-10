@@ -14,15 +14,15 @@ h = Hanlder()
 def get_parser():
     parser = argparse.ArgumentParser(description="The ssr command client based Python.")
     parser.add_argument("-l", "--list", action="store_true", help="show ssr list")
-    parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int, help="assign local proxy port,use with -c or --fast-node")
+    parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int,
+                        help="assign local proxy port,use with -s")
     parser.add_argument("-s", "--start", metavar="ssr_id", type=int,help="start ssr proxy")
     parser.add_argument("-S", "--stop", default=0, metavar="ssr_id", type=int, help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
-    parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
     parser.add_argument("--test-speed", action="store_true", help="test ssr nodes download and upload speed")
-    parser.add_argument("--fast-node", action="store_true", help="generate fast ssr config json")
+    parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
     parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")
     parser.add_argument("--list-url", action="store_true", help="list ssr subscribe url")
@@ -46,8 +46,6 @@ def main():
         d.displaySSRList()
     elif args.update:
         u.updateSubscribe()
-    elif args.config:
-        pass
     elif args.fast_node:
         h.startFastNode()
     elif args.start:
@@ -71,7 +69,7 @@ def main():
     elif args.parse_url:
         d.parseSSRUrl(args.parse_url)
     elif args.add_ssr:
-        pass
+        u.addSSRNode(args.add_ssr)
     elif args.test_again:
         pass
     elif args.print_qrcode:

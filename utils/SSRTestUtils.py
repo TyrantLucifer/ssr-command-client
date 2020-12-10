@@ -90,6 +90,7 @@ class SSRSpeedTest(object):
 
         return ssrDict
 
+    @calculate
     def connectThreadPool(self, func, args):
         threadList = list()
         pool = Pool(len(args))
@@ -100,6 +101,7 @@ class SSRSpeedTest(object):
         pool.join()
         return threadList
 
+    @calculate
     def speedThreadPool(self, func, args):
         port = 60000
         threadList = list()
@@ -120,6 +122,7 @@ class SSRSpeedTest(object):
             result.append(thread.get())
         return result
 
+    @calculate
     def startSpeedTest(self, ssrDictList):
         result = list()
         threadList = self.speedThreadPool(self.testSSRSpeed, ssrDictList)

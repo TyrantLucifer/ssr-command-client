@@ -108,6 +108,12 @@ class Update(object):
             )
         ssrSpeedTable.print()
 
+    def addSSRNode(self, ssrUrl):
+        ssrInfo = ParseShadowsocksR.parseShadowsocksR(ssrUrl)
+        ssrInfo = s.testSSRConnect(ssrInfo)
+        ssrInfo['id'] = len(u.ssrInfoList)
+        u.ssrInfoList.append(ssrInfo)
+        u.updateCacheJson(i.ssrListJsonFile, u.ssrInfoList)
 
 
 

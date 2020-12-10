@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="增加显示版本功能，增加开启Ubuntu">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcitions/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcitions/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/SSRTestUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/SSRTestUtils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,9 @@
         <option value="https://github.com/TyrantLucifer/ssr-command-client.git" />
       </set>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Python3.7/Lib/argparse.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1lEd2DS4c0JfJxDy12jkq3GhuTc" />
   <component name="ProjectViewState">
@@ -125,6 +127,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -148,6 +151,9 @@
       <workItem from="1607390304026" duration="54331000" />
       <workItem from="1607514737845" duration="12367000" />
       <workItem from="1607567163625" duration="10591000" />
+      <workItem from="1607598429711" duration="13605000" />
+      <workItem from="1607612510421" duration="4617000" />
+      <workItem from="1607617478001" duration="8709000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -352,19 +358,96 @@
       <option name="project" value="LOCAL" />
       <updated>1607570784404</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="增加开启系统代理，打印二维码功能">
+      <created>1607605297289</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1607605297289</updated>
+    </task>
+    <task id="LOCAL-00031" summary="增加开启系统代理，打印二维码功能">
+      <created>1607605337305</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607605337305</updated>
+    </task>
+    <task id="LOCAL-00032" summary="增加开启系统代理，打印二维码功能">
+      <created>1607606293358</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1607606293358</updated>
+    </task>
+    <task id="LOCAL-00033" summary="增加requirement.txt">
+      <created>1607606328848</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1607606328848</updated>
+    </task>
+    <task id="LOCAL-00034" summary="增加显示版本功能，增加开启Ubuntu pac代理功能">
+      <created>1607611762928</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1607611762928</updated>
+    </task>
+    <task id="LOCAL-00035" summary="优化帮助信息显示">
+      <created>1607612550069</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1607612550069</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修复windows打包bug">
+      <created>1607619285633</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1607619285633</updated>
+    </task>
+    <task id="LOCAL-00037" summary="增加显示版本功能，增加开启Ubuntu">
+      <created>1607619305711</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1607619305711</updated>
+    </task>
+    <task id="LOCAL-00038" summary="修复windows打包多线程bug">
+      <created>1607619405941</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1607619405941</updated>
+    </task>
+    <task id="LOCAL-00039" summary="更新功能列表，去除开机自启功能">
+      <created>1607620652249</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1607620652249</updated>
+    </task>
+    <task id="LOCAL-00040" summary="更新README">
+      <created>1607626004843</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1607626004843</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
+    <option name="COLUMN_ID_ORDER">
       <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
       </list>
     </option>
   </component>
@@ -381,10 +464,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复windows获取家目录的bug，减少导入不必要的模块" />
-    <MESSAGE value="增加测速模块" />
-    <MESSAGE value="删除节点信息json" />
-    <MESSAGE value="更新unix启动ssr方，更新获取ssr订阅功能" />
     <MESSAGE value="更新测速模块，优化日志输出" />
     <MESSAGE value="增加speedtest模块" />
     <MESSAGE value="优化shadowsocksr日志输出" />
@@ -401,97 +480,19 @@
     <MESSAGE value="优化表格输出" />
     <MESSAGE value="增加测速功能" />
     <MESSAGE value="增加展示节点json信息功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加展示节点json信息功能" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1345" y="400" width="740" height="666" key="#Inspections" timestamp="1607234392772">
-      <screen x="0" y="28" width="3440" height="1412" />
-    </state>
-    <state x="1345" y="400" width="740" height="666" key="#Inspections/0.28.3440.1412@0.28.3440.1412" timestamp="1607234392772" />
-    <state x="1278" y="431" width="873" height="604" key="#Log_Highlighting_(ideolog)" timestamp="1607238360808">
-      <screen x="0" y="28" width="3440" height="1412" />
-    </state>
-    <state x="1278" y="431" width="873" height="604" key="#Log_Highlighting_(ideolog)/0.28.3440.1412@0.28.3440.1412" timestamp="1607238360808" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607397406216">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607397406216" />
-    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2" timestamp="1607570782113">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="542" y="85" width="1177" height="905" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607570782113" />
-    <state x="971" y="114" key="CommitChangelistDialog2/0.0.3440.1400@0.0.3440.1400" timestamp="1607526830733" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607322889755">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607322889755" />
-    <state width="1860" height="277" key="GridCell.Tab.0.bottom" timestamp="1607527183887">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607420255724" />
-    <state width="1860" height="277" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607527183887" />
-    <state width="1860" height="277" key="GridCell.Tab.0.center" timestamp="1607527183887">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607420255724" />
-    <state width="1860" height="277" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607527183887" />
-    <state width="1860" height="277" key="GridCell.Tab.0.left" timestamp="1607527183887">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607420255724" />
-    <state width="1860" height="277" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607527183887" />
-    <state width="1860" height="277" key="GridCell.Tab.0.right" timestamp="1607527183887">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607420255724" />
-    <state width="1860" height="277" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607527183887" />
-    <state width="1860" height="344" key="GridCell.Tab.1.bottom" timestamp="1607514650043">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1860" height="344" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1607514650043" />
-    <state width="1860" height="344" key="GridCell.Tab.1.center" timestamp="1607514650043">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1860" height="344" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1607514650043" />
-    <state width="1860" height="344" key="GridCell.Tab.1.left" timestamp="1607514650043">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1860" height="344" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1607514650043" />
-    <state width="1860" height="344" key="GridCell.Tab.1.right" timestamp="1607514650043">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state width="1860" height="344" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1607514650043" />
-    <state x="1640" y="290" key="RollbackChangesDialog" timestamp="1607523747594">
-      <screen x="0" y="0" width="3440" height="1400" />
-    </state>
-    <state x="1640" y="290" key="RollbackChangesDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1607523747594" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1607320134988">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607320134988" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1607570786951">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607570786951" />
-    <state x="989" y="322" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607526834270" />
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607567222781">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607567222781" />
-    <state x="1351" y="582" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400@0.0.3440.1400" timestamp="1607518063823" />
-    <state x="245" y="232" width="672" height="762" key="search.everywhere.popup" timestamp="1607569379432">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="245" y="232" width="672" height="762" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607569379432" />
-    <state x="439" y="312" width="1204" height="1026" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1607524859017" />
-    <state x="439" y="343" width="840" height="1034" key="search.everywhere.popup/0.28.3440.1412@0.28.3440.1412" timestamp="1607237222959" />
-    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607309101731">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607309101731" />
+    <MESSAGE value="增加开启系统代理，打印二维码功能" />
+    <MESSAGE value="增加requirement.txt" />
+    <MESSAGE value="增加显示版本功能，增加开启Ubuntu pac代理功能" />
+    <MESSAGE value="优化帮助信息显示" />
+    <MESSAGE value="修复windows打包bug" />
+    <MESSAGE value="增加显示版本功能，增加开启Ubuntu" />
+    <MESSAGE value="修复windows打包多线程bug" />
+    <MESSAGE value="更新功能列表，去除开机自启功能" />
+    <MESSAGE value="更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1607512839092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1607512839092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

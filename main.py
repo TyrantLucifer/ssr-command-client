@@ -100,5 +100,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # sss
+    multiprocessing.freeze_support()
     main()

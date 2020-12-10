@@ -4,16 +4,16 @@
 @Date: 2020/12/7 上午12:14
 '''
 
-import time
 import socks
 import socket
 import sys
+from . import multiprocessing_win
+
 from multiprocessing import Pool, Process
 import multiprocessing.pool
 
 sys.path.append('../')
 
-from logger.Logging import *
 from speedtest import speedtest
 from utils.PrintUtils import *
 from utils.HandleSSRUtils import *
@@ -92,6 +92,7 @@ class SSRSpeedTest(object):
 
     @calculate
     def connectThreadPool(self, func, args):
+        multiprocessing.freeze_support()
         threadList = list()
         pool = Pool(len(args))
         for arg in args:
@@ -103,6 +104,7 @@ class SSRSpeedTest(object):
 
     @calculate
     def speedThreadPool(self, func, args):
+        multiprocessing.freeze_support()
         port = 60000
         threadList = list()
         pool = MyPool(len(args))

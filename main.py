@@ -20,6 +20,7 @@ def get_parser():
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-c", "--config", metavar="ssr_node_id", type=int, help="generate ssr config json")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
+    parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
     parser.add_argument("--test-speed", action="store_true", help="test ssr nodes download and upload speed")
     parser.add_argument("--fast-node", action="store_true", help="generate fast ssr config json")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
@@ -85,6 +86,8 @@ def main():
         pass
     elif args.test_speed:
         u.testSSRSpeed()
+    elif args.display_json:
+        d.displaySSRJson(id=args.display_json)
     else:
         parser.print_help()
 

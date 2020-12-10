@@ -146,8 +146,9 @@ class Display(object):
     def displayLocalAddress(self):
         color.print(settings.valueDict['local_address'],
                     'blue')
-
+    @isIDValid
     def displaySSRJson(self, id):
+        i.createJsonFile(u.ssrInfoList[id])
         color.print(json.dumps(u.ssrInfoList[id], ensure_ascii=False, indent=4),
                     'yellow')
 

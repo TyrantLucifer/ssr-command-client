@@ -46,6 +46,7 @@ class ControlSSR(object):
             signal.signal(signal.SIGINT, int_handler)
             daemon.set_user(ssrDict.get('user', None))
             logger.info('ShadowsocksR is start on {0}:{1}'.format(args[0], args[1]))
+            logger.info('Press Ctrl+C to stop shadowsocksR')
             loop.run()
         except Exception as e:
             logger.error(e)

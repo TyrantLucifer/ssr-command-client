@@ -81,5 +81,5 @@ class InitConfigDir(object):
 
     def createJsonFile(self, ssrDict):
         content = json.dumps(ssrDict, ensure_ascii=False, indent=4)
-        with open(self.ssrJsonFile, 'w') as file:
+        with open(self.ssrJsonFile, 'w', encoding='utf-8') as file:
             file.write(content)

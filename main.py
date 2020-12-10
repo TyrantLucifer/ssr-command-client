@@ -26,7 +26,7 @@ def get_parser():
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
-    parser.add_argument("--test-speed", action="store_true", help="test ssr nodes download and upload speed")
+    parser.add_argument("--test-speed", action="store_true", help="test all ssr nodes download and upload speed")
     parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
     parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")

@@ -4,6 +4,7 @@
 @Date: 2020/12/6 下午6:24
 '''
 
+import qrcode
 from prettytable import PrettyTable
 from colorama import init, Fore
 
@@ -113,3 +114,20 @@ class Colored(object):
             print(self.white(text))
         if color == 'blue':
             print(self.blue(text))
+
+class PrintQrcode(object):
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def print_qrcode(string):
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=3,
+            border=1,
+        );
+        qr.add_data(string)
+        qr.make(fit=True)
+        qr.print_ascii(tty=True, invert=True)

@@ -12,46 +12,56 @@ h = ControlSSR()
 ssrTable = DrawInfoListTable()
 ssrSpeedTable = DrawSpeedTable()
 
-def isIDValid(func):
+
+def is_id_valid(func):
     def judge(*args, **kwargs):
-        if kwargs['id'] < 0 or kwargs['id'] >= len(u.ssrInfoList):
+        if kwargs['ssr_id'] < 0 or kwargs['ssr_id'] >= len(u.ssrInfoList):
             logger.error('ssr id error')
             sys.exit(1)
         else:
             ssrLogger.addHandler(streamHandler)
             func(*args, **kwargs)
             ssrLogger.removeFilter(streamHandler)
+
     return judge
 
+def is_ubuntu(func):
+    def judge(*args, **kwargs):
+        if i.system != 'Ubuntu':
+            logger.info("Current OS - {0} {1} only support Ubuntu".format(i.system, func.__name__))
+            sys.exit(1)
+        else:
+            func(*args, **kwargs)
+    return judge
 
-class Hanlder(object):
+class Handler(object):
 
     def __init__(self):
         pass
 
-    @isIDValid
-    def start(self, id, port=1080):
+    @is_id_valid
+    def start(self, ssr_id, port=1080):
         if i.platform == 'win32':
-            h.startOnWindows(u.ssrInfoList[id], settings.local_address,
+            h.startOnWindows(u.ssrInfoList[ssr_id], settings.local_address,
                              port,
                              settings.timeout,
                              settings.workers)
         else:
-            h.startOnUnix(u.ssrInfoList[id], settings.local_address,
+            h.startOnUnix(u.ssrInfoList[ssr_id], settings.local_address,
                           port,
                           settings.timeout,
                           settings.workers,
                           i.pidFilePath,
                           i.logFilePath)
 
-    @isIDValid
-    def stop(self, id, port=1080):
-        h.stopOnUnix(u.ssrInfoList[id], settings.local_address,
-                      port,
-                      settings.timeout,
-                      settings.workers,
-                      i.pidFilePath,
-                      i.logFilePath)
+    @is_id_valid
+    def stop(self, ssr_id, port=1080):
+        h.stopOnUnix(u.ssrInfoList[ssr_id], settings.local_address,
+                     port,
+                     settings.timeout,
+                     settings.workers,
+                     i.pidFilePath,
+                     i.logFilePath)
         os.remove(i.pidFilePath)
 
     def startFastNode(self):
@@ -65,7 +75,28 @@ class Hanlder(object):
         index = pingList.index(min(pingList))
         logger.info("select fast node id - {0} name - {1} delay - {2}ms".
                     format(index, u.ssrInfoList[index]['remarks'], pingList[index]))
-        self.start(id=index)
+        self.start(ssr_id=index)
+
+    @is_ubuntu
+    def openGlobalProxy(self):
+        cmd = "gsettings set org.gnome.system.proxy mode 'manual'"
+        os.system(cmd)
+        cmd = "gsettings set org.gnome.system.proxy.socks host {0}".format(settings.local_address)
+        os.system(cmd)
+        cmd = "gsettings set org.gnome.system.proxy.socks port {0}".format(1080)
+        os.system(cmd)
+        logger.info("open global socks5 proxy - {0}:{1}".format(settings.local_address, 1080))
+
+    @is_ubuntu
+    def openPacProxy(self):
+        pass
+
+    @is_ubuntu
+    def closeProxy(self):
+        cmd = "gsettings set org.gnome.system.proxy mode 'none'"
+        os.system(cmd)
+        logger.info("close system proxy")
+
 
 class Update(object):
 
@@ -92,11 +123,11 @@ class Update(object):
         for ssrInfo in ssrInfoList:
             if ssrInfo['connect']:
                 download = color.green(str(ssrInfo['download']))
-                upload= color.green(str(ssrInfo['upload']))
+                upload = color.green(str(ssrInfo['upload']))
             else:
                 download = color.red(ssrInfo['download'])
-                upload= color.red(ssrInfo['upload'])
-                
+                upload = color.red(ssrInfo['upload'])
+
             ssrSpeedTable.append(
                 id=ssrInfo['id'],
                 name=ssrInfo['remarks'],
@@ -115,6 +146,28 @@ class Update(object):
         u.ssrInfoList.append(ssrInfo)
         u.updateCacheJson(i.ssrListJsonFile, u.ssrInfoList)
 
+    def addSSRSubcribeUrl(self, subscribeUrl):
+        settings.setValue('subscribe_url',
+                          settings.subscribe_url + '|' + subscribeUrl)
+        logger.info('add subscribe_url url: {0}'.format(subscribeUrl))
+
+    def removeSSRSubcribeUrl(self, subcribeUrl):
+        if subcribeUrl in u.urlList:
+            u.urlList.remove(subcribeUrl)
+            settings.setValue('subscribe_url',
+                              '|'.join(u.urlList))
+            logger.info("remove subcribeUrl - {0}".
+                        format(subcribeUrl))
+        else:
+            logger.error("subscribeUrl - {0} is not existed".
+                         format(subcribeUrl))
+
+    @is_id_valid
+    def testSSRNodeConnect(self, ssr_id):
+        u.ssrInfoList[ssr_id] = s.testSSRConnect(u.ssrInfoList[ssr_id])
+        logger.info('test node successfully, connect: {0} delay: {1}'.
+                    format(u.ssrInfoList[ssr_id]['connect'], u.ssrInfoList[ssr_id]['ping']))
+        u.updateCacheJson(i.ssrListJsonFile, u.ssrInfoList)
 
 
 class Display(object):
@@ -150,9 +203,9 @@ class Display(object):
             color.print(url, 'blue')
 
     def displayLocalAddress(self):
-        color.print(settings.valueDict['local_address'],
-                    'blue')
-    @isIDValid
+        color.print(settings.local_address, 'blue')
+
+    @is_id_valid
     def displaySSRJson(self, id):
         i.createJsonFile(u.ssrInfoList[id])
         color.print(json.dumps(u.ssrInfoList[id], ensure_ascii=False, indent=4),
@@ -163,3 +216,7 @@ class Display(object):
         ssrInfo = s.testSSRConnect(ssrInfo)
         color.print(json.dumps(ssrInfo, ensure_ascii=False, indent=4),
                     'yellow')
+
+    @is_id_valid
+    def printQrCode(self, ssr_id):
+        PrintQrcode.print_qrcode(u.ssrInfoList[ssr_id]['ssr_url'])

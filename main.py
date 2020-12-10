@@ -9,14 +9,15 @@ from funcitions.Functions import *
 
 u = Update()
 d = Display()
-h = Hanlder()
+h = Handler()
+
 
 def get_parser():
     parser = argparse.ArgumentParser(description="The ssr command client based Python.")
     parser.add_argument("-l", "--list", action="store_true", help="show ssr list")
     parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int,
                         help="assign local proxy port,use with -s")
-    parser.add_argument("-s", "--start", metavar="ssr_id", type=int,help="start ssr proxy")
+    parser.add_argument("-s", "--start", metavar="ssr_id", type=int, help="start ssr proxy")
     parser.add_argument("-S", "--stop", default=0, metavar="ssr_id", type=int, help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
@@ -33,11 +34,15 @@ def get_parser():
     parser.add_argument("--add-ssr", metavar="ssr_url", help="add ssr node")
     parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
     parser.add_argument("--print-qrcode", metavar="ssr_node_id", type=int, help="print ssr node qrcode")
-    parser.add_argument("--setting-global-proxy", action="store_true", help="setting system global proxy,only support Ubuntu Desktop")
-    parser.add_argument("--setting-pac-proxy", action="store_true", help="setting system pac proxy,only support Ubuntu Desktop")
-    parser.add_argument("--close-system-proxy", action="store_true", help="close system proxy,only support Ubuntu Desktop")
+    parser.add_argument("--setting-global-proxy", action="store_true",
+                        help="setting system global proxy,only support Ubuntu Desktop")
+    parser.add_argument("--setting-pac-proxy", action="store_true",
+                        help="setting system pac proxy,only support Ubuntu Desktop")
+    parser.add_argument("--close-system-proxy", action="store_true",
+                        help="close system proxy,only support Ubuntu Desktop")
     parser.add_argument("--setting-auto-start", action="store_true", help="setting ssr auto start")
     return parser
+
 
 def main():
     parser = get_parser()
@@ -49,9 +54,9 @@ def main():
     elif args.fast_node:
         h.startFastNode()
     elif args.start:
-        h.start(id=args.start, port=args.port)
+        h.start(ssr_id=args.start, port=args.port)
     elif args.stop:
-        h.stop(id=args.stop, port=args.port)
+        h.stop(ssr_id=args.stop, port=args.port)
     elif args.version:
         pass
     elif args.setting_url:
@@ -61,9 +66,9 @@ def main():
     elif args.list_url:
         d.displaySuscribeUrl()
     elif args.add_url:
-        pass
+        u.addSSRSubcribeUrl(args.add_url)
     elif args.remove_url:
-        pass
+        u.removeSSRSubcribeUrl(args.remove_url)
     elif args.list_address:
         d.displayLocalAddress()
     elif args.parse_url:
@@ -71,15 +76,15 @@ def main():
     elif args.add_ssr:
         u.addSSRNode(args.add_ssr)
     elif args.test_again:
-        pass
+        u.testSSRNodeConnect(ssr_id=args.test_again)
     elif args.print_qrcode:
-        pass
+        d.printQrCode(args.print_qrcode)
     elif args.setting_global_proxy:
-        pass
+        h.openGlobalProxy()
     elif args.setting_pac_proxy:
-        pass
+        h.openPacProxy()
     elif args.close_system_proxy:
-        pass
+        h.closeProxy()
     elif args.setting_auto_start:
         pass
     elif args.test_speed:
@@ -88,6 +93,7 @@ def main():
         d.displaySSRJson(id=args.display_json)
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     # sss

@@ -101,7 +101,7 @@ class ParseShadowsocksR(object):
 class UpdateSubscribeUrl(object):
 
     def __init__(self, cacheJsonPath, subcribeUrl):
-        self.urlList = subcribeUrl.split(',')
+        self.urlList = subcribeUrl.split('|')
         self.resultList = list()
         self.ssrInfoList = list()
         self.getNodeInfoList(cacheJsonPath, self.urlList)

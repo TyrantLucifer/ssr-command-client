@@ -9,12 +9,13 @@ import os
 import sys
 import json
 import configparser
-
+import platform
 
 class InitConfigDir(object):
 
     def __init__(self):
         self.platform = sys.platform
+        self.system = platform.system()
         self.homeDir = os.path.expanduser('~')
         self.configDir = os.path.join(self.homeDir,
                                       '.ssr-command-client')

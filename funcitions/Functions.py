@@ -228,7 +228,13 @@ class Display(object):
         result.encoding = 'utf-8'
         version = result.json()['version']
         tips_message = result.json()['tips_message']
-        logger.info("Current version: {0}".format(version))
+        if version == i.version:
+            logger.info("Current version {0} is newest. Please enjoy.".format(version))
+        else:
+            logger.info("Current version: {0}".format(i.version))
+            logger.info("Newest version: {0}, "
+                        "you can download on https://github.com/TyrantLucifer/ssr-command-client/releases/tag/v{1}".
+                        format(version, version))
         logger.info(tips_message)
 
     @is_id_valid

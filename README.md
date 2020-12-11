@@ -13,6 +13,7 @@
 - 支持测试ShadowsocksR节点是否被tcp阻断(多线程)
 - 支持ShadowsocksR节点测速(多线程)
 - 支持打印ShadowsocksR节点Json和二维码
+- 整合ShadowsocksR源码到项目中
 - 暂时不支持`ipv6`ShadowsocksR节点，解析时会默认屏蔽
 
 ## 安装方式

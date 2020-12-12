@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="增加显示版本功能，增加开启Ubuntu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcitions/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcitions/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +35,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="aea6278838834da968375083fc59474293746064" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -50,6 +43,9 @@
         <option value="https://github.com/TyrantLucifer/ssr-command-client.git" />
       </set>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Python3.7/Lib/argparse.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1lEd2DS4c0JfJxDy12jkq3GhuTc" />
   <component name="ProjectViewState">
@@ -129,7 +125,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -156,8 +152,7 @@
       <workItem from="1607598429711" duration="13605000" />
       <workItem from="1607612510421" duration="4617000" />
       <workItem from="1607617478001" duration="8709000" />
-      <workItem from="1607649693974" duration="220000" />
-      <workItem from="1607650085708" duration="4659000" />
+      <workItem from="1607761770837" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -439,18 +434,11 @@
       <option name="project" value="LOCAL" />
       <updated>1607626004843</updated>
     </task>
-    <task id="LOCAL-00041" summary="更新README">
-      <created>1607650373365</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1607650373365</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
@@ -502,18 +490,8 @@
     <MESSAGE value="更新README" />
     <option name="LAST_COMMIT_MESSAGE" value="更新README" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="542" y="85" key="CommitChangelistDialog2" timestamp="1607650370751">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="542" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607650370751" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1607650441389">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607650441389" />
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1607512839092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1607512839092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

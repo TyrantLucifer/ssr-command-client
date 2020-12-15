@@ -22,7 +22,7 @@
 ```shell
 git clone https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
-(pip3) install -r requirement.txt
+python(pip3) install -r requirement.txt
 ```
 
 - 下载二进制文件

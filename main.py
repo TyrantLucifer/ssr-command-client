@@ -90,8 +90,6 @@ def main():
         h.openPacProxy()
     elif args.close_system_proxy:
         h.closeProxy()
-    elif args.setting_auto_start:
-        h.openPacProxy()
     elif args.test_speed:
         u.testSSRSpeed()
     elif args.display_json:

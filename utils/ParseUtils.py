@@ -146,7 +146,8 @@ class UpdateSubscribeUrl(object):
         for urlResult in self.resultList:
             for ssrUrl in urlResult:
                 if ssrUrl:
-                    self.ssrInfoList.append(ParseShadowsocksR.parseShadowsocksR(ssrUrl))
+                    if ParseShadowsocksR.parseShadowsocksR(ssrUrl):
+                        self.ssrInfoList.append(ParseShadowsocksR.parseShadowsocksR(ssrUrl))
         for ssrInfo in self.ssrInfoList:
             ssrInfo['id'] = self.ssrInfoList.index(ssrInfo)
         content = json.dumps(self.ssrInfoList, ensure_ascii=False, indent=4)

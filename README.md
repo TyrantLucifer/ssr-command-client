@@ -157,8 +157,10 @@ ip 查看ip归属地
 > 5. `fork`的大哥们能否在`fork`之前给个`star`
 
 ## 请作者喝个咖啡
-<img align="left" style="float:left;width:50%" src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" />
-<img align="right" style="float:right;width:50%" src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" />
+
+<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" style="height: 300px; width: 300px;" />
+
+<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" style="height: 300px; width: 300px; float: right" />
 
 ## Tips
 

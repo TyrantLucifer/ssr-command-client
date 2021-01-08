@@ -237,6 +237,28 @@ class Display(object):
                         format(version, version))
         logger.info(tips_message)
 
+    @calculate
+    def upgrade(self):
+        logger.info("start get version from cloud, it will take a lot of time")
+        result = requests.get('https://tyrantlucifer.com/ssr/version.json')
+        result.encoding = 'utf-8'
+        version = result.json()['version']
+        if version == i.version:
+            logger.info("Current version {0} is newest. Please enjoy.".format(version))
+        else:
+            logger.info("Current version: {0}".format(i.version))
+            logger.info("Newest version: {0}".format(version))
+            logger.info("Start update ssr-command-client...")
+            if i.platform == 'win32':
+                file_name = 'ssr-command-client_windows_amd64.exe'
+            else:
+                file_name = 'ssr-command-client_linux_amd64'
+            r = requests.get('https://tyrantlucifer.com/ssr/releases/{0}'.format(file_name))
+            with open(os.path.join(i.homeDir, file_name), 'wb') as file:
+                file.write(r.content)
+            logger.info("Update success. Please enjoy it.")
+            logger.info("You can find binary file in {0}".format(i.homeDir))
+
     @is_id_valid
     def printQrCode(self, ssr_id):
         PrintQrcode.print_qrcode(u.ssrInfoList[ssr_id]['ssr_url'])

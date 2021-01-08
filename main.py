@@ -25,6 +25,7 @@ def get_parser():
     parser.add_argument("-S", "--stop", default=0, metavar="ssr_id", type=int, help="stop ssr proxy")
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
+    parser.add_argument("--upgrade", action="store_true", help="upgrade ssr command client")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
     parser.add_argument("--test-speed", action="store_true", help="test all ssr nodes download and upload speed")
     parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
@@ -94,6 +95,8 @@ def main():
         u.testSSRSpeed()
     elif args.display_json:
         d.displaySSRJson(ssr_id=args.display_json)
+    elif args.upgrade:
+        d.upgrade()
     else:
         parser.print_help()
 

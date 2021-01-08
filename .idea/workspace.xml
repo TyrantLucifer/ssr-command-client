@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="更新README">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/funcitions/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcitions/Functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -155,7 +156,10 @@
       <workItem from="1607612510421" duration="4617000" />
       <workItem from="1607617478001" duration="8709000" />
       <workItem from="1607761770837" duration="48000" />
-      <workItem from="1607762938292" duration="901000" />
+      <workItem from="1607762938292" duration="1916000" />
+      <workItem from="1607859778681" duration="175000" />
+      <workItem from="1610101957980" duration="537000" />
+      <workItem from="1610102925215" duration="1310000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -444,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607762982335</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="移除自动启动功能，修复测速bug">
+      <created>1607764015688</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1607764015688</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +484,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新测速模块，优化日志输出" />
     <MESSAGE value="增加speedtest模块" />
     <MESSAGE value="优化shadowsocksr日志输出" />
     <MESSAGE value="修复多线程测速模块" />
@@ -498,7 +508,8 @@
     <MESSAGE value="修复windows打包多线程bug" />
     <MESSAGE value="更新功能列表，去除开机自启功能" />
     <MESSAGE value="更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
+    <MESSAGE value="移除自动启动功能，修复测速bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="移除自动启动功能，修复测速bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

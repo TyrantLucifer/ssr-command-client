@@ -14,7 +14,7 @@ import platform
 class InitConfigDir(object):
 
     def __init__(self):
-        self.version = '2.0.1'
+        self.version = '2.0.2'
         self.platform = sys.platform
         self.system = platform.system()
         self.homeDir = os.path.expanduser('~')

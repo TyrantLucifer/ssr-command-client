@@ -160,7 +160,7 @@ ip 查看ip归属地
 
 > 有意愿献爱心的小伙伴，务必将github账号写入捐款备注哦，谢谢大家
 
-| wechat                                                                                                     | alipay                                                                                                       |
+| alipay                                                                                                     | wechat                                                                                                       |
 | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | <a href='#支持开源'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" height="150" width="150" /></a> | <a href='#支持开源'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" height="150" width="150" /></a> |
 

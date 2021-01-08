@@ -26,9 +26,9 @@ python(pip3) install -r requirement.txt
 ```
 
 - 下载二进制文件
-> [Linux - ssr-command-client](https://github.com/TyrantLucifer/ssr-command-client/releases/download/v2.0/ssr-command-client_linux_amd64)
+> [Linux - ssr-command-client](https://github.com/TyrantLucifer/ssr-command-client/releases/download/v2.0.2/ssr-command-client_linux_amd64)
 
-> [Windows - ssr-command-client](https://github.com/TyrantLucifer/ssr-command-client/releases/download/v2.0/ssr-command-client_windows_amd64.exe)
+> [Windows - ssr-command-client](https://github.com/TyrantLucifer/ssr-command-client/releases/download/v2.0.2/ssr-command-client_windows_amd64.exe)
 
 ## 使用方法
 ```angular2html

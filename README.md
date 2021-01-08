@@ -34,7 +34,7 @@ python(pip3) install -r requirement.txt
 ```angular2html
 usage: ssr-commnd-client [-h] [-l] [-p local_port] [-s ssr_id] [-S ssr_id] [-u] [-v]
                          [--display-json ssr_id] [--test-speed] [--fast-node]
-                         [--setting-url ssr_subscribe_url]
+                         [--setting-url ssr_subscribe_url] [--upgrade]
                          [--setting-address ssr_local_address] [--list-url]
                          [--add-url ssr_subscribe_url] [--remove-url ssr_subscribe_url]
                          [--list-address] [--parse-url ssr_url] [--add-ssr ssr_url]
@@ -61,6 +61,8 @@ optional arguments:
                只在Linux系统中生效
 
 -u --update 更新SSR订阅列表
+
+--upgrade 更新ssr-command-client,下载最新版本二进制文件到家目录
 
 --fast-node 根据节点真连接延迟自动选择最优节点，并在本地启动代理
 

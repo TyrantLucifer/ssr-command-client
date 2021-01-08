@@ -158,9 +158,9 @@ ip 查看ip归属地
 
 ## 请作者喝个咖啡
 
-<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" style="height: 300px; width: 300px;" />
+<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" style="height: 100px; width: 100px;" />
 
-<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" style="height: 300px; width: 300px; float: right" />
+<img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" style="height: 100px; width: 100px; float: right" />
 
 ## Tips
 

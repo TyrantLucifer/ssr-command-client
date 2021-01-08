@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +157,7 @@
       <workItem from="1607859778681" duration="175000" />
       <workItem from="1610101957980" duration="537000" />
       <workItem from="1610102925215" duration="3061000" />
-      <workItem from="1610116642388" duration="1351000" />
+      <workItem from="1610116642388" duration="1698000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -482,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610117075606</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="更新README">
+      <created>1610118253743</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1610118253743</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

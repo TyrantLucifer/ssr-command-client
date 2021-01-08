@@ -157,7 +157,8 @@
       <workItem from="1607762938292" duration="1916000" />
       <workItem from="1607859778681" duration="175000" />
       <workItem from="1610101957980" duration="537000" />
-      <workItem from="1610102925215" duration="2235000" />
+      <workItem from="1610102925215" duration="3061000" />
+      <workItem from="1610116642388" duration="407000" />
     </task>
     <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
       <created>1607305962586</created>
@@ -467,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610104880150</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="更新README">
+      <created>1610105168492</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1610105168492</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

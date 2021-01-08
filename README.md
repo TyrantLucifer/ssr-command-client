@@ -156,6 +156,10 @@ ip 查看ip归属地
 > 4. 因为最近工作和学习原因，公众号很少更新，流失了很多粉丝，但也无可奈何，希望大家能多多理解，不要取关，以后会更新更多精品内容。
 > 5. `fork`的大哥们能否在`fork`之前给个`star`
 
+## 请作者喝个咖啡
+<img align="left" style="float:left;width:50%" src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/alipay.jpg" />
+<img align="right" style="float:right;width:50%" src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat-pay.png" />
+
 ## Tips
 
 如果有好的建议，欢迎发邮件给我，或者关注下方我的个人微信公众号在后台留言，或者加qq群`764374820`反馈

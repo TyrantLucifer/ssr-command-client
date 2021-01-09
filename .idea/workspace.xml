@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="" />
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,28 +158,8 @@
       <workItem from="1607859778681" duration="175000" />
       <workItem from="1610101957980" duration="537000" />
       <workItem from="1610102925215" duration="3061000" />
-      <workItem from="1610116642388" duration="2065000" />
-    </task>
-    <task id="LOCAL-00001" summary="修复windows获取家目录的bug，减少导入不必要的模块">
-      <created>1607305962586</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1607305962586</updated>
-    </task>
-    <task id="LOCAL-00002" summary="修复windows获取家目录的bug，减少导入不必要的模块">
-      <created>1607306060331</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1607306060331</updated>
-    </task>
-    <task id="LOCAL-00003" summary="增加测速模块">
-      <created>1607335006333</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1607335006333</updated>
+      <workItem from="1610116642388" duration="2585000" />
+      <workItem from="1610172399464" duration="23000" />
     </task>
     <task id="LOCAL-00004" summary="增加测速模块">
       <created>1607396689666</created>
@@ -500,7 +483,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610118429293</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="更新README">
+      <created>1610118724705</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1610118724706</updated>
+    </task>
+    <task id="LOCAL-00051" summary="更新README">
+      <created>1610118801005</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610118801005</updated>
+    </task>
+    <task id="LOCAL-00052" summary="更新README">
+      <created>1610118857547</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1610118857547</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

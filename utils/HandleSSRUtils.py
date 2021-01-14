@@ -15,7 +15,7 @@ class ControlSSR(object):
     def __init__(self):
         pass
 
-    def startOnWindows(self, ssrDict, *args, **kwargs):
+    def startOnWindows(self, ssrDict, *args):
         ssrDict['local_address'] = args[0]
         ssrDict['local_port'] = args[1]
         ssrDict['timeout'] = args[2]
@@ -47,12 +47,8 @@ class ControlSSR(object):
             daemon.set_user(ssrDict.get('user', None))
             logger.info('ShadowsocksR is start on {0}:{1}'.format(args[0], args[1]))
             logger.info('Press Ctrl+C to stop shadowsocksR')
-            if 'event' in kwargs:
-                kwargs['event'].set()
             loop.run()
         except Exception as e:
-            if 'event' in kwargs:
-                kwargs['event'].set()
             logger.error(e)
             sys.exit(1)
 

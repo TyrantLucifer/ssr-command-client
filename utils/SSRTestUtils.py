@@ -9,7 +9,7 @@ import socket
 import sys
 from . import multiprocessing_win
 
-from multiprocessing import Pool, Process
+from multiprocessing import Event, Pool, Process
 import multiprocessing.pool
 
 sys.path.append('../')
@@ -29,8 +29,14 @@ class NoDaemonProcess(multiprocessing.Process):
         pass
     daemon = property(_get_daemon, _set_daemon)
 
-class MyPool(multiprocessing.pool.Pool):
+class NoDaemonContext(type(multiprocessing.get_context())):
     Process = NoDaemonProcess
+
+class MyPool(multiprocessing.pool.Pool):
+    def __init__(self, *args, **kwargs):
+        kwargs['context'] = NoDaemonContext()
+        super(MyPool, self).__init__(*args, **kwargs)
+
 
 class SSRSpeedTest(object):
 
@@ -64,9 +70,11 @@ class SSRSpeedTest(object):
 
     def testSSRSpeed(self, ssrDict, *args):
         if ssrDict['connect']:
-            p = Process(target=c.startOnWindows, args=(ssrDict, *args))
+            event = Event()
+            p = Process(target=c.startOnWindows, args=(ssrDict, *args), kwargs={'event': event})
             p.daemon = True
             p.start()
+            event.wait(60)
             socks.set_default_proxy(socks.SOCKS5, args[0], args[1])
             socket.socket = socks.socksocket
             try:

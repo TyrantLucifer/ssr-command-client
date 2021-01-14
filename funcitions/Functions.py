@@ -133,8 +133,8 @@ class Update(object):
                 download = color.green(str(ssrInfo['download']))
                 upload = color.green(str(ssrInfo['upload']))
             else:
-                download = color.red(ssrInfo['download'])
-                upload = color.red(ssrInfo['upload'])
+                download = color.red(str(ssrInfo['download']))
+                upload = color.red(str(ssrInfo['upload']))
 
             ssrSpeedTable.append(
                 id=ssrInfo['id'],

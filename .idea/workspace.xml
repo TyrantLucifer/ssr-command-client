@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="更新README,用爱发电">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcitions/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcitions/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/InitUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/InitUtils.py" afterDir="false" />
-    </list>
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,14 +168,7 @@
       <workItem from="1610452590061" duration="36000" />
       <workItem from="1610630441060" duration="10466000" />
       <workItem from="1612087030591" duration="14000" />
-      <workItem from="1612088579654" duration="8197000" />
-    </task>
-    <task id="LOCAL-00005" summary="删除节点信息json">
-      <created>1607397436875</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1607397436875</updated>
+      <workItem from="1612088579654" duration="8691000" />
     </task>
     <task id="LOCAL-00006" summary="删除节点信息json">
       <created>1607409335373</created>
@@ -520,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610172439904</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="增加新功能，可支持生成clash配置文件">
+      <created>1612096884968</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1612096884969</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +542,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复多线程测速模块" />
     <MESSAGE value="增加funtions模块" />
     <MESSAGE value="修复ssr启动bug" />
     <MESSAGE value="增加主模块" />
@@ -574,7 +566,8 @@
     <MESSAGE value="增加更新功能" />
     <MESSAGE value="更新README" />
     <MESSAGE value="更新README,用爱发电" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README,用爱发电" />
+    <MESSAGE value="增加新功能，可支持生成clash配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加新功能，可支持生成clash配置文件" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

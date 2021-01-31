@@ -262,3 +262,136 @@ class Display(object):
     @is_id_valid
     def printQrCode(self, ssr_id):
         PrintQrcode.print_qrcode(u.ssrInfoList[ssr_id]['ssr_url'])
+
+
+class GenerateConfig(object):
+
+    emojis = {
+        "China": "🇨🇳",
+        "Hongkong": "🇭🇰",
+        "Taiwan": "🇹🇼",
+        "Japan": "🇯🇵",
+        "Singapore": "🇸🇬",
+        "America": "🇺🇸",
+        "Korea": "🇰🇷",
+        "Others": "🏳‍🌈"
+    }
+
+    def __init__(self):
+        pass
+
+    def __readClashExampleConfig(self):
+        url = "https://tyrantlucifer.com/ssr/clashExample.yaml"
+        result = requests.get(url)
+        result.encoding = 'utf-8'
+        with open(i.clashConfigFilePath, 'w', encoding='utf-8') as file:
+            file.write(result.text)
+        with open(i.clashConfigFilePath, 'r', encoding='utf-8') as file:
+            yaml_dict = yaml.safe_load(file)
+        return yaml_dict
+
+    def __convertCountry(self, ssr_info_dict):
+        remarks = ssr_info_dict['remarks']
+        if re.search(r'.*日.*|.*日本.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['Japan'] + ' ' + remarks
+            ssr_info_dict['country'] = "Japan"
+        elif re.search(r'.*港.*|.*香港.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['Hongkong'] + ' ' + remarks
+            ssr_info_dict['country'] = "Hongkong"
+        elif re.search(r'.*湾.*|.*台湾.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['Taiwan'] + ' ' + remarks
+            ssr_info_dict['country'] = "Taiwan"
+        elif re.search(r'.*新.*|.*新加坡.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['Singapore'] + ' ' + remarks
+            ssr_info_dict['country'] = "Singapore"
+        elif re.search(r'.*美.*|.*美国.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['America'] + ' ' + remarks
+            ssr_info_dict['country'] = "America"
+        elif re.search(r'.*韩.*|.*韩国.*', remarks):
+            ssr_info_dict['remarks'] = self.emojis['Korea'] + ' ' + remarks
+            ssr_info_dict['country'] = "Korea"
+        else:
+            ssr_info_dict['remarks'] = self.emojis['Others'] + ' ' + remarks
+            ssr_info_dict['country'] = "Others"
+
+    def generateClashProxyDict(self, ssr_info_dict):
+        clash_proxy_dict = dict()
+        clash_proxy_dict['server'] = ssr_info_dict['server']
+        clash_proxy_dict['name'] = ssr_info_dict['remarks']
+        clash_proxy_dict['port'] = ssr_info_dict['server_port']
+        clash_proxy_dict['type'] = "ssr"
+        clash_proxy_dict['cipher'] = ssr_info_dict['method']
+        clash_proxy_dict['password'] = ssr_info_dict['password']
+        clash_proxy_dict['protocol'] = ssr_info_dict['protocol']
+        clash_proxy_dict['obfs'] = ssr_info_dict['obfs']
+        clash_proxy_dict['protocol-param'] = ssr_info_dict['protocol_param']
+        clash_proxy_dict['obfs-param'] = ssr_info_dict['obfs_param']
+        return clash_proxy_dict
+
+    def generateClashConfig(self):
+        yaml_dict = self.__readClashExampleConfig()
+        proxy_list = list()
+        hk_proxy_dict = {
+            'name': 'HK',
+            'type': 'select',
+            'proxies': []
+        }
+        sg_proxy_dict = {
+            'name': 'SG',
+            'type': 'select',
+            'proxies': []
+        }
+        tw_proxy_dict = {
+            'name': 'TW',
+            'type': 'select',
+            'proxies': []
+        }
+        jp_proxy_dict = {
+            'name': 'JP',
+            'type': 'select',
+            'proxies': []
+        }
+        us_proxy_dict = {
+            'name': 'US',
+            'type': 'select',
+            'proxies': []
+        }
+        ko_proxy_dict = {
+            'name': 'KO',
+            'type': 'select',
+            'proxies': []
+        }
+        other_proxy_dict = {
+            'name': 'OTHER',
+            'type': 'select',
+            'proxies': []
+        }
+        for ssr_info_dict in u.ssrInfoList:
+            self.__convertCountry(ssr_info_dict)
+            if ssr_info_dict['country'] == 'Japan':
+                jp_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            elif ssr_info_dict['country'] == 'Hongkong':
+                hk_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            elif ssr_info_dict['country'] == 'Taiwan':
+                tw_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            elif ssr_info_dict['country'] == 'Singapore':
+                sg_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            elif ssr_info_dict['country'] == 'America':
+                us_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            elif ssr_info_dict['country'] == 'Korea':
+                ko_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            else:
+                other_proxy_dict['proxies'].append(ssr_info_dict['remarks'])
+            proxy_list.append(self.generateClashProxyDict(ssr_info_dict))
+        yaml_dict['proxies'] = proxy_list
+        yaml_dict['proxy-groups'].append(hk_proxy_dict)
+        yaml_dict['proxy-groups'].append(sg_proxy_dict)
+        yaml_dict['proxy-groups'].append(tw_proxy_dict)
+        yaml_dict['proxy-groups'].append(us_proxy_dict)
+        yaml_dict['proxy-groups'].append(ko_proxy_dict)
+        yaml_dict['proxy-groups'].append(jp_proxy_dict)
+        yaml_dict['proxy-groups'].append(other_proxy_dict)
+        with open(i.clashConfigFilePath, 'w', encoding='utf-8') as file:
+            yaml.dump(yaml_dict, file, default_flow_style=False,encoding='utf-8',allow_unicode=True)
+        logger.info("Generate clash config yaml successfully. You can find it on {0}".format(i.clashConfigFilePath))
+

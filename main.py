@@ -10,7 +10,7 @@ from funcitions.Functions import *
 u = Update()
 d = Display()
 h = Handler()
-
+g = GenerateConfig()
 
 def get_parser():
     parser = argparse.ArgumentParser(description=color.blue("The ssr command client based Python."),
@@ -26,6 +26,7 @@ def get_parser():
     parser.add_argument("-u", "--update", action="store_true", help="update ssr list")
     parser.add_argument("-v", "--version", action="store_true", help="display version")
     parser.add_argument("--upgrade", action="store_true", help="upgrade ssr command client")
+    parser.add_argument("--generate-clash", action="store_true", help="generate clash config yaml")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
     parser.add_argument("--test-speed", action="store_true", help="test all ssr nodes download and upload speed")
     parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
@@ -97,6 +98,8 @@ def main():
         d.displaySSRJson(ssr_id=args.display_json)
     elif args.upgrade:
         d.upgrade()
+    elif args.generate_clash:
+        g.generateClashConfig()
     else:
         parser.print_help()
 

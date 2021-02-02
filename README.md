@@ -14,6 +14,7 @@
 - 支持ShadowsocksR节点测速(多线程)
 - 支持打印ShadowsocksR节点Json和二维码
 - 整合ShadowsocksR源码到项目中
+- 支持生成基础版clash配置文件 
 - 暂时不支持`ipv6`ShadowsocksR节点，解析时会默认屏蔽
 
 ## 安装方式
@@ -40,7 +41,7 @@ usage: ssr-commnd-client [-h] [-l] [-p local_port] [-s ssr_id] [-S ssr_id] [-u] 
                          [--list-address] [--parse-url ssr_url] [--add-ssr ssr_url]
                          [--test-again ssr_node_id] [--print-qrcode ssr_node_id]
                          [--setting-global-proxy] [--setting-pac-proxy]
-                         [--close-system-proxy] 
+                         [--close-system-proxy] [--generate-clash]
 
 ShadowsocksR 命令行客户端
 
@@ -63,6 +64,8 @@ optional arguments:
 -u --update 更新SSR订阅列表
 
 --upgrade 更新ssr-command-client,下载最新版本二进制文件到家目录
+
+--generate-clash 生成clash基础版配置文件
 
 --fast-node 根据节点真连接延迟自动选择最优节点，并在本地启动代理
 

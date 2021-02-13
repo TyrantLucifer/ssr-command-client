@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,14 +174,9 @@
       <workItem from="1612088579654" duration="10403000" />
       <workItem from="1612101362439" duration="1607000" />
       <workItem from="1612280895516" duration="305000" />
-      <workItem from="1613136936914" duration="131000" />
-    </task>
-    <task id="LOCAL-00008" summary="更新测速模块，优化日志输出">
-      <created>1607428829235</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1607428829235</updated>
+      <workItem from="1613136936914" duration="319000" />
+      <workItem from="1613137382834" duration="36000" />
+      <workItem from="1613235732985" duration="649000" />
     </task>
     <task id="LOCAL-00009" summary="增加speedtest模块">
       <created>1607436958474</created>
@@ -519,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612281024965</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="更新二进制文件下载地址">
+      <created>1613137069858</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1613137069858</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复ssr启动bug" />
     <MESSAGE value="增加主模块" />
     <MESSAGE value="优化ssr日志输出" />
     <MESSAGE value="优化ssr停用逻辑" />
@@ -573,7 +574,8 @@
     <MESSAGE value="增加新功能，可支持生成clash配置文件" />
     <MESSAGE value="更新版本号，更新requirement" />
     <MESSAGE value="更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
+    <MESSAGE value="更新二进制文件下载地址" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新二进制文件下载地址" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

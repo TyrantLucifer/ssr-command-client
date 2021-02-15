@@ -155,8 +155,9 @@ class Update(object):
         u.updateCacheJson(i.ssrListJsonFile, u.ssrInfoList)
 
     def addSSRSubcribeUrl(self, subscribeUrl):
+        u.urlList.append(subscribeUrl)
         settings.setValue('subscribe_url',
-                          settings.subscribe_url + '|' + subscribeUrl)
+                          '|'.join(u.urlList))
         logger.info('add subscribe_url url: {0}'.format(subscribeUrl))
 
     def removeSSRSubcribeUrl(self, subcribeUrl):

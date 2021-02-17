@@ -20,8 +20,8 @@ from __future__ import absolute_import, division, print_function, \
 from ctypes import c_char_p, c_int, c_long, byref, \
     create_string_buffer, c_void_p
 
-from shadowsocks import common
-from shadowsocks.crypto import util
+from ssr_cli.shadowsocks import common
+from ssr_cli.shadowsocks.crypto import util
 
 __all__ = ['ciphers']
 

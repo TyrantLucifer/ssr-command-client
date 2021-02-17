@@ -3,6 +3,9 @@
 @E-mail: tyrantlucifer@gmail.com
 @Date: 2020/12/8 下午14:20
 '''
+
+import sys
+sys.path.append("../")
 import argparse
 from ssr_cli.functions.Functions import *
 
@@ -27,7 +30,8 @@ def get_parser():
     parser.add_argument("--upgrade", action="store_true", help="upgrade ssr command client")
     parser.add_argument("--generate-clash", action="store_true", help="generate clash config yaml")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
-    parser.add_argument("--test-speed", action="store_true", help="test all ssr nodes download and upload speed")
+    parser.add_argument("--test-all-speed", action="store_true", help="test all ssr nodes download and upload speed")
+    parser.add_argument("--test-speed", type=int, metavar="ssr_id", help="test ssr nodes download and upload speed")
     parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
     parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")
@@ -92,7 +96,9 @@ def main():
     elif args.close_system_proxy:
         h.closeProxy()
     elif args.test_speed:
-        u.testSSRSpeed()
+        u.testSingleSSRSpeed(ssr_id=args.test_speed)
+    elif args.test_all_speed:
+        u.testAllSSRSpeed()
     elif args.display_json:
         d.displaySSRJson(ssr_id=args.display_json)
     elif args.upgrade:

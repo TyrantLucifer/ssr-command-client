@@ -92,7 +92,8 @@ class SSRSpeedTest(object):
         else:
             ssrDict['download'] = '∞'
             ssrDict['upload'] = '∞'
-
+        logger.info("Download: {0}MB/s".format(ssrDict['download']))
+        logger.info("Upload: {0}MB/s".format(ssrDict['upload']))
         return ssrDict
 
     @calculate

@@ -126,7 +126,11 @@ class Update(object):
         settings.setValue('local_address', address)
         logger.info('change subscribe url to: {0}'.format(address))
 
-    def testSSRSpeed(self):
+    @is_id_valid
+    def testSingleSSRSpeed(self, ssr_id):
+        s.testSSRSpeed(u.ssrInfoList[ssr_id], '127.0.0.1', 60000, 300, 1)
+
+    def testAllSSRSpeed(self):
         ssrInfoList = s.startSpeedTest(u.ssrInfoList)
         for ssrInfo in ssrInfoList:
             if ssrInfo['connect']:

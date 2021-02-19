@@ -8,9 +8,6 @@
 """
 
 import argparse
-
-# import sys
-# sys.path.append('../')
 from shadowsocksr_cli.functions import *
 
 

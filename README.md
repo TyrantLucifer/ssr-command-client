@@ -23,7 +23,7 @@
 ```shell
 git clone https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
-python(python3) setup.py install
+ setup.py install
 ```
 
 - pip安装
@@ -69,6 +69,8 @@ optional arguments:
 
 --fast-node 根据节点真连接延迟自动选择最优节点，并在本地启动代理
 
+--test-speed SSR_NODE_ID 根据节点id测试节点上传下载速度
+
 --setting-url SUBSCRIBE_URL 重置ssr订阅链接，SUBSCRIBE_URL为订阅链接地址
                             注：如果订阅链接中有&符号，请用""将链接括起来
 
@@ -112,12 +114,12 @@ optional arguments:
 | 1  | SSRTOOL_Node:美国-密苏里州  |     200     |    √    |  69.30.201.82  | 8099 | aes-256-cfb |
 +----+----------------------------+-----------+---------+----------------+------+-------------+
 ```
-- 开启美国节点代理`python(python3) main.py -s 1`
-- 打印节点列表`python(python3) main.py -l`
-- 更新订阅列表`python(python3) main.py -u`
-- 重置订阅链接`python(python3) main.py --setting-url https://tyrantlucifer.com/ssr/ssr.txt`
-- 查看订阅链接列表`python(python3) main.py --list-url`
-- 查看本地监听地址`python(python3) main.py --list-adderss`
+- 开启美国节点代理` shadowsocksr-cli -s 1`
+- 打印节点列表` shadowsocksr-cli -l`
+- 更新订阅列表` shadowsocksr-cli -u`
+- 重置订阅链接` shadowsocksr-cli --setting-url https://tyrantlucifer.com/ssr/ssr.txt`
+- 查看订阅链接列表` shadowsocksr-cli --list-url`
+- 查看本地监听地址` shadowsocksr-cli --list-adderss`
 
 ## Linux终端设置代理方法
 

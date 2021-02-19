@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/daemon.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/daemon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,21 +196,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="4182000" />
-    </task>
-    <task id="LOCAL-00021" summary="优化ssr停用逻辑">
-      <created>1607522934860</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1607522934860</updated>
-    </task>
-    <task id="LOCAL-00022" summary="删除没用脚本">
-      <created>1607523823820</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1607523823820</updated>
+      <workItem from="1613739735872" duration="4675000" />
     </task>
     <task id="LOCAL-00023" summary="删除没用文件">
       <created>1607523878067</created>
@@ -542,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613742800397</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="优化输出">
+      <created>1613743928749</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1613743928749</updated>
+    </task>
+    <task id="LOCAL-00071" summary="优化unix平台日志输出">
+      <created>1613744115872</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1613744115872</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,8 +570,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加展示节点json信息功能" />
-    <MESSAGE value="增加开启系统代理，打印二维码功能" />
     <MESSAGE value="增加requirement.txt" />
     <MESSAGE value="增加显示版本功能，增加开启Ubuntu pac代理功能" />
     <MESSAGE value="优化帮助信息显示" />
@@ -596,7 +593,9 @@
     <MESSAGE value="fix shell.py模块名称" />
     <MESSAGE value="fix MANIFEST.in" />
     <MESSAGE value="更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
+    <MESSAGE value="优化输出" />
+    <MESSAGE value="优化unix平台日志输出" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化unix平台日志输出" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

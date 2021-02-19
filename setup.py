@@ -1,4 +1,8 @@
+import codecs
 from setuptools import setup
+
+with codecs.open('README.rst', encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name="shadowsocksr-cli",
@@ -38,4 +42,5 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: Proxy Servers',
     ],
+    long_description=long_description,
 )

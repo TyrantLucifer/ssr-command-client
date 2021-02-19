@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,14 +195,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="4675000" />
-    </task>
-    <task id="LOCAL-00023" summary="删除没用文件">
-      <created>1607523878067</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1607523878067</updated>
+      <workItem from="1613739735872" duration="4982000" />
     </task>
     <task id="LOCAL-00024" summary="增加选择最优节点功能">
       <created>1607525476287</created>
@@ -541,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613744115872</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="更新README">
+      <created>1613744434495</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1613744434495</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,10 +591,10 @@
     <MESSAGE value="format main PEP8" />
     <MESSAGE value="fix shell.py模块名称" />
     <MESSAGE value="fix MANIFEST.in" />
-    <MESSAGE value="更新README" />
     <MESSAGE value="优化输出" />
     <MESSAGE value="优化unix平台日志输出" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化unix平台日志输出" />
+    <MESSAGE value="更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,13 +23,14 @@
 ```shell
 git clone https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
- setup.py install
+python(python3) setup.py install
 ```
 
 - pip安装
 ```shell
 pip(pip3) install shadowsocksr-cli
 ```
+
 ## 使用方法
 ```angular2html
 usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]]
@@ -58,8 +59,7 @@ optional arguments:
 -s SSR_NODE_ID 启动Shadowsocks代理，SSR_NODE_ID为节点ID，可从打印列表中获得；
                如果不指定 -p 参数，那么默认代理启动在本地1080端口
 
--S SSR_NODE_ID 停止Shadowsocks代理，SSR_NODE_ID为节点ID，可从打印列表中获得；
-               只在Linux系统中生效
+-S [SSR_NODE_ID] 停止Shadowsocks代理，只在Unix环境下生效
 
 -u --update 更新SSR订阅列表
 

@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/main.py" afterDir="false" />
     </list>
@@ -197,14 +196,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="296000" />
-    </task>
-    <task id="LOCAL-00014" summary="修复ssr启动bug">
-      <created>1607518288253</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1607518288253</updated>
+      <workItem from="1613739735872" duration="588000" />
     </task>
     <task id="LOCAL-00015" summary="修复ssr启动bug">
       <created>1607518351423</created>
@@ -542,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613739845874</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="重构main，重构setup">
+      <created>1613740053248</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1613740053248</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +570,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="删除没用文件" />
     <MESSAGE value="增加选择最优节点功能" />
     <MESSAGE value="优化日志输出" />
     <MESSAGE value="优化表格输出" />
@@ -596,7 +594,8 @@
     <MESSAGE value="优化测速功能，将测速功能拆分，现支持单节点测速" />
     <MESSAGE value="更新README" />
     <MESSAGE value="重构代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构代码" />
+    <MESSAGE value="重构main，重构setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构main，重构setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

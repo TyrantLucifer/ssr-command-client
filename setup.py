@@ -9,7 +9,9 @@ setup(
     url="https://github.com/tyrantlucifer/ssr-command-client", 
     packages=[
         "shadowsocksr_cli",
-        "shadowsocksr_cil.shadowsocks"
+        "shadowsocksr_cli.shadowsocks",
+        "shadowsocksr_cli.shadowsocks.crypto",
+        "shadowsocksr_cli.shadowsocks.obfsplugin"
     ],
     entry_points={
         'console_scripts': [

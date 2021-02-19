@@ -7,10 +7,10 @@
 @desc: shadowsocksr-cli入口函数
 """
 
-import sys
 import argparse
 
-sys.path.append('../')
+# import sys
+# sys.path.append('../')
 from shadowsocksr_cli.functions import *
 
 

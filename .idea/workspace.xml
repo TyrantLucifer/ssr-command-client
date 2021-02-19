@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,28 +196,8 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="5062000" />
-    </task>
-    <task id="LOCAL-00025" summary="优化日志输出">
-      <created>1607525711442</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1607525711442</updated>
-    </task>
-    <task id="LOCAL-00026" summary="优化日志输出">
-      <created>1607525831617</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1607525831617</updated>
-    </task>
-    <task id="LOCAL-00027" summary="优化表格输出">
-      <created>1607526096057</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1607526096057</updated>
+      <workItem from="1613739735872" duration="6849000" />
+      <workItem from="1613746602537" duration="1298000" />
     </task>
     <task id="LOCAL-00028" summary="增加测速功能">
       <created>1607526832812</created>
@@ -540,7 +521,28 @@
       <option name="project" value="LOCAL" />
       <updated>1613744727286</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="更新gitignore">
+      <created>1613744822902</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1613744822902</updated>
+    </task>
+    <task id="LOCAL-00075" summary="更新README">
+      <created>1613745084539</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1613745084539</updated>
+    </task>
+    <task id="LOCAL-00076" summary="添加README.rst，添加pypi项目描述">
+      <created>1613747890878</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1613747890879</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +571,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加requirement.txt" />
-    <MESSAGE value="增加显示版本功能，增加开启Ubuntu pac代理功能" />
     <MESSAGE value="优化帮助信息显示" />
     <MESSAGE value="修复windows打包bug" />
     <MESSAGE value="增加显示版本功能，增加开启Ubuntu" />
@@ -593,8 +593,10 @@
     <MESSAGE value="fix MANIFEST.in" />
     <MESSAGE value="优化输出" />
     <MESSAGE value="优化unix平台日志输出" />
+    <MESSAGE value="更新gitignore" />
     <MESSAGE value="更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
+    <MESSAGE value="添加README.rst，添加pypi项目描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加README.rst，添加pypi项目描述" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

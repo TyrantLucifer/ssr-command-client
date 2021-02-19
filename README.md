@@ -181,4 +181,7 @@ ip 查看ip归属地
 ## 致谢
 
 感谢Jetbrains给予开发本项目的正版工具支持，如果有商业需求，推荐购买正版[Jetbrains](https://www.jetbrains.com/?from=ssr-command-client)
-![Jetbrains](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/jetbrains-variant-2.png)
+
+|Jetbrains|
+|---------|
+|<a href='#致谢'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/jetbrains-variant-2.png" height="300" width="300" /></a> |

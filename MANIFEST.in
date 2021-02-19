@@ -1,1 +1,1 @@
-recursive-include ssr_cli *.py 
+recursive-include shadowsocksr_cli *.py

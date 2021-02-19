@@ -1,21 +1,21 @@
-# The command client of ShadowsocksR based Python3
+# The command client of Shadowsocksr based Python3
 
-在命令行下使用的一款ShadowsocksR客户端
+在命令行下使用的一款Shadowsocksr客户端
 
 ## 特性
 
 - 全新`2.0`版本，在`1.0`基础上进行使用面向对象重构，并预留接口
 - 支持`Linux` + `Windows`双平台
-- 支持ShadowsocksR链接解析
-- 支持ShadowsocksR订阅链接解析(支持添加多个订阅地址)
+- 支持Shadowsocksr链接解析
+- 支持Shadowsocksr订阅链接解析(支持添加多个订阅地址)
 - 支持制定本地端口启动代理
-- 支持测试ShadowsocksR节点真连接延迟(多线程)
-- 支持测试ShadowsocksR节点是否被tcp阻断(多线程)
-- 支持ShadowsocksR节点测速(多线程)
-- 支持打印ShadowsocksR节点Json和二维码
-- 整合ShadowsocksR源码到项目中
+- 支持测试Shadowsocksr节点真连接延迟(多线程)
+- 支持测试Shadowsocksr节点是否被tcp阻断(多线程)
+- 支持Shadowsocksr节点测速(上传+下载)
+- 支持打印Shadowsocksr节点Json和二维码
+- 整合Shadowsocksr源码到项目中
 - 支持生成基础版clash配置文件 
-- 暂时不支持`ipv6`ShadowsocksR节点，解析时会默认屏蔽
+- 暂时不支持`ipv6`Shadowsocksr节点，解析时会默认屏蔽
 
 ## 安装方式
 
@@ -23,27 +23,27 @@
 ```shell
 git clone https://github.com/TyrantLucifer/ssr-command-client.git
 cd ssr-command-client
-python(pip3) install -r requirement.txt
+python(python3) setup.py install
 ```
 
-- 下载二进制文件
-> [Linux - ssr-command-client](https://tyrantlucifer.com/ssr/releases/ssr-command-client_linux_amd64)
-
-> [Windows - ssr-command-client](https://tyrantlucifer.com/ssr/releases/ssr-command-client_windows_amd64.exe)
-
+- pip安装
+```shell
+pip(pip3) install shadowsocksr-cli
+```
 ## 使用方法
 ```angular2html
-usage: ssr-commnd-client [-h] [-l] [-p local_port] [-s ssr_id] [-S ssr_id] [-u] [-v]
-                         [--display-json ssr_id] [--test-speed] [--fast-node]
-                         [--setting-url ssr_subscribe_url] [--upgrade]
-                         [--setting-address ssr_local_address] [--list-url]
-                         [--add-url ssr_subscribe_url] [--remove-url ssr_subscribe_url]
-                         [--list-address] [--parse-url ssr_url] [--add-ssr ssr_url]
-                         [--test-again ssr_node_id] [--print-qrcode ssr_node_id]
-                         [--setting-global-proxy] [--setting-pac-proxy]
-                         [--close-system-proxy] [--generate-clash]
-
-ShadowsocksR 命令行客户端
+usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]]
+                        [-u] [-v] [--generate-clash] [--display-json ssr_id]
+                        [--test-speed ssr_id] [--fast-node]
+                        [--setting-url ssr_subscribe_url]
+                        [--setting-address ssr_local_address] [--list-url]
+                        [--add-url ssr_subscribe_url]
+                        [--remove-url ssr_subscribe_url] [--list-address]
+                        [--parse-url ssr_url] [--add-ssr ssr_url]
+                        [--test-again ssr_node_id]
+                        [--print-qrcode ssr_node_id] [--setting-global-proxy]
+                        [--setting-pac-proxy] [--close-system-proxy]
+Shadowsocksr 命令行客户端
 
 optional arguments:
   -v, --version         版本信息
@@ -90,8 +90,6 @@ optional arguments:
 --add-ssr SSR_URL 手动添加ssr节点到当前列表中，SSR_URL为ssr链接地址，例如：ssr://xxxxxxxxxxxxxxxx
 
 --test-again SSR_NODE_ID 重新测试ssr节点连接状态，SSR_NODE_ID为节点ID，可从打印列表中获得
-
---test-speed 批量ssr节点测速
 
 --print-qrcode SSR_NODE_ID 打印ssr节点二维码，SSR_NODE_ID为节点ID，可从打印列表中获得
 

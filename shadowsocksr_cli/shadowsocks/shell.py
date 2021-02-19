@@ -22,8 +22,8 @@ import os
 import json
 import sys
 import getopt
-from ssr_cli.shadowsocks import encrypt
-from ssr_cli.shadowsocks.common import to_bytes, to_str, IPNetwork, PortRange, logging
+from shadowsocksr_cli.shadowsocks import encrypt
+from shadowsocksr_cli.shadowsocks.common import to_bytes, to_str, IPNetwork, PortRange, logging
 
 VERBOSE_LEVEL = 5
 

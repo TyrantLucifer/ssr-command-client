@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/MANIFEST.in" afterDir="false" />
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="format main PEP8">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,21 +195,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="910000" />
-    </task>
-    <task id="LOCAL-00016" summary="修复ssr启动bug">
-      <created>1607518592875</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1607518592875</updated>
-    </task>
-    <task id="LOCAL-00017" summary="增加主模块">
-      <created>1607521624925</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1607521624925</updated>
+      <workItem from="1613739735872" duration="2160000" />
     </task>
     <task id="LOCAL-00018" summary="优化ssr日志输出">
       <created>1607522587535</created>
@@ -540,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613740378155</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="更新分发文件列表">
+      <created>1613740663374</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1613740663374</updated>
+    </task>
+    <task id="LOCAL-00066" summary="format main PEP8">
+      <created>1613740790315</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1613740790315</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +569,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加选择最优节点功能" />
-    <MESSAGE value="优化日志输出" />
     <MESSAGE value="优化表格输出" />
     <MESSAGE value="增加测速功能" />
     <MESSAGE value="增加展示节点json信息功能" />
@@ -594,7 +592,9 @@
     <MESSAGE value="更新README" />
     <MESSAGE value="重构代码" />
     <MESSAGE value="重构main，重构setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构main，重构setup" />
+    <MESSAGE value="更新分发文件列表" />
+    <MESSAGE value="format main PEP8" />
+    <option name="LAST_COMMIT_MESSAGE" value="format main PEP8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

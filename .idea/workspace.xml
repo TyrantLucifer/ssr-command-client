@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="format main PEP8">
+    <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/MANIFEST.in" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,14 +196,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-      <workItem from="1613739735872" duration="2160000" />
-    </task>
-    <task id="LOCAL-00018" summary="优化ssr日志输出">
-      <created>1607522587535</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1607522587535</updated>
+      <workItem from="1613739735872" duration="2669000" />
     </task>
     <task id="LOCAL-00019" summary="优化ssr日志输出">
       <created>1607522751122</created>
@@ -540,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613740790315</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="fix shell.py模块名称">
+      <created>1613742137565</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1613742137565</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +570,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="优化表格输出" />
     <MESSAGE value="增加测速功能" />
     <MESSAGE value="增加展示节点json信息功能" />
     <MESSAGE value="增加开启系统代理，打印二维码功能" />
@@ -594,7 +594,8 @@
     <MESSAGE value="重构main，重构setup" />
     <MESSAGE value="更新分发文件列表" />
     <MESSAGE value="format main PEP8" />
-    <option name="LAST_COMMIT_MESSAGE" value="format main PEP8" />
+    <MESSAGE value="fix shell.py模块名称" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix shell.py模块名称" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,1 +1,3 @@
 recursive-include shadowsocksr_cli *.py
+include README.rst
+include LICENSE

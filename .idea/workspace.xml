@@ -20,70 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/handle_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/init_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/network_test_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/parse_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/print_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/setting_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shadowsocksr_cli/update_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/functions/Functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/functions/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/logger/Logging.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/logger/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/requirement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/asyncdns.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/asyncdns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/ctypes_libsodium.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/ctypes_libsodium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/ctypes_openssl.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/ctypes_openssl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/openssl.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/openssl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/rc4_md5.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/rc4_md5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/sodium.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/sodium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/crypto/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/crypto/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/daemon.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/daemon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/encrypt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/encrypt_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/encrypt_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/eventloop.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/eventloop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/lru_cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/lru_cache.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/auth_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/auth_chain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/http_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/http_simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/obfs_tls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/obfs_tls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/plain.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/plain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/obfsplugin/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/obfsplugin/verify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/ordereddict.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/ordereddict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/shell.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/shell.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/tcprelay.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/tcprelay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/udprelay.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/udprelay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/shadowsocks/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/shadowsocks/version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/speedtest/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/speedtest/speedtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/speedtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/HandleSSRUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/InitUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/ParseUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/PrintUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/SSRTestUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/SettingUtils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssr_cli/utils/multiprocessing_win.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,13 +197,7 @@
       <workItem from="1613568707394" duration="10804000" />
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
-    </task>
-    <task id="LOCAL-00013" summary="修复ssr启动bug">
-      <created>1607518029857</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1607518029857</updated>
+      <workItem from="1613739735872" duration="296000" />
     </task>
     <task id="LOCAL-00014" summary="修复ssr启动bug">
       <created>1607518288253</created>
@@ -602,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613577457351</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="重构代码">
+      <created>1613739845873</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1613739845874</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +571,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="删除没用脚本" />
     <MESSAGE value="删除没用文件" />
     <MESSAGE value="增加选择最优节点功能" />
     <MESSAGE value="优化日志输出" />
@@ -656,7 +595,8 @@
     <MESSAGE value="fix function模块名称" />
     <MESSAGE value="优化测速功能，将测速功能拆分，现支持单节点测速" />
     <MESSAGE value="更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
+    <MESSAGE value="重构代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

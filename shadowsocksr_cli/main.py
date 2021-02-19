@@ -16,7 +16,9 @@ from shadowsocksr_cli.functions import *
 
 def get_parser():
     parser = argparse.ArgumentParser(description=color.blue("The shadowsocksr command client based Python."),
-                                     epilog=color.yellow('Powered by ') + color.green('tyrantlucifer') + color.yellow('. If you have any questions,you can send e-mails to ') + color.green('tyrantlucifer@gmail.com'))
+                                     epilog=color.yellow('Powered by ') + color.green('tyrantlucifer') + color.yellow(
+                                         ". If you have any questions,you can send e-mails to ") + color.green(
+                                         "tyrantlucifer@gmail.com"))
     parser.add_argument("-l", "--list", action="store_true", help="show ssr list")
     parser.add_argument("-p", "--port", default=1080, metavar="local_port", type=int,
                         help="assign local proxy port,use with -s")

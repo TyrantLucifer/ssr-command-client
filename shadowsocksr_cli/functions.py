@@ -177,6 +177,7 @@ class HandleShadowsocksr(object):
                                                 log_file=Setting.get_value('shadowsocksr_log_file_path'))
 
     @staticmethod
+    @is_id_valid(update_shadowsocksr.ssr_dict_list)
     def stop(ssr_id, local_port):
         ControlShadowsocksr.operate_on_unix(update_shadowsocksr.ssr_dict_list[ssr_id],
                                             local_address=Setting.get_value('local_address'),

@@ -214,7 +214,9 @@ ip 查看ip归属地
 - Telegram:https://t.me/ssr_command_client
 - Personal Wechat
 
-![我的微信公众号](https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg)
+|微信公众号|
+|---------|
+|<a href='#Tips'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg" height="300" width="300" /></a> |
 
 ## 致谢
 

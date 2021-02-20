@@ -114,7 +114,7 @@ class ShadowsocksrTest(object):
         else:
             ssr_dict['download'] = '∞'
             ssr_dict['upload'] = '∞'
-        logger.info("Shadowsocksr - id: {0} - name: {1}".format(ssr_dict['id'], ssr_dict['remarks']))
+        logger.info("Shadowsocksr - name: {0}".format(ssr_dict['remarks']))
         logger.info("Download: {0} MB/s".format(ssr_dict['download']))
         logger.info("Upload: {0} MB/s".format(ssr_dict['upload']))
         return ssr_dict

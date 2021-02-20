@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/parse_shadowsocksr_url.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_connect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_speed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/network_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/network_test_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="setup" />
+        <entry key="$PROJECT_DIR$" value="refactor" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +64,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Program Files/Python3.7/Lib/argparse.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/shadowsocksr_cli/speedtest.py" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1lEd2DS4c0JfJxDy12jkq3GhuTc" />
@@ -80,7 +84,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -93,7 +97,7 @@
       <recent name="$PROJECT_DIR$/" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test_shadowsocksr_speed">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ssr-command-client" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,6 +112,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="parse_shadowsocksr_url" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ssr-command-client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/parse_shadowsocksr_url.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,13 +164,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_shadowsocksr_connect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ssr-command-client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/test_shadowsocksr_connect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_shadowsocksr_speed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ssr-command-client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/test_shadowsocksr_speed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_shadowsocksr_speed" />
+        <item itemvalue="Python.test_shadowsocksr_connect" />
+        <item itemvalue="Python.parse_shadowsocksr_url" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -197,28 +267,11 @@
       <workItem from="1613611437283" duration="6157000" />
       <workItem from="1613633788542" duration="43411000" />
       <workItem from="1613739735872" duration="6849000" />
-      <workItem from="1613746602537" duration="1298000" />
-    </task>
-    <task id="LOCAL-00028" summary="增加测速功能">
-      <created>1607526832812</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1607526832812</updated>
-    </task>
-    <task id="LOCAL-00029" summary="增加展示节点json信息功能">
-      <created>1607570784404</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1607570784404</updated>
-    </task>
-    <task id="LOCAL-00030" summary="增加开启系统代理，打印二维码功能">
-      <created>1607605297289</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1607605297289</updated>
+      <workItem from="1613746602537" duration="3098000" />
+      <workItem from="1613750634322" duration="668000" />
+      <workItem from="1613751421098" duration="178000" />
+      <workItem from="1613751967795" duration="782000" />
+      <workItem from="1613791412941" duration="1110000" />
     </task>
     <task id="LOCAL-00031" summary="增加开启系统代理，打印二维码功能">
       <created>1607605337305</created>
@@ -542,7 +595,28 @@
       <option name="project" value="LOCAL" />
       <updated>1613747890879</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="添加README.rst，添加pypi项目描述">
+      <created>1613747908210</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1613747908210</updated>
+    </task>
+    <task id="LOCAL-00078" summary="添加README.rst，添加pypi项目描述">
+      <created>1613747916900</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1613747916901</updated>
+    </task>
+    <task id="LOCAL-00079" summary="更新许可类型">
+      <created>1613748484250</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1613748484250</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +645,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="优化帮助信息显示" />
     <MESSAGE value="修复windows打包bug" />
     <MESSAGE value="增加显示版本功能，增加开启Ubuntu" />
     <MESSAGE value="修复windows打包多线程bug" />
@@ -596,7 +669,8 @@
     <MESSAGE value="更新gitignore" />
     <MESSAGE value="更新README" />
     <MESSAGE value="添加README.rst，添加pypi项目描述" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加README.rst，添加pypi项目描述" />
+    <MESSAGE value="更新许可类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新许可类型" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,7 +684,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ssr_command_client$parse_shadowsocksr_url.coverage" NAME="parse_shadowsocksr_url Coverage Results" MODIFIED="1613791901153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_connect.coverage" NAME="test_shadowsocksr_connect Coverage Results" MODIFIED="1613792177080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_speed.coverage" NAME="test_shadowsocksr_speed Coverage Results" MODIFIED="1613792509220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1610636435282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

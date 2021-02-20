@@ -63,8 +63,6 @@ optional arguments:
 
 -u --update 更新SSR订阅列表
 
---upgrade 更新ssr-command-client,下载最新版本二进制文件到家目录
-
 --generate-clash 生成clash基础版配置文件
 
 --fast-node 根据节点真连接延迟自动选择最优节点，并在本地启动代理

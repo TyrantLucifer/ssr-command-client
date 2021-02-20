@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/parse_shadowsocksr_url.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_connect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_speed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -268,21 +266,9 @@
       <workItem from="1613750634322" duration="668000" />
       <workItem from="1613751421098" duration="178000" />
       <workItem from="1613751967795" duration="782000" />
-      <workItem from="1613791412941" duration="1576000" />
-    </task>
-    <task id="LOCAL-00032" summary="增加开启系统代理，打印二维码功能">
-      <created>1607606293358</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1607606293358</updated>
-    </task>
-    <task id="LOCAL-00033" summary="增加requirement.txt">
-      <created>1607606328848</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1607606328848</updated>
+      <workItem from="1613791412941" duration="2888000" />
+      <workItem from="1613827685544" duration="17000" />
+      <workItem from="1613838243257" duration="15000" />
     </task>
     <task id="LOCAL-00034" summary="增加显示版本功能，增加开启Ubuntu pac代理功能">
       <created>1607611762928</created>
@@ -613,7 +599,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613792740015</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="README中加入对API用法的简单描述，并添加examples代码文件">
+      <created>1613793115042</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1613793115043</updated>
+    </task>
+    <task id="LOCAL-00082" summary="更新README">
+      <created>1613793962681</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1613793962681</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +642,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加显示版本功能，增加开启Ubuntu" />
     <MESSAGE value="修复windows打包多线程bug" />
     <MESSAGE value="更新功能列表，去除开机自启功能" />
     <MESSAGE value="移除自动启动功能，修复测速bug" />
@@ -663,11 +662,12 @@
     <MESSAGE value="优化输出" />
     <MESSAGE value="优化unix平台日志输出" />
     <MESSAGE value="更新gitignore" />
-    <MESSAGE value="更新README" />
     <MESSAGE value="添加README.rst，添加pypi项目描述" />
     <MESSAGE value="更新许可类型" />
     <MESSAGE value="优化测试节点速度时日志输出，减少耦合度" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化测试节点速度时日志输出，减少耦合度" />
+    <MESSAGE value="README中加入对API用法的简单描述，并添加examples代码文件" />
+    <MESSAGE value="更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

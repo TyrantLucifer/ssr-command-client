@@ -23,10 +23,7 @@
       <change afterPath="$PROJECT_DIR$/examples/parse_shadowsocksr_url.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_connect.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/test_shadowsocksr_speed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssr-command-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssr-command-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/network_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/network_test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,14 +268,7 @@
       <workItem from="1613750634322" duration="668000" />
       <workItem from="1613751421098" duration="178000" />
       <workItem from="1613751967795" duration="782000" />
-      <workItem from="1613791412941" duration="1110000" />
-    </task>
-    <task id="LOCAL-00031" summary="增加开启系统代理，打印二维码功能">
-      <created>1607605337305</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1607605337305</updated>
+      <workItem from="1613791412941" duration="1576000" />
     </task>
     <task id="LOCAL-00032" summary="增加开启系统代理，打印二维码功能">
       <created>1607606293358</created>
@@ -616,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613748484250</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="优化网络输出">
+      <created>1613792740015</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1613792740015</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +642,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复windows打包bug" />
     <MESSAGE value="增加显示版本功能，增加开启Ubuntu" />
     <MESSAGE value="修复windows打包多线程bug" />
     <MESSAGE value="更新功能列表，去除开机自启功能" />
@@ -670,7 +666,8 @@
     <MESSAGE value="更新README" />
     <MESSAGE value="添加README.rst，添加pypi项目描述" />
     <MESSAGE value="更新许可类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新许可类型" />
+    <MESSAGE value="优化测试节点速度时日志输出，减少耦合度" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化测试节点速度时日志输出，减少耦合度" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -686,8 +683,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssr_command_client$parse_shadowsocksr_url.coverage" NAME="parse_shadowsocksr_url Coverage Results" MODIFIED="1613791901153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/ssr_command_client$main.coverage" NAME="main Coverage Results" MODIFIED="1607523255470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_connect.coverage" NAME="test_shadowsocksr_connect Coverage Results" MODIFIED="1613792177080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_speed.coverage" NAME="test_shadowsocksr_speed Coverage Results" MODIFIED="1613792509220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_connect.coverage" NAME="test_shadowsocksr_connect Coverage Results" MODIFIED="1613792641627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/ssr_command_client$test_shadowsocksr_speed.coverage" NAME="test_shadowsocksr_speed Coverage Results" MODIFIED="1613792654708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/ssr_command_client$test.coverage" NAME="test Coverage Results" MODIFIED="1610636435282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

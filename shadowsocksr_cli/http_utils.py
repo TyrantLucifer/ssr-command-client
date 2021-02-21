@@ -150,7 +150,7 @@ class Daemon(object):
 
     def start(self, *args, **kwargs):
         if self.verbose >= 1:
-            print('ready to starting ......')
+            logger.info("HTTP Server is starting...")
         # check for a pid file to see if the daemon already runs
         pid = self.get_pid()
         if pid:
@@ -163,7 +163,7 @@ class Daemon(object):
 
     def stop(self):
         if self.verbose >= 1:
-            print('stopping ...')
+            pass
         pid = self.get_pid()
         if not pid:
             msg = 'pid file [%s] does not exist. Not running?\n' % self.pidfile
@@ -189,7 +189,7 @@ class Daemon(object):
                 print(str(err))
                 sys.exit(1)
             if self.verbose >= 1:
-                print('Stopped!')
+                logger.info("HTTP Server is stopped...")
 
     def restart(self, *args, **kwargs):
         self.stop()

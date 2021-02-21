@@ -9,6 +9,7 @@
 
 from shadowsocksr_cli.print_utils import *
 from shadowsocksr_cli.update_utils import *
+from shadowsocksr_cli.http_utils import *
 
 # 初始化工具类print_utils.Colored
 color = Colored()
@@ -21,3 +22,9 @@ ssr_speed_table = DrawShadowsocksrSpeedTable()
 
 # 初始化工具类update_utils.UpdateShadowsocksr
 update_shadowsocksr = UpdateShadowsocksr()
+
+# 初始化工具类http_utils.HTTPLocalServer
+http_local_server = HTTPLocalServer("HTTPLocalServer",
+                                    init_config.http_server_pid_file,
+                                    stderr=init_config.http_error_log_file,
+                                    verbose=1)

@@ -381,3 +381,24 @@ class GenerateClashConfig(object):
             yaml.dump(yaml_dict, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
         logger.info("Generate clash config yaml successfully.")
         logger.info("You can find it on {0}".format(init_config.clash_config_file))
+
+
+class HandleHttpServer(object):
+    """控制本地http server
+
+    """
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def start(local_port=1081):
+        if init_config.platform == 'win32':
+            http_local_server.start_on_windows(local_port=local_port)
+        else:
+            http_local_server.start(init_config.http_log_file,
+                                    local_port=local_port)
+
+    @staticmethod
+    def stop():
+        http_local_server.stop()

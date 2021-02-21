@@ -402,3 +402,20 @@ class HandleHttpServer(object):
     @staticmethod
     def stop():
         http_local_server.stop()
+
+    @staticmethod
+    def handle_http_server(action, local_port=1081):
+        if action == "start":
+            HandleHttpServer.start(local_port)
+        elif action == "stop":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                HandleHttpServer.stop()
+        elif action == "status":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                logger.info("HTTP Server status:{0}".format(http_local_server.is_running()))
+        else:
+            logger.error("--http not support this option: {0}".format(action))

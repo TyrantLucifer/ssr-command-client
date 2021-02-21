@@ -95,7 +95,7 @@ def main():
     elif args.generate_clash:
         GenerateClashConfig.generate_clash_config()
     elif args.http:
-        HandleHttpServer.start()
+        HandleHttpServer.handle_http_server(args.http)
     else:
         parser.print_help()
 

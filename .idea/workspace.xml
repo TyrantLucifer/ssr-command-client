@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/http_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/http_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,13 +270,6 @@
       <workItem from="1613791412941" duration="2888000" />
       <workItem from="1613827685544" duration="17000" />
       <workItem from="1613838243257" duration="15000" />
-    </task>
-    <task id="LOCAL-00037" summary="增加显示版本功能，增加开启Ubuntu">
-      <created>1607619305711</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1607619305711</updated>
     </task>
     <task id="LOCAL-00038" summary="修复windows打包多线程bug">
       <created>1607619405941</created>
@@ -613,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613922818360</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="优化unix平台下，http server提示输出">
+      <created>1613922995306</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1613922995306</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +643,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加更新功能" />
     <MESSAGE value="更新README,用爱发电" />
     <MESSAGE value="增加新功能，可支持生成clash配置文件" />
     <MESSAGE value="更新版本号，更新requirement" />
@@ -667,7 +667,8 @@
     <MESSAGE value="增加开启本地http服务器的功能" />
     <MESSAGE value="优化http开启关闭功能" />
     <MESSAGE value="fix daemon进程启动bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix daemon进程启动bug" />
+    <MESSAGE value="优化unix平台下，http server提示输出" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化unix平台下，http server提示输出" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

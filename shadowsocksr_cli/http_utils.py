@@ -166,7 +166,7 @@ class Daemon(object):
             pass
         pid = self.get_pid()
         if not pid:
-            msg = 'pid file [%s] does not exist. Not running?\n' % self.pidfile
+            msg = 'pid file [%s] does not exist. Not running?' % self.pidfile
             # sys.stderr.write(msg)
             logger.error(msg)
             if os.path.exists(self.pidfile):

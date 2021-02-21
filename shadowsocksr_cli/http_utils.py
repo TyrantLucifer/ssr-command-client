@@ -112,7 +112,7 @@ class Daemon(object):
         si = open(self.stdin, 'r')
         so = open(self.stdout, 'a+')
         if self.stderr:
-            se = open(self.stderr, 'a+', 0)
+            se = open(self.stderr, 'ab+', 0)
         else:
             se = so
 

@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8205ff-20ff-4599-8d2e-8662f221d4d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shadowsocksr_cli/http_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/shadowsocksr_cli/http_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,13 +269,6 @@
       <workItem from="1613791412941" duration="2888000" />
       <workItem from="1613827685544" duration="17000" />
       <workItem from="1613838243257" duration="15000" />
-    </task>
-    <task id="LOCAL-00035" summary="优化帮助信息显示">
-      <created>1607612550069</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1607612550069</updated>
     </task>
     <task id="LOCAL-00036" summary="修复windows打包bug">
       <created>1607619285633</created>
@@ -615,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613921886745</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="优化http开启关闭功能">
+      <created>1613922602312</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1613922602312</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +642,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新功能列表，去除开机自启功能" />
     <MESSAGE value="移除自动启动功能，修复测速bug" />
     <MESSAGE value="增加更新功能" />
     <MESSAGE value="更新README,用爱发电" />
@@ -669,7 +666,8 @@
     <MESSAGE value="README中加入对API用法的简单描述，并添加examples代码文件" />
     <MESSAGE value="更新README" />
     <MESSAGE value="增加开启本地http服务器的功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加开启本地http服务器的功能" />
+    <MESSAGE value="优化http开启关闭功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化http开启关闭功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

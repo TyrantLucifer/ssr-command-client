@@ -117,7 +117,7 @@ optional arguments:
 - 更新订阅列表` shadowsocksr-cli -u`
 - 重置订阅链接` shadowsocksr-cli --setting-url https://tyrantlucifer.com/ssr/ssr.txt`
 - 查看订阅链接列表` shadowsocksr-cli --list-url`
-- 查看本地监听地址` shadowsocksr-cli --list-adderss`
+- 查看本地监听地址` shadowsocksr-cli --list-address`
 
 ## API
 

@@ -223,3 +223,7 @@ ip 查看ip归属地
 |Jetbrains|
 |---------|
 |<a href='#致谢'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/jetbrains-variant-2.png" height="300" width="300" /></a> |
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/TyrantLucifer/ssr-command-client.svg)](https://starchart.cc/TyrantLucifer/ssr-command-client)

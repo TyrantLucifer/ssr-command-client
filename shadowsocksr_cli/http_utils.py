@@ -221,9 +221,9 @@ class HTTPLocalServer(Daemon):
         self.server_socket.listen(128)
 
     def __deal_request(self, client_socket):
-        request = client_socket.recv(1024).decode("utf-8")
+        request = client_socket.recv(1024).decode()
         request_lines = request.splitlines()
-        if len(request_lines) == 0:
+        if len(request_lines) == 0 or re.match(r"[^/]+(/[^ ]*)", request_lines[0]) is not None:
             return
         else:
             ret = re.match(r"[^/]+(/[^ ]*)", request_lines[0]).group(1)

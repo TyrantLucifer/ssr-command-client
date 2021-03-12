@@ -392,21 +392,23 @@ class HandleHttpServer(object):
         pass
 
     @staticmethod
-    def start(local_port=1081):
+    def start(local_port, http_port=80):
+        GeneratePac.generate_pac(Setting.get_value("local_address"), local_port)
         if init_config.platform == 'win32':
-            http_local_server.start_on_windows(local_port=local_port)
+            http_local_server.start_on_windows(http_port=http_port)
         else:
             http_local_server.start(init_config.http_log_file,
-                                    local_port=local_port)
+                                    http_port=http_port)
 
     @staticmethod
     def stop():
+        GeneratePac.remove_pac()
         http_local_server.stop()
 
     @staticmethod
-    def handle_http_server(action, local_port=1081):
+    def handle_http_server(action, local_port, http_port=80):
         if action == "start":
-            HandleHttpServer.start(local_port)
+            HandleHttpServer.start(local_port, http_port=http_port)
         elif action == "stop":
             if init_config.platform == "win32":
                 logger.error("Only support unix platform")

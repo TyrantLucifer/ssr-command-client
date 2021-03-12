@@ -10,10 +10,8 @@
 import atexit
 import signal
 import socket
-import select
 import re
-import multiprocessing
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+import requests
 from shadowsocksr_cli.logger import *
 
 
@@ -229,6 +227,9 @@ class HTTPLocalServer(Daemon):
             ret = re.match(r"[^/]+(/[^ ]*)", request_lines[0]).group(1)
         if ret == "/":
             ret = "/index.html"
+        index = ret.find('?')
+        if index != -1:
+            ret = ret[0:index]
         try:
             f = open(ret[1:], "rb")
         except FileNotFoundError:
@@ -254,16 +255,45 @@ class HTTPLocalServer(Daemon):
             client_socket.close()
 
     def start_on_windows(self, *args, **kwargs):
-        port = kwargs['local_port']
+        port = kwargs['http_port']
         self.__init_http_server(port)
         try:
             logger.info("HTTP Server start on localhost:{0}...".format(port))
             self.__serve_forever()
         except KeyboardInterrupt:
             logger.info("HTTP Server stop...")
+            GeneratePac.remove_pac()
 
     def run(self, *args, **kwargs):
-        port = kwargs['local_port']
+        port = kwargs['http_port']
         self.__init_http_server(port)
         self.__serve_forever()
         logger.info("HTTP Server start on *:{0}".format(port))
+
+
+class GeneratePac(object):
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def __download_pac_template():
+        result = requests.get('https://tyrantlucifer.com/ssr/autoproxy.pac')
+        result.encoding = 'utf-8'
+        with open(init_config.pac_file, 'w', encoding='utf-8') as file:
+            file.write(result.text)
+
+    @staticmethod
+    def generate_pac(address, port):
+        if not os.path.exists(init_config.pac_file):
+            GeneratePac.__download_pac_template()
+        with open(init_config.pac_file, 'r', encoding='utf-8') as file:
+            content = file.read()
+        with open("autoproxy.pac", 'w', encoding='utf-8') as file:
+            content = content.replace("address", address)
+            content = content.replace("port", str(port))
+            file.write(content)
+
+    @staticmethod
+    def remove_pac():
+        os.remove("autoproxy.pac")

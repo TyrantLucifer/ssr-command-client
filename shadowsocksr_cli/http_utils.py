@@ -213,8 +213,6 @@ class HTTPLocalServer(Daemon):
         Daemon.__init__(self, save_path, stdin, stdout, stderr, home_dir, umask, verbose)
         self.name = name
         self.server_socket = None
-        self.epoll = None
-        self.fd_socket = dict()
 
     def __init_http_server(self, port):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -222,13 +220,7 @@ class HTTPLocalServer(Daemon):
         self.server_socket.bind(("", port))
         self.server_socket.listen(128)
 
-        if init_config.platform == "win32":
-            pass
-        else:
-            self.epoll = select.epoll()
-            self.epoll.register(self.server_socket.fileno(), select.EPOLLIN | select.EPOLLET)
-
-    def __deal_request_on_windows(self, client_socket):
+    def __deal_request(self, client_socket):
         request = client_socket.recv(1024).decode("utf-8")
         request_lines = request.splitlines()
         if len(request_lines) == 0:
@@ -239,7 +231,7 @@ class HTTPLocalServer(Daemon):
             ret = "/index.html"
         try:
             f = open(ret[1:], "rb")
-        except:
+        except FileNotFoundError:
             response_body = "file not found, 请输入正确的url"
             response_header = "HTTP/1.1 404 not found\r\n"
             response_header += "Content-Type: text/html; charset=utf-8\r\n"
@@ -255,69 +247,23 @@ class HTTPLocalServer(Daemon):
             response_header += "\r\n"
             client_socket.send(response_header.encode("utf-8") + response_body)
 
-    def __deal_request_on_unix(self, request, client_socket):
-        if not request:
-            return
-        request_lines = request.splitlines()
-        if len(request_lines) == 0:
-            return
-        else:
-            ret = re.match(r"[^/]+(/[^ ]*)", request_lines[0]).group(1)
-        if ret == "/":
-            ret = "/index.html"
-        try:
-            f = open(ret[1:], "rb")
-        except:
-            response_body = "file not found, 请输入正确的url"
-            response_header = "HTTP/1.1 404 not found\r\n"
-            response_header += "Content-Type: text/html; charset=utf-8\r\n"
-            response_header += "Content-Length: %d\r\n" % len(response_body)
-            response_header += "\r\n"
-            client_socket.send(response_header.encode('utf-8'))
-            client_socket.send(response_body.encode("utf-8"))
-        else:
-            content = f.read()
-            f.close()
-            response_body = content
-            response_header = "HTTP/1.1 200 OK\r\n"
-            response_header += "Content-Length: %d\r\n" % len(response_body)
-            response_header += "\r\n"
-            client_socket.send(response_header.encode("utf-8") + response_body)
-
-    def __serve_forever_on_windows(self):
+    def __serve_forever(self):
         while True:
             client_socket, client_addr = self.server_socket.accept()
-            self.__deal_request_on_windows(client_socket)
+            self.__deal_request(client_socket)
             client_socket.close()
-
-    def __serve_forever_on_unix(self):
-        while True:
-            epoll_list = self.epoll.poll()
-            for fd, event in epoll_list:
-                if fd == self.server_socket.fileno():
-                    new_socket, new_addr = self.server_socket.accept()
-                    self.epoll.register(new_socket.fileno(), select.EPOLLIN | select.EPOLLET)
-                    self.fd_socket[new_socket.fileno()] = new_socket
-                elif event == select.EPOLLIN:
-                    request = self.fd_socket[fd].recv(1024).decode("utf-8")
-                    if request:
-                        self.__deal_request_on_unix(request, self.fd_socket[fd])
-                    else:
-                        self.epoll.unregister(fd)
-                        self.fd_socket[fd].close()
-                        del self.fd_socket[fd]
 
     def start_on_windows(self, *args, **kwargs):
         port = kwargs['local_port']
         self.__init_http_server(port)
         try:
             logger.info("HTTP Server start on localhost:{0}...".format(port))
-            self.__serve_forever_on_windows()
+            self.__serve_forever()
         except KeyboardInterrupt:
             logger.info("HTTP Server stop...")
 
     def run(self, *args, **kwargs):
         port = kwargs['local_port']
         self.__init_http_server(port)
-        self.__serve_forever_on_unix()
+        self.__serve_forever()
         logger.info("HTTP Server start on *:{0}".format(port))

@@ -221,7 +221,7 @@ class HTTPLocalServer(Daemon):
         self.server_socket.listen(128)
 
     def __deal_request(self, client_socket):
-        request = client_socket.recv(1024).decode()
+        request = client_socket.recv(1024).decode('unicode_escape')
         request_lines = request.splitlines()
         if len(request_lines) == 0 or re.match(r"[^/]+(/[^ ]*)", request_lines[0]) is None:
             return

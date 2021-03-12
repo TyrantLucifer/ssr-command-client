@@ -37,6 +37,7 @@ def get_parser():
     parser.add_argument("--add-ssr", metavar="ssr_url", help="add ssr node")
     parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
     parser.add_argument("--print-qrcode", metavar="ssr_node_id", type=int, help="print ssr node qrcode")
+    parser.add_argument("--http", metavar="action[start stop status]", help="Manager local http server")
     parser.add_argument("--setting-global-proxy", action="store_true",
                         help="setting system global proxy,only support on " + color.red('Ubuntu Desktop'))
     parser.add_argument("--setting-pac-proxy", action="store_true",
@@ -93,6 +94,8 @@ def main():
         DisplayShadowsocksr.display_shadowsocksr_json(ssr_id=args.display_json)
     elif args.generate_clash:
         GenerateClashConfig.generate_clash_config()
+    elif args.http:
+        HandleHttpServer.handle_http_server(args.http, args.port)
     else:
         parser.print_help()
 

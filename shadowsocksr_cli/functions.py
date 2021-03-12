@@ -381,3 +381,43 @@ class GenerateClashConfig(object):
             yaml.dump(yaml_dict, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
         logger.info("Generate clash config yaml successfully.")
         logger.info("You can find it on {0}".format(init_config.clash_config_file))
+
+
+class HandleHttpServer(object):
+    """控制本地http server
+
+    """
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def start(local_port, http_port=80):
+        GeneratePac.generate_pac(Setting.get_value("local_address"), local_port)
+        if init_config.platform == 'win32':
+            http_local_server.start_on_windows(http_port=http_port)
+        else:
+            http_local_server.start(init_config.http_log_file,
+                                    http_port=http_port)
+
+    @staticmethod
+    def stop():
+        GeneratePac.remove_pac()
+        http_local_server.stop()
+
+    @staticmethod
+    def handle_http_server(action, local_port, http_port=80):
+        if action == "start":
+            HandleHttpServer.start(local_port, http_port=http_port)
+        elif action == "stop":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                HandleHttpServer.stop()
+        elif action == "status":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                logger.info("HTTP Server status:{0}".format(http_local_server.is_running()))
+        else:
+            logger.error("--http not support this option: {0}".format(action))

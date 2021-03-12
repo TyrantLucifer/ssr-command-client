@@ -64,6 +64,12 @@ class InitConfig(object):
                                      'autoProxy.pac')
         self.clash_config_file = os.path.join(self.config_dir,
                                               'clashConfig.yaml')
+        self.http_server_pid_file = os.path.join(self.config_dir,
+                                                 'httpd.pid')
+        self.http_log_file = os.path.join(self.config_dir,
+                                          'httpd.log')
+        self.http_error_log_file = os.path.join(self.config_dir,
+                                                'httpd_error.log')
         self.subscribe_url = 'https://tyrantlucifer.com/ssr/ssr.txt'
         self.local_address = '127.0.0.1'
         self.timeout = 300

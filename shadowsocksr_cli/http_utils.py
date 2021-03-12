@@ -12,6 +12,7 @@ import signal
 import socket
 import re
 import requests
+import threading
 from shadowsocksr_cli.logger import *
 
 
@@ -257,12 +258,22 @@ class HTTPLocalServer(Daemon):
     def start_on_windows(self, *args, **kwargs):
         port = kwargs['http_port']
         self.__init_http_server(port)
-        try:
-            logger.info("HTTP Server start on localhost:{0}...".format(port))
-            self.__serve_forever()
-        except KeyboardInterrupt:
-            logger.info("HTTP Server stop...")
+
+        def handler(signum, frame):
+            logger.info('received SIGQUIT, doing graceful shutting down..')
             GeneratePac.remove_pac()
+            logger.info('HTTP Server stop...')
+            exit(0)
+
+        signal.signal(signal.SIGINT, handler)
+        signal.signal(signal.SIGTERM, handler)
+
+        logger.info("HTTP Server start on localhost:{0}...".format(port))
+        t = threading.Thread(target=self.__serve_forever, args=())
+        t.daemon = True
+        t.start()
+        while True:
+            time.sleep(1)
 
     def run(self, *args, **kwargs):
         port = kwargs['http_port']

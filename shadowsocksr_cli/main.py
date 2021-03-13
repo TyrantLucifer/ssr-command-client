@@ -38,6 +38,8 @@ def get_parser():
     parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
     parser.add_argument("--print-qrcode", metavar="ssr_node_id", type=int, help="print ssr node qrcode")
     parser.add_argument("--http", metavar="action[start stop status]", help="Manager local http server")
+    parser.add_argument("--http-port", metavar="http server port", default=80, type=int,
+                        help="assign local http server port")
     parser.add_argument("--setting-global-proxy", action="store_true",
                         help="setting system global proxy,only support on " + color.red('Ubuntu Desktop'))
     parser.add_argument("--setting-pac-proxy", action="store_true",
@@ -83,11 +85,11 @@ def main():
     elif args.print_qrcode is not None:
         DisplayShadowsocksr.display_qrcode(ssr_id=args.print_qrcode)
     elif args.setting_global_proxy:
-        UpdateSystemProxy.open_global_proxy(args.port)
+        UpdateSystemProxy.open_global_proxy(args.port, args.http_port)
     elif args.setting_pac_proxy:
-        UpdateSystemProxy.open_pac_proxy(args.port)
+        UpdateSystemProxy.open_pac_proxy(args.port, args.http_port)
     elif args.close_system_proxy:
-        UpdateSystemProxy.close_proxy(args.port)
+        UpdateSystemProxy.close_proxy(args.port, args.http_port)
     elif args.test_speed is not None:
         DisplayShadowsocksr.display_shadowsocksr_speed(ssr_id=args.test_speed)
     elif args.display_json is not None:
@@ -95,7 +97,7 @@ def main():
     elif args.generate_clash:
         GenerateClashConfig.generate_clash_config()
     elif args.http:
-        HandleHttpServer.handle_http_server(args.http, args.port)
+        HandleHttpServer.handle_http_server(args.http, args.port, args.http_port)
     else:
         parser.print_help()
 

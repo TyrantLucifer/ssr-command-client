@@ -85,9 +85,9 @@ def main():
     elif args.setting_global_proxy:
         UpdateSystemProxy.open_global_proxy(args.port)
     elif args.setting_pac_proxy:
-        UpdateSystemProxy.open_pac_proxy()
+        UpdateSystemProxy.open_pac_proxy(args.port)
     elif args.close_system_proxy:
-        UpdateSystemProxy.close_proxy()
+        UpdateSystemProxy.close_proxy(args.port)
     elif args.test_speed is not None:
         DisplayShadowsocksr.display_shadowsocksr_speed(ssr_id=args.test_speed)
     elif args.display_json is not None:

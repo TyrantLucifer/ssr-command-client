@@ -40,7 +40,7 @@ class InitConfig(object):
     """
 
     def __init__(self):
-        self.version = '2.1.0'
+        self.version = '2.1.1'
         self.platform = sys.platform
         self.system = platform.system()
         self.home_dir = os.path.expanduser('~')

@@ -289,6 +289,7 @@ class GeneratePac(object):
 
     @staticmethod
     def __download_pac_template():
+        logger.info("Start download pac template...")
         result = requests.get('https://tyrantlucifer.com/ssr/autoproxy.pac')
         result.encoding = 'utf-8'
         with open(init_config.pac_file, 'w', encoding='utf-8') as file:
@@ -304,6 +305,7 @@ class GeneratePac(object):
             content = content.replace("address", address)
             content = content.replace("port", str(port))
             file.write(content)
+        logger.info("Generate pac file successfully...")
 
     @staticmethod
     def remove_pac():

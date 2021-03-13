@@ -94,9 +94,8 @@ class DisplayShadowsocksr(object):
             logger.info("Current version {0} is newest. Please enjoy.".format(version))
         else:
             logger.info("Current version: {0}".format(init_config.version))
-            logger.info("Newest version: {0}, "
-                        "you can download on https://github.com/TyrantLucifer/ssr-command-client/releases/tag/v{1}".
-                        format(version, version))
+            logger.info("Newest version: {0}, ".format(version))
+            logger.info("You can use 'pip(pip3) install shadowsocksr-cli' to update.")
         logger.info(tips_message)
 
 

@@ -14,7 +14,8 @@
 - 支持Shadowsocksr节点测速(上传+下载)
 - 支持打印Shadowsocksr节点Json和二维码
 - 整合Shadowsocksr源码到项目中
-- 支持生成基础版clash配置文件 
+- 支持生成基础版clash配置文件
+- 支持开启本地http pac代理服务
 - 暂时不支持`ipv6`Shadowsocksr节点，解析时会默认屏蔽
 
 ## 安装方式
@@ -42,6 +43,7 @@ usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]]
                         [--remove-url ssr_subscribe_url] [--list-address]
                         [--parse-url ssr_url] [--add-ssr ssr_url]
                         [--test-again ssr_node_id]
+                        [--http action[start stop status]] [--http-port port]
                         [--print-qrcode ssr_node_id] [--setting-global-proxy]
                         [--setting-pac-proxy] [--close-system-proxy]
 Shadowsocksr 命令行客户端
@@ -98,6 +100,10 @@ optional arguments:
 --setting-pac-proxy 设置pac代理，注：只支持Ubuntu Desktop
 
 --close-system-proxy 关闭系统代理选项，注：只支持Ubuntu Desktop
+
+--http ACTION[start stop status] 开启本地http服务器，自动生成pac文件，为系统提供http pac代理
+
+--http-port PORT 指定本地http服务器端口号，默认为80
 
 ```
 

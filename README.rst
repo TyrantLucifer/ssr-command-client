@@ -37,18 +37,15 @@ Usage
 
 ::
 
-
-    usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]]
-                            [-u] [-v] [--generate-clash] [--display-json ssr_id]
-                            [--test-speed ssr_id] [--fast-node]
-                            [--setting-url ssr_subscribe_url]
+    usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]] [-u] [-v]
+                            [--generate-clash] [--display-json ssr_id] [--test-speed ssr_id]
+                            [--fast-node] [--setting-url ssr_subscribe_url]
                             [--setting-address ssr_local_address] [--list-url]
-                            [--add-url ssr_subscribe_url]
-                            [--remove-url ssr_subscribe_url] [--list-address]
-                            [--parse-url ssr_url] [--add-ssr ssr_url]
-                            [--test-again ssr_node_id]
-                            [--print-qrcode ssr_node_id] [--setting-global-proxy]
-                            [--setting-pac-proxy] [--close-system-proxy]
+                            [--add-url ssr_subscribe_url] [--remove-url ssr_subscribe_url]
+                            [--list-address] [--parse-url ssr_url] [--add-ssr ssr_url]
+                            [--test-again ssr_node_id] [--print-qrcode ssr_node_id]
+                            [--http action[start stop status]] [--setting-global-proxy]
+                            [--setting-pac-proxy] [--close-system-proxy] [--http-port port]
 
     The shadowsocksr command client based Python.
 
@@ -91,6 +88,9 @@ optional arguments:
                         Desktop
   --close-system-proxy  close system proxy,only support on Ubuntu
                         Desktop
+  --http action         open local http server, offer http pac proxy for system
+  --http-port port      assign local http server port, default is 80
+
 
 Documentation
 -------------

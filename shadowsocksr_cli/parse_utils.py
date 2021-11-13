@@ -95,6 +95,7 @@ class ParseShadowsocksr(object):
                 ssr_dict['fast_open'] = False
                 ssr_dict['verbose'] = False
                 ssr_dict['connect_verbose_info'] = 0
+                ssr_dict.setdefault("protocol_param", 0)
                 return ssr_dict
             else:
                 logger.debug("Currently it is not support ipv6 node")

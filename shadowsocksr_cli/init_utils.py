@@ -42,7 +42,7 @@ class InitConfig(object):
     def __init__(self):
         self.version = '2.1.2'
         self.platform = sys.platform
-        self.system = platform.system()
+        self.system = platform.uname().version
         self.home_dir = os.path.expanduser('~')
         self.config_dir = os.path.join(self.home_dir,
                                        '.ssr-command-client')

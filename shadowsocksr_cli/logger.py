@@ -9,6 +9,7 @@
 
 import logging
 import time
+import re
 
 from shadowsocksr_cli.init_utils import *
 
@@ -57,7 +58,7 @@ def calculate(func):
 # 定义判断操作系统是否为Ubuntu的装饰器
 def is_ubuntu(func):
     def judge(*args, **kwargs):
-        if init_config.system != 'Ubuntu':
+        if re.match(r'.*?Ubuntu.*?', init_config.system) is None:
             logger.info("Current OS - {0} {1} only support Ubuntu".format(init_config.system, func.__name__))
             sys.exit(1)
         else:

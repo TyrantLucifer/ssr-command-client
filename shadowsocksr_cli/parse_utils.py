@@ -112,7 +112,10 @@ class ParseShadowsocksr(object):
         ssr_dict_list = list()
         logger.info('Start parse ssr subscribe url: {0}'.format(subscribe_url))
         try:
-            result = requests.get(subscribe_url)
+            headers = {
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.361"
+            }
+            result = requests.get(subscribe_url, headers=headers)
             result.encoding = 'utf-8'
             ssr_result = ParseShadowsocksr.base64_decode(result.text)
         except Exception as e:

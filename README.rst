@@ -7,7 +7,7 @@ Shadowsocksr-cli
 Features
 --------
 
-- Support Linux and Windows
+- Support + Linux + Windows + Mac(Intel + M1)
 - Support parse shadowsocksr information by shadowsocksr url
 - Support parse shadowsocksr information by subscribe url
 - Support test shadowsocksr connect status

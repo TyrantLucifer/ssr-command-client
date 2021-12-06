@@ -10,7 +10,7 @@
 import socks
 import socket
 from shadowsocksr_cli import speedtest
-from multiprocessing import Pool, Process, freeze_support
+from multiprocessing import Pool, Process, freeze_support, get_context
 from shadowsocksr_cli.handle_utils import *
 from shadowsocksr_cli.setting_utils import *
 
@@ -65,7 +65,10 @@ class ShadowsocksrTest(object):
         freeze_support()
         thread_list = list()
         result_list = list()
-        pool = Pool(len(ssr_dict_list))
+        if 'ARM' in init_config.system:
+            pool = get_context("fork").Pool(len(ssr_dict_list))
+        else:
+            pool = Pool(len(ssr_dict_list))
         for ssr_dict in ssr_dict_list:
             thread = pool.apply_async(ShadowsocksrTest.test_shadowsocksr_connect,
                                       args=(ssr_dict,))

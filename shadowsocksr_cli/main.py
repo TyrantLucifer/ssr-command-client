@@ -38,7 +38,7 @@ def get_parser():
     parser.add_argument("--test-again", metavar="ssr_node_id", type=int, help="test ssr node again")
     parser.add_argument("--print-qrcode", metavar="ssr_node_id", type=int, help="print ssr node qrcode")
     parser.add_argument("--http", metavar="action[start stop status]", help="Manager local http server")
-    parser.add_argument("--http-port", metavar="http server port", default=80, type=int,
+    parser.add_argument("--http-port", metavar="http server port", default=10000, type=int,
                         help="assign local http server port")
     parser.add_argument("--setting-global-proxy", action="store_true",
                         help="setting system global proxy,only support on " + color.red('Ubuntu Desktop'))

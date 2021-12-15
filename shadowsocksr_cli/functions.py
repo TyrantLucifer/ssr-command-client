@@ -233,8 +233,6 @@ class UpdateSystemProxy(object):
         logger.info('Open pac proxy - {0}:{1}'.format(Setting.get_value('local_address'), local_port))
         HandleHttpServer.handle_http_server("start", local_port, http_port)
 
-
-
     @staticmethod
     @is_ubuntu
     def close_proxy(local_port, http_port=80):

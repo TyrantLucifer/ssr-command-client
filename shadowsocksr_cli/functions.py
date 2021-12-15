@@ -212,7 +212,7 @@ class UpdateSystemProxy(object):
 
     @staticmethod
     @is_ubuntu
-    def open_global_proxy(local_port):
+    def open_global_proxy(local_port, http_port=80):
         cmd = "gsettings set org.gnome.system.proxy mode 'manual'"
         os.system(cmd)
         cmd = "gsettings set org.gnome.system.proxy.socks host {0}".format(Setting.get_value('local_address'))

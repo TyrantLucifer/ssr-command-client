@@ -309,4 +309,5 @@ class GeneratePac(object):
 
     @staticmethod
     def remove_pac():
-        os.remove("autoproxy.pac")
+        if os.path.exists("autoproxy.pac"):
+            os.remove("autoproxy.pac")

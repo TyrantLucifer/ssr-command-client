@@ -6,7 +6,7 @@
 @time: 2021/2/18 22:08
 @desc: 提供测试shadowsocksr连接延迟，tcp端口状态，上传下载速度工具类
 """
-
+import requests
 import socks
 import socket
 from shadowsocksr_cli import speedtest
@@ -121,3 +121,41 @@ class ShadowsocksrTest(object):
         logger.info("Download: {0} MB/s".format(ssr_dict['download']))
         logger.info("Upload: {0} MB/s".format(ssr_dict['upload']))
         return ssr_dict
+
+    @staticmethod
+    @calculate
+    def test_shadowsocksr_netflix(ssr_dict, local_port=60000):
+        kwargs = {
+            'local_address': '127.0.0.1',
+            'local_port': local_port,
+            'timeout': int(Setting.get_value('timeout')),
+            'workers': int(Setting.get_value('workers'))
+        }
+        if ssr_dict['connect']:
+            p = Process(target=ControlShadowsocksr.start_on_windows,
+                        args=(ssr_dict,),
+                        kwargs=kwargs)
+            p.daemon = True
+            p.start()
+            socks.set_default_proxy(socks.SOCKS5,
+                                    kwargs['local_address'],
+                                    kwargs['local_port'])
+            socket.socket = socks.socksocket
+            headers = {
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+            }
+            self_made = "https://www.netflix.com/title/70242311"
+            other_made = "https://www.netflix.com/title/70143836"
+            try:
+                r1 = requests.get(self_made, headers=headers, timeout=20)
+                r2 = requests.get(other_made, headers=headers, timeout=20)
+                if r1.status_code == 200 and r2.status_code == 200:
+                    logger.info("Shadowsocksr - name: {0} Full native".format(ssr_dict['remarks']))
+                elif r1.status_code == 200:
+                    logger.info("Shadowsocksr - name: {0} Only original".format(ssr_dict['remarks']))
+                else:
+                    logger.info("Shadowsocksr - name: {0} Can not unlock netflix".format(ssr_dict['remarks']))
+            except Exception as e:
+                logger.error(e)
+        else:
+            logger.info("Shadowsocksr - name: {0} is invalid".format(ssr_dict['remarks']))

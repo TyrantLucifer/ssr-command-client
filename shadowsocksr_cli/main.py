@@ -26,6 +26,7 @@ def get_parser():
     parser.add_argument("--generate-clash", action="store_true", help="generate clash config yaml")
     parser.add_argument("--display-json", metavar="ssr_id", type=int, help="display ssr json info")
     parser.add_argument("--test-speed", type=int, metavar="ssr_id", help="test ssr nodes download and upload speed")
+    parser.add_argument("--test-netflix", type=int, metavar="ssr_id", help="test ssr nodes if or not watch netflix")
     parser.add_argument("--fast-node", action="store_true", help="find most fast by delay and start ssr proxy")
     parser.add_argument("--setting-url", metavar="ssr_subscribe_url", help="setting ssr subscribe url")
     parser.add_argument("--setting-address", metavar="ssr_local_address", help="setting ssr local address")
@@ -92,6 +93,8 @@ def main():
         UpdateSystemProxy.close_proxy(args.port, args.http_port)
     elif args.test_speed is not None:
         DisplayShadowsocksr.display_shadowsocksr_speed(ssr_id=args.test_speed)
+    elif args.test_netflix is not None:
+        DisplayShadowsocksr.display_shadowsocksr_netflix(ssr_id=args.test_netflix)
     elif args.display_json is not None:
         DisplayShadowsocksr.display_shadowsocksr_json(ssr_id=args.display_json)
     elif args.generate_clash:

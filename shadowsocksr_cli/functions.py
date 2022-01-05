@@ -80,6 +80,11 @@ class DisplayShadowsocksr(object):
 
     @staticmethod
     @is_id_valid(update_shadowsocksr.ssr_dict_list)
+    def display_shadowsocksr_netflix(ssr_id):
+        ShadowsocksrTest.test_shadowsocksr_netflix(update_shadowsocksr.ssr_dict_list[ssr_id])
+
+    @staticmethod
+    @is_id_valid(update_shadowsocksr.ssr_dict_list)
     def display_qrcode(ssr_id):
         PrintQrcode.print_qrcode(update_shadowsocksr.ssr_dict_list[ssr_id]['ssr_url'])
 

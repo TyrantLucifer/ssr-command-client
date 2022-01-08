@@ -18,7 +18,7 @@
 from __future__ import absolute_import, division, print_function, \
     with_statement
 
-import collections
+import collections.abc as collections
 import time
 
 from shadowsocksr_cli.logger import ssr_logger as logging

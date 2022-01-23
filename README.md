@@ -1,6 +1,8 @@
 # shadowsocks-cli
 
-English | [中文](README_CH.md)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/tyrantlucifer/ssr-command-client)
+
+English | [中文](README_CH.md) 
 
 The command client of shadowsocksr based by python
 

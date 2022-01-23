@@ -1,5 +1,7 @@
 # shadowsocks-cli
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/tyrantlucifer/ssr-command-client)
+
 中文| [English](README.md)
 
 在命令行下使用的一款Shadowsocksr客户端

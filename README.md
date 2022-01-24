@@ -91,7 +91,7 @@ optional arguments:
   --close-system-proxy  close system proxy,only support on Ubuntu Desktop
 ```
 
-## Simpla Examples
+## Simple Examples
 
 ```angular2html
 Supposed your shadowsocksr nodes list as below：

@@ -19,7 +19,7 @@ The command client of shadowsocksr based by python
 - Support generate clash config file for your shadowsocksr subscribe
 - Support open http pac proxy
 - Not Support ipv6 shadowsocksr node
-- Developed by purge python
+- Developed by pure python
 
 ## Install
 

@@ -178,11 +178,6 @@ If you have any good suggestion，welcome to use the following contact informati
 - Email:Tyrantlucifer@gmail.com 
 - Blog:https://tyrantlucifer.com
 - Telegram:https://t.me/ssr_command_client
-- Personal Wechat
-
-|微信公众号|
-|---------|
-|<a href='#Tips'><img src="https://cdn.jsdelivr.net/gh/TyrantLucifer/MyImageRepository/img/wechat.jpg" height="300" width="300" /></a> |
 
 ## Thanks
 

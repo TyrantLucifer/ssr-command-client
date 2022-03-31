@@ -66,9 +66,9 @@ class ShadowsocksrTest(object):
         thread_list = list()
         result_list = list()
         if 'ARM' in init_config.system:
-            pool = get_context("fork").Pool(len(ssr_dict_list))
+            pool = get_context("fork").Pool(50)
         else:
-            pool = Pool(len(ssr_dict_list))
+            pool = Pool(50)
         for ssr_dict in ssr_dict_list:
             thread = pool.apply_async(ShadowsocksrTest.test_shadowsocksr_connect,
                                       args=(ssr_dict,))

@@ -6,7 +6,7 @@ with codecs.open('README.rst', encoding='utf-8') as f:
 
 setup(
     name="shadowsocksr-cli",
-    version="2.1.7",
+    version="2.1.8",
     author="tyrantlucifer",
     author_email="tyrantlucifer@gmail.com",
     description="The command client of shadowsocksr",

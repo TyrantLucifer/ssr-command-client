@@ -6,6 +6,7 @@
 @time: 2021/2/18 21:37
 @desc:
 """
+import random
 
 import yaml
 from shadowsocksr_cli.common import *
@@ -82,6 +83,12 @@ class DisplayShadowsocksr(object):
     @is_id_valid(update_shadowsocksr.ssr_dict_list)
     def display_shadowsocksr_netflix(ssr_id):
         ShadowsocksrTest.test_shadowsocksr_netflix(update_shadowsocksr.ssr_dict_list[ssr_id])
+
+    @staticmethod
+    def display_all_shadowsocksr_netflix():
+        for ssr_dict in update_shadowsocksr.ssr_dict_list:
+            local_port = random.randint(60000, 61000)
+            ShadowsocksrTest.test_shadowsocksr_netflix(ssr_dict, local_port)
 
     @staticmethod
     @is_id_valid(update_shadowsocksr.ssr_dict_list)

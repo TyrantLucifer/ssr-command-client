@@ -37,15 +37,24 @@ Usage
 
 ::
 
-    usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]] [-u] [-v]
-                            [--generate-clash] [--display-json ssr_id] [--test-speed ssr_id]
-                            [--fast-node] [--setting-url ssr_subscribe_url]
-                            [--setting-address ssr_local_address] [--list-url]
-                            [--add-url ssr_subscribe_url] [--remove-url ssr_subscribe_url]
-                            [--list-address] [--parse-url ssr_url] [--add-ssr ssr_url]
-                            [--test-again ssr_node_id] [--print-qrcode ssr_node_id]
-                            [--http action[start stop status]] [--setting-global-proxy]
-                            [--setting-pac-proxy] [--close-system-proxy] [--http-port port]
+    usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id]
+                            [-S [ssr_id]] [-u] [-v] [--generate-clash]
+                            [--display-json ssr_id]
+                            [--test-speed ssr_id]
+                            [--test-netflix ssr_id] [--test-netflix-all]
+                            [--fast-node]
+                            [--setting-url ssr_subscribe_url]
+                            [--setting-address ssr_local_address]
+                            [--list-url] [--add-url ssr_subscribe_url]
+                            [--remove-url ssr_subscribe_url]
+                            [--list-address] [--parse-url ssr_url]
+                            [--add-ssr ssr_url]
+                            [--test-again ssr_node_id]
+                            [--print-qrcode ssr_node_id]
+                            [--http action[start stop status]]
+                            [--http-port http server port]
+                            [--setting-global-proxy]
+                            [--setting-pac-proxy] [--close-system-proxy]
 
     The shadowsocksr command client based Python.
 
@@ -64,6 +73,9 @@ optional arguments:
   --display-json ssr_id
                         display ssr json info
   --test-speed ssr_id   test ssr nodes download and upload speed
+  --test-netflix ssr_id
+                        test ssr nodes if or not watch netflix
+  --test-netflix-all    test all ssr nodes if or not watch netflix
   --fast-node           find most fast by delay and start ssr proxy
   --setting-url ssr_subscribe_url
                         setting ssr subscribe url
@@ -81,15 +93,17 @@ optional arguments:
                         test ssr node again
   --print-qrcode ssr_node_id
                         print ssr node qrcode
+  --http action
+                        Manager local http server
+  --http-port http_server_port
+                        assign local http server port
   --setting-global-proxy
                         setting system global proxy,only support on
                         Ubuntu Desktop
-  --setting-pac-proxy   setting system pac proxy,only support on Ubuntu
-                        Desktop
-  --close-system-proxy  close system proxy,only support on Ubuntu
-                        Desktop
-  --http action         open local http server, offer http pac proxy for system
-  --http-port port      assign local http server port, default is 80
+  --setting-pac-proxy   setting system pac proxy,only support on
+                        Ubuntu Desktop
+  --close-system-proxy  close system proxy,only support on
+                        Ubuntu Desktop
 
 
 Documentation

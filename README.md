@@ -15,6 +15,7 @@ The command client of shadowsocksr based by python
 - Support test shadowsockr node delay
 - Support test shadowsocksr node is or not blocked by tcp
 - Support test shadowsocksr node download and upload speed
+- Support test node Netflix unlocking situation
 - Support generate json and qrcode for shadowsocksr node
 - Support generate clash config file for your shadowsocksr subscribe
 - Support open http pac proxy
@@ -37,13 +38,24 @@ pip(pip3) install shadowsocksr-cli
 
 ## Usage
 ```angular2html
-usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id] [-S [ssr_id]] [-u] [-v] [--generate-clash]
-                        [--display-json ssr_id] [--test-speed ssr_id] [--test-netflix ssr_id] [--fast-node]
-                        [--setting-url ssr_subscribe_url] [--setting-address ssr_local_address] [--list-url]
-                        [--add-url ssr_subscribe_url] [--remove-url ssr_subscribe_url] [--list-address]
-                        [--parse-url ssr_url] [--add-ssr ssr_url] [--test-again ssr_node_id]
-                        [--print-qrcode ssr_node_id] [--http action[start stop status]] [--http-port http server port]
-                        [--setting-global-proxy] [--setting-pac-proxy] [--close-system-proxy]
+usage: shadowsocksr-cli [-h] [-l] [-p local_port] [-s ssr_id]       
+                        [-S [ssr_id]] [-u] [-v] [--generate-clash]  
+                        [--display-json ssr_id]
+                        [--test-speed ssr_id]                       
+                        [--test-netflix ssr_id] [--test-netflix-all]
+                        [--fast-node]                               
+                        [--setting-url ssr_subscribe_url]           
+                        [--setting-address ssr_local_address]       
+                        [--list-url] [--add-url ssr_subscribe_url]  
+                        [--remove-url ssr_subscribe_url]
+                        [--list-address] [--parse-url ssr_url]        
+                        [--add-ssr ssr_url]
+                        [--test-again ssr_node_id]
+                        [--print-qrcode ssr_node_id]
+                        [--http action[start stop status]]
+                        [--http-port http server port]
+                        [--setting-global-proxy]
+                        [--setting-pac-proxy] [--close-system-proxy]  
 
 The shadowsocksr command client based Python.
 
@@ -61,10 +73,11 @@ optional arguments:
   --generate-clash      generate clash config yaml
   --display-json ssr_id
                         display ssr json info
-  --test-speed ssr_id   test ssr nodes download and upload speed
+  --test-speed ssr_id   test ssr nodes download and upload speed      
   --test-netflix ssr_id
-                        test ssr nodes if or not watch netflix
-  --fast-node           find most fast by delay and start ssr proxy
+                        test ssr nodes if or not watch netflix        
+  --test-netflix-all    test all ssr nodes if or not watch netflix    
+  --fast-node           find most fast by delay and start ssr proxy   
   --setting-url ssr_subscribe_url
                         setting ssr subscribe url
   --setting-address ssr_local_address
@@ -86,9 +99,12 @@ optional arguments:
   --http-port http server port
                         assign local http server port
   --setting-global-proxy
-                        setting system global proxy,only support on Ubuntu Desktop
-  --setting-pac-proxy   setting system pac proxy,only support on Ubuntu Desktop
-  --close-system-proxy  close system proxy,only support on Ubuntu Desktop
+                        setting system global proxy,only support on   
+                        Ubuntu Desktop
+  --setting-pac-proxy   setting system pac proxy,only support on      
+                        Ubuntu Desktop
+  --close-system-proxy  close system proxy,only support on
+                        Ubuntu Desktop
 ```
 
 ## Simple Examples

@@ -83,7 +83,7 @@ class ParseShadowsocksr(object):
                             ssr_dict[key] = ParseShadowsocksr.base64_decode(value)
                         except Exception as e:
                             logger.error(e)
-                            logger.error("base64 decode {0} error, it will use raw value {1}".format(key, value))
+                            logger.warning("base64 decode {0} error, it will use raw value {1}".format(key, value))
                             ssr_dict[key] = value
                 ssr_dict['server'] = server
                 ssr_dict['server_port'] = int(port)

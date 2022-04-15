@@ -56,13 +56,13 @@ class ParseShadowsocksr(object):
         else:
             ssr_dict = dict()
             param_list = ssr_decode_url.split(':')
-            if len(param_list) == 6:
+            if len(param_list[0]) > 4:
                 server = param_list[0]
                 port = param_list[1]
                 protocol = param_list[2]
                 method = param_list[3]
                 obfs = param_list[4]
-                first_encryption_param_list = param_list[-1].split('/?')
+                first_encryption_param_list = param_list[5].split('/?')
                 password = ParseShadowsocksr.base64_decode(first_encryption_param_list[0])
                 second_encryption_param_list = first_encryption_param_list[-1].split('&')
                 key_list = [
@@ -79,7 +79,12 @@ class ParseShadowsocksr(object):
                     if key == 'protoparam':
                         key = 'protocol_param'
                     if key in key_list:
-                        ssr_dict[key] = ParseShadowsocksr.base64_decode(value)
+                        try:
+                            ssr_dict[key] = ParseShadowsocksr.base64_decode(value)
+                        except Exception as e:
+                            logger.error(e)
+                            logger.error("base64 decode {0} error, it will use raw value {1}".format(key, value))
+                            ssr_dict[key] = value
                 ssr_dict['server'] = server
                 ssr_dict['server_port'] = int(port)
                 ssr_dict['method'] = method
@@ -116,7 +121,7 @@ class ParseShadowsocksr(object):
                 "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.361"
             }
             result = requests.get(subscribe_url, headers=headers)
-            result.encoding = 'utf-8'
+            result.encoding = result.apparent_encoding
             ssr_result = ParseShadowsocksr.base64_decode(result.text)
         except Exception as e:
             logger.error(e)

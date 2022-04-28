@@ -186,6 +186,8 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 | ---- | ------------------------------------- | ---- | ---------- |
 | 1    | [lfp1024](https://github.com/lfp1024) | 20   | 2021-09-12 |
 | 2    | [mmin18](https://github.com/mmin18) | 30   | 2021-12-31 |
+| 3    | unknown | 20   | 2022-04-15 |
+| 4    | unknown | 30   | 2022-04-28 |
 
 ## Tips
 

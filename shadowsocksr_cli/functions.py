@@ -87,7 +87,7 @@ class DisplayShadowsocksr(object):
     @staticmethod
     def display_all_shadowsocksr_netflix():
         for ssr_dict in update_shadowsocksr.ssr_dict_list:
-            local_port = random.randint(60000, 61000)
+            local_port = random.randint(60000, 62000)
             ShadowsocksrTest.test_shadowsocksr_netflix(ssr_dict, local_port)
 
     @staticmethod

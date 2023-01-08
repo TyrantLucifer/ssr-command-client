@@ -189,7 +189,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 | 3    | unknown | 20   | 2022-04-15 |
 | 4    | unknown | 30   | 2022-04-28 |
 | 5    | [jmydurant](https://github.com/jmydurant) | 50   | 2022-04-28 |
-| 6    | unknown | 50   | 2023-01-08 |
+| 6    | unknown | 5.21   | 2023-01-08 |
 
 ## Tips
 

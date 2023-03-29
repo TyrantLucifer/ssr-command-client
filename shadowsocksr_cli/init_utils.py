@@ -74,12 +74,25 @@ class InitConfig(object):
         self.local_address = '127.0.0.1'
         self.timeout = 300
         self.workers = 1
+        self.__default_json = '[]'
 
         if not self.__is_exist_config_dir():
             self.__create_config_dir()
 
+        if self.__is_exist_config_file_json():
+            self.__initConfigFileJson()
+        else:
+            with open(self.ssr_list_json,'w') as f:
+                f.write(self.__default_json)
+
     def __is_exist_config_dir(self):
         if os.path.exists(self.config_dir):
+            return True
+        else:
+            return False
+
+    def __is_exist_config_file_json(self):
+        if os.path.exists(self.ssr_list_json):
             return True
         else:
             return False
@@ -99,6 +112,11 @@ class InitConfig(object):
             config.write(file)
         with open(self.config_lock_file, 'w') as lock_file:
             lock_file.write('')
+
+    def __initConfigFileJson(self):
+        if os.path.getsize(self.ssr_list_json) == 0:
+            with open(self.ssr_list_json,'w') as f:
+                f.write(self.__default_json)
 
     def __create_config_dir(self):
         os.mkdir(self.config_dir)

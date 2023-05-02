@@ -190,14 +190,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 | 4    | unknown | 30   | 2022-04-28 |
 | 5    | [jmydurant](https://github.com/jmydurant) | 50   | 2022-04-28 |
 | 6    | unknown | 5.21   | 2023-01-08 |
-
-## Tips
-
-If you have any good suggestion，welcome to use the following contact information to contact me, you can send e-mail to me or add the qq group `554069363`
-
-- Email:Tyrantlucifer@gmail.com 
-- Blog:https://tyrantlucifer.com
-- Telegram:https://t.me/ssr_command_client
+| 7    | unknown | 20   | 2023-04-20 |
 
 ## Thanks
 

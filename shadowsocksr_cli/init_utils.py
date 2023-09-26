@@ -70,7 +70,7 @@ class InitConfig(object):
                                           'httpd.log')
         self.http_error_log_file = os.path.join(self.config_dir,
                                                 'httpd_error.log')
-        self.http_proxy_server_pid_file = os.join(self.config_dir,
+        self.http_proxy_server_pid_file = os.path.join(self.config_dir,
                                                   'httpproxy.pid')
         self.http_proxy_error_log_file = os.path.join(self.config_dir,
                                                 'httpproxy.log')

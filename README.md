@@ -174,6 +174,14 @@ alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 ```
+- if you prefer socks5 to http proxy, you can use this command `shadowsocksr-cli -p 1080 --http-proxy start --http-proxy-port 7890`
+- then you can add the following content in you `~/.bashrc`
+```shell
+alias setproxy="export ALL_PROXY=http://127.0.0.1:7890"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+```
+
 ## Support open source:heart:, Buy the author a Starbucks
 
 > If you are willing to donate, please write your Github account in the donation note. Thank you  

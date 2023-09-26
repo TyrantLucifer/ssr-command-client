@@ -434,3 +434,44 @@ class HandleHttpServer(object):
                 logger.info("HTTP Server status:{0}".format(http_local_server.is_running()))
         else:
             logger.error("--http not support this option: {0}".format(action))
+
+
+class HandleHttpProxy(object):
+    """
+    将socks5代理转换为http代理
+    """
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def start(socks_port, http_proxy_port):
+        if init_config.platform == 'win32':
+            http_proxy_server.start_on_windows(socks_port=socks_port,
+                                               http_proxy_port=http_proxy_port)
+        else:
+            http_proxy_server.start(init_config.http_log_file,
+                                    socks_port=socks_port,
+                                    http_proxy_port=http_proxy_port)
+
+    @staticmethod
+    def stop():
+        http_proxy_server.stop()
+
+    @staticmethod
+    def handle_http_proxy(action, socks_port, http_proxy_port):
+        if action == "start":
+            HandleHttpProxy.start(socks_port=socks_port, http_proxy_port=http_proxy_port)
+        elif action == "stop":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                HandleHttpProxy.stop()
+        elif action == "status":
+            if init_config.platform == "win32":
+                logger.error("Only support unix platform")
+            else:
+                logger.info("HTTP Server status:{0}".format(http_proxy_server.is_running()))
+        else:
+            logger.error("--http-proxy not support this option: {0}".format(action))
+

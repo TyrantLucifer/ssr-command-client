@@ -1,3 +1,7 @@
+"""
+Adapted from [Xiangsong Zeng](https://gist.github.com/zengxs)
+Reference gist: proxy_socks2http.py https://gist.github.com/zengxs/dc6cb4dea4495ecaab7b44abb07a581f
+"""
 import asyncio
 import logging
 import re

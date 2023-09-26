@@ -19,6 +19,7 @@ The command client of shadowsocksr based by python
 - Support generate json and qrcode for shadowsocksr node
 - Support generate clash config file for your shadowsocksr subscribe
 - Support open http pac proxy
+- Support convert socks proxy to http proxy
 - Not Support ipv6 shadowsocksr node
 - Developed by pure python
 

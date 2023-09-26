@@ -19,6 +19,7 @@
 - 整合Shadowsocksr源码到项目中
 - 支持生成基础版clash配置文件
 - 支持开启本地http pac代理服务
+- 支持socks5代理转http代理
 - 暂时不支持`ipv6`Shadowsocksr节点，解析时会默认屏蔽
 
 ## 安装方式

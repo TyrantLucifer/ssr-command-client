@@ -184,6 +184,13 @@ setproxy 开启代理
 unsetproxy 关闭代理
 ip 查看ip归属地
 ```
+- 如果你需要使用http代理而不是socks代理，使用这个命令可以将socks5代理转换为http代理 `shadowsocksr-cli -p 1080 --http-proxy start --http-proxy-port 7890`
+- 然后你就可以将以下快捷命令添加到 `~/.bashrc`
+```shell
+alias sethttpsproxy="export HTTPS_PROXY=http://127.0.0.1:7890"
+alias unsethttpsproxy="unset HTTPS_PROXY"
+```
+
 
 ## 常见问题
 

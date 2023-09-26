@@ -108,6 +108,9 @@ optional arguments:
 
 --http-port PORT 指定本地http服务器端口号，默认为80
 
+--http-proxy action[start stop status] 将socks5代理转换为http代理
+                        
+--http-proxy-port 指定http代理的服务端口
 ```
 
 ## 简单示例

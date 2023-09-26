@@ -98,6 +98,10 @@ optional arguments:
                         Manager local http server
   --http-port http server port
                         assign local http server port
+  --http-proxy action[start stop status]
+                        Convert socks5 proxy to http proxy
+  --http-proxy-port http proxy port
+                        assign local http proxy port
   --setting-global-proxy
                         setting system global proxy,only support on   
                         Ubuntu Desktop

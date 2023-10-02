@@ -28,3 +28,9 @@ http_local_server = HTTPLocalServer("HTTPLocalServer",
                                     init_config.http_server_pid_file,
                                     stderr=init_config.http_error_log_file,
                                     verbose=1)
+
+# 初始化工具类http_utils.HTTPProxyServer
+http_proxy_server = HTTPProxyServer("HTTPProxyServer", 
+                                    init_config.http_proxy_server_pid_file,
+                                    stderr=init_config.http_proxy_error_log_file,
+                                    verbose=1)

@@ -14,6 +14,7 @@ Features
 - Support test shadowsocksr download and upload speed
 - Support print shadowsocksr information by qrcode or json format
 - Support generate clash fundamental config file
+- Support convert socks proxy to http proxy
 
 How to install
 --------------

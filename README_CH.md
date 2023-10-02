@@ -19,6 +19,7 @@
 - 整合Shadowsocksr源码到项目中
 - 支持生成基础版clash配置文件
 - 支持开启本地http pac代理服务
+- 支持socks5代理转http代理
 - 暂时不支持`ipv6`Shadowsocksr节点，解析时会默认屏蔽
 
 ## 安装方式
@@ -108,6 +109,9 @@ optional arguments:
 
 --http-port PORT 指定本地http服务器端口号，默认为80
 
+--http-proxy action[start stop status] 将socks5代理转换为http代理
+                        
+--http-proxy-port 指定http代理的服务端口
 ```
 
 ## 简单示例
@@ -184,6 +188,13 @@ setproxy 开启代理
 unsetproxy 关闭代理
 ip 查看ip归属地
 ```
+- 如果你需要使用http代理而不是socks代理，使用这个命令可以将socks5代理转换为http代理 `shadowsocksr-cli -p 1080 --http-proxy start --http-proxy-port 7890`
+- 然后你就可以将以下快捷命令添加到 `~/.bashrc`
+```shell
+alias sethttpsproxy="export HTTPS_PROXY=http://127.0.0.1:7890"
+alias unsethttpsproxy="unset HTTPS_PROXY"
+```
+
 
 ## 常见问题
 

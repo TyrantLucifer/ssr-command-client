@@ -70,6 +70,10 @@ class InitConfig(object):
                                           'httpd.log')
         self.http_error_log_file = os.path.join(self.config_dir,
                                                 'httpd_error.log')
+        self.http_proxy_server_pid_file = os.path.join(self.config_dir,
+                                                  'httpproxy.pid')
+        self.http_proxy_error_log_file = os.path.join(self.config_dir,
+                                                'httpproxy.log')
         self.subscribe_url = 'https://tyrantlucifer.com/ssr/ssr.txt'
         self.local_address = '127.0.0.1'
         self.timeout = 300

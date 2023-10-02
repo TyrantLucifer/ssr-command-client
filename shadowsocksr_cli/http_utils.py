@@ -7,13 +7,16 @@
 @desc: 提供http pac代理功能
 """
 
+import asyncio
 import atexit
+import functools
 import signal
 import socket
 import re
 import requests
 import threading
 from shadowsocksr_cli.logger import *
+from shadowsocksr_cli.proxy_socks2http import handle_connection
 
 
 class Daemon(object):
@@ -311,3 +314,52 @@ class GeneratePac(object):
     def remove_pac():
         if os.path.exists("autoproxy.pac"):
             os.remove("autoproxy.pac")
+
+
+class HTTPProxyServer(Daemon):
+
+    def __init__(self, name, save_path, stdin=os.devnull, stdout=os.devnull, stderr=os.devnull, home_dir='.', umask=22,
+                 verbose=1):
+        Daemon.__init__(self, save_path, stdin, stdout, stderr, home_dir, umask, verbose)
+        self.name = name
+        self.port = 7890
+        self.socks_port = 1080
+
+    def __init_http_server(self, port, socks_port):
+        self.port = port
+        self.socks_port = socks_port
+        
+    def __serve_forever(self):
+        loop = asyncio.get_event_loop()
+        handler = functools.partial(handle_connection, socks_port=self.socks_port)
+        server = asyncio.start_server(handler, host="localhost", port=self.port)
+        server = loop.run_until_complete(server)
+        loop.run_forever()
+
+    def start_on_windows(self, *args, **kwargs):
+        port = kwargs['http_proxy_port']
+        socks_port = kwargs["socks_port"]
+
+        self.__init_http_server(port, socks_port)
+
+        def handler(signum, frame):
+            logger.info('received SIGQUIT, doing graceful shutting down..')
+            logger.info('HTTP Proxy stop...')
+            exit(0)
+
+        signal.signal(signal.SIGINT, handler)
+        signal.signal(signal.SIGTERM, handler)
+
+        logger.info("HTTP Proxy start on localhost:{0}...".format(port))
+        t = threading.Thread(target=self.__serve_forever, args=())
+        t.daemon = True
+        t.start()
+        while True:
+            time.sleep(1)
+
+    def run(self, *args, **kwargs):
+        port = kwargs['http_proxy_port']
+        socks_port = kwargs["socks_port"]
+        self.__init_http_server(port, socks_port)
+        self.__serve_forever()
+        logger.info("HTTP Proxy start on *:{0}".format(port))

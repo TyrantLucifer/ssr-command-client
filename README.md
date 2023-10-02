@@ -19,6 +19,7 @@ The command client of shadowsocksr based by python
 - Support generate json and qrcode for shadowsocksr node
 - Support generate clash config file for your shadowsocksr subscribe
 - Support open http pac proxy
+- Support convert socks proxy to http proxy
 - Not Support ipv6 shadowsocksr node
 - Developed by pure python
 
@@ -98,6 +99,10 @@ optional arguments:
                         Manager local http server
   --http-port http server port
                         assign local http server port
+  --http-proxy action[start stop status]
+                        Convert socks5 proxy to http proxy
+  --http-proxy-port http proxy port
+                        assign local http proxy port
   --setting-global-proxy
                         setting system global proxy,only support on   
                         Ubuntu Desktop
@@ -174,6 +179,13 @@ alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 ```
+- if you prefer socks5 to http proxy, you can use this command `shadowsocksr-cli -p 1080 --http-proxy start --http-proxy-port 7890`
+- then you can add the following content in you `~/.bashrc`
+```shell
+alias sethttpsproxy="export HTTPS_PROXY=http://127.0.0.1:7890"
+alias unsethttpsproxy="unset HTTPS_PROXY"
+```
+
 ## Support open source:heart:, Buy the author a Starbucks
 
 > If you are willing to donate, please write your Github account in the donation note. Thank you  

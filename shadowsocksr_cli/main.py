@@ -42,6 +42,9 @@ def get_parser():
     parser.add_argument("--http", metavar="action[start stop status]", help="Manager local http server")
     parser.add_argument("--http-port", metavar="http server port", default=10000, type=int,
                         help="assign local http server port")
+    parser.add_argument("--http-proxy", metavar="action[start stop status]", help="Convert socks5 proxy to http proxy")
+    parser.add_argument("--http-proxy-port", metavar="http proxy port", default=7890, type=int,
+                        help="assign local http proxy port")
     parser.add_argument("--setting-global-proxy", action="store_true",
                         help="setting system global proxy,only support on " + color.red('Ubuntu Desktop'))
     parser.add_argument("--setting-pac-proxy", action="store_true",
@@ -104,6 +107,8 @@ def main():
         GenerateClashConfig.generate_clash_config()
     elif args.http:
         HandleHttpServer.handle_http_server(args.http, args.port, args.http_port)
+    elif args.http_proxy:
+        HandleHttpProxy.handle_http_proxy(args.http_proxy, args.port, args.http_proxy_port)
     else:
         parser.print_help()
 

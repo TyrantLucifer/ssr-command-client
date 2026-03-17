@@ -64,27 +64,30 @@ class ParseShadowsocksr(object):
                 obfs = param_list[4]
                 first_encryption_param_list = param_list[5].split('/?')
                 password = ParseShadowsocksr.base64_decode(first_encryption_param_list[0])
-                second_encryption_param_list = first_encryption_param_list[-1].split('&')
+
                 key_list = [
                     'obfs_param',
                     'protocol_param',
                     'remarks',
                     'group'
                 ]
-                for params in second_encryption_param_list:
-                    key = params.split('=')[0]
-                    value = params.split('=')[1]
-                    if key == 'obfsparam':
-                        key = 'obfs_param'
-                    if key == 'protoparam':
-                        key = 'protocol_param'
-                    if key in key_list:
-                        try:
-                            ssr_dict[key] = ParseShadowsocksr.base64_decode(value)
-                        except Exception as e:
-                            logger.error(e)
-                            logger.warning("base64 decode {0} error, it will use raw value {1}".format(key, value))
-                            ssr_dict[key] = value
+                if len(first_encryption_param_list) > 1:
+                    second_encryption_param_list = first_encryption_param_list[-1].split('&')
+                    for params in second_encryption_param_list:
+                        key = params.split('=')[0]
+                        value = params.split('=')[1]
+                        if key == 'obfsparam':
+                            key = 'obfs_param'
+                        if key == 'protoparam':
+                            key = 'protocol_param'
+                        if key in key_list:
+                            try:
+                                ssr_dict[key] = ParseShadowsocksr.base64_decode(value)
+                            except Exception as e:
+                                logger.error(e)
+                                logger.warning("base64 decode {0} error, it will use raw value {1}".format(key, value))
+                                ssr_dict[key] = value
+
                 ssr_dict['server'] = server
                 ssr_dict['server_port'] = int(port)
                 ssr_dict['method'] = method
